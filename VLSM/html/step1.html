@@ -1,0 +1,119 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<div id="container_step1">
+    <div id="container_step1_top">
+        <fieldset>
+            <legend>Calculate VLSM</legend>
+            <p><label>Subnetted address</label><input type="text" id="subnetted_address_input" readonly/></p>
+            <p><label>In binary</label><input type="text" id="subnetted_bin_input" readonly/></p>
+        </fieldset>
+    </div>
+    <div id="container_step1_bottom">
+        <fieldset class="noborder">
+            <legend>จำนวน PC ที่ต้องการในแต่ละ Network segment</legend>
+            <div id="container_step1_bottom_left">
+                <fieldset><legend>ก่อนเรียงลำดับ</legend>
+                    <p>
+                        <label>LAN1 จำนวน PC ที่ต้องการ </label>
+                        <input type="text" name="lan1_host" id="lan1_host_input_before" readonly/>
+                    </p>
+                    <p>
+                        <label>LAN2 จำนวน PC ที่ต้องการ </label>
+                        <input type="text" name="lan2_host" id="lan2_host_input_before" readonly/>
+                    </p>
+                    <p>
+                        <label>LAN3 จำนวน PC ที่ต้องการ </label>
+                        <input type="text" name="lan3_host" id="lan3_host_input_before" readonly/>
+                    </p>
+                    <p>
+                        <label>LAN4 จำนวน PC ที่ต้องการ </label>
+                        <input type="text" name="lan4_host" id="lan4_host_input_before" readonly/>
+                    </p>
+                    <p>
+                        <label>LAN5 จำนวน PC ที่ต้องการ </label>
+                        <input type="text" name="lan5_host" id="lan5_host_input_before" readonly/>
+                    </p>
+                    <p>
+                        <label>LAN6 จำนวน PC ที่ต้องการ </label>
+                        <input type="text" name="lan6_host" id="lan6_host_input_before" readonly/>
+                    </p>
+                    <p>
+                        <label>LAN7 จำนวน PC ที่ต้องการ </label>
+                        <input type="text" name="lan7_host" id="lan7_host_input_before" readonly/>
+                    </p>
+                    <p>
+                        <label>R4-R1 จำนวน Router ที่ต้องการ </label>
+                        <input type="text" name="lan4_1" id="lan4_1_input_before" readonly/>
+                    </p>
+                    <p>
+                        <label>R4-R2 จำนวน Router ที่ต้องการ </label>
+                        <input type="text" name="lan4_2" id="lan4_2_input_before" readonly/>
+                    </p>
+                    <p>
+                        <label>R4-R3 จำนวน Router ที่ต้องการ </label>
+                        <input type="text" name="lan4_3" id="lan4_3_input_before" readonly/>
+                    </p>
+                    <fieldset class="noborder" class="minifont">
+                        <legend>คำอธิบาย</legend>
+                        <div id="step1_description">
+                            ทำการเรียงลำดับจำนวน Host ทั้งหมดโดยเรียงจากมากไปหาน้อย
+                        </div>
+                    </fieldset>
+                </fieldset>
+            </div>
+            <div id="container_step1_bottom_right">
+                <fieldset ><legend>หลังเรียงลำดับ</legend>
+                    <div id="sortable">
+                        <p id="lan1_host_input_after">
+                            <label>LAN1 จำนวน PC ที่ต้องการ </label>
+                            <input type="text" name="lan1_host" readonly/>
+                        </p>
+                        <p id="lan2_host_input_after">
+                            <label>LAN2 จำนวน PC ที่ต้องการ </label>
+                            <input type="text" name="lan2_host" readonly/>
+                        </p>
+                        <p id="lan3_host_input_after">
+                            <label>LAN3 จำนวน PC ที่ต้องการ </label>
+                            <input type="text" name="lan3_host" readonly/>
+                        </p>
+                        <p id="lan4_host_input_after">
+                            <label>LAN4 จำนวน PC ที่ต้องการ </label>
+                            <input type="text" name="lan4_host" readonly/>
+                        </p>
+                        <p id="lan5_host_input_after">
+                            <label>LAN5 จำนวน PC ที่ต้องการ </label>
+                            <input type="text" name="lan5_host" readonly/>
+                        </p>
+                        <p id="lan6_host_input_after">
+                            <label>LAN6 จำนวน PC ที่ต้องการ </label>
+                            <input type="text" name="lan6_host" readonly/>
+                        </p>
+                        <p id="lan7_host_input_after">
+                            <label>LAN7 จำนวน PC ที่ต้องการ </label>
+                            <input type="text" name="lan7_host" readonly/>
+                        </p>
+                        <p id="lan4_1_host_input_after">
+                            <label>R4-R1 จำนวน Router ที่ต้องการ </label>
+                            <input type="text" name="lan4_1" readonly/>
+                        </p>
+                        <p id="lan4_2_host_input_after">
+                            <label>R4-R2 จำนวน Router ที่ต้องการ </label>
+                            <input type="text" name="lan4_2" readonly/>
+                        </p>
+                        <p id="lan4_3_host_input_after">
+                            <label>R4-R3 จำนวน Router ที่ต้องการ </label>
+                            <input type="text" name="lan4_3" readonly/>
+                        </p>
+                    </div>
+                    <fieldset class="noborder" class="minifont">
+                        <legend>คำอธิบาย</legend>
+                        <div id="step1_description">
+                            แสดงข้อมูลของ Network segment โดยเรียงตามลำดับของจำนวน PC ที่ต้องการ
+                        </div>
+                    </fieldset></fieldset>
+            </div>
+        </fieldset>
+    </div>
+</div>
+<script type="text/javascript">
+    $.global_val_step1();
+</script>

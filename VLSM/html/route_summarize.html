@@ -1,0 +1,84 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<div id="container_route_summarize">
+    <div id="container_route_summarize_top">
+        <fieldset>
+            <legend></legend>
+            <ul id="routing_list"><li  class="selected">Routing with summarize</li><li>Routing with non summarize</li></ul>
+            <ol id="routing_action_list"><li  class="selected" id="a1">Cold start</li><li id="a3">Update information</li></ol>
+            <div id="routing_action">
+                <p>
+                <h3></h3>
+                <div id="top">
+                    <div id="left">
+                        <h4>R1</h4>
+                        <table id="table_R1">
+                            <tr>
+                                <th>Network</th><th>Interface</th><th>Hop</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="center">
+                        <h4>R2</h4>
+                        <table id="table_R2">
+                            <tr>
+                                <th>Network</th><th>Interface</th><th>Hop</th>
+                            </tr>
+                        </table>
+                        <h4>R4</h4>
+                        <table id="table_R4">
+                            <tr>
+                                <th>Network</th><th>Interface</th><th>Hop</th>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="right">
+                        <h4>R3</h4>
+                        <table id="table_R3">
+                            <tr>
+                                <th>Network</th><th>Interface</th><th>Hop</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                </p>
+            </div>
+        </fieldset>
+    </div>
+    <div id="host_list">
+        <ul>
+            <li id="lan1_host"></li>
+            <li id="lan2_host"></li>
+            <li id="lan3_host"></li>
+            <li id="lan4_host"></li>
+            <li id="lan5_host"></li>
+            <li id="lan6_host"></li>
+            <li id="lan7_host"></li>
+            <li id="R4_R1"></li>
+            <li id="R4_R2"></li>
+            <li id="R4_R3"></li>
+        </ul>
+        <table id="table_R1_old">
+            <tr>
+                <th>Network</th><th>Interface</th><th>Hop</th>
+            </tr>
+        </table>
+                <table id="table_R2_old">
+            <tr>
+                <th>Network</th><th>Interface</th><th>Hop</th>
+            </tr>
+        </table>
+                <table id="table_R3_old">
+            <tr>
+                <th>Network</th><th>Interface</th><th>Hop</th>
+            </tr>
+        </table>
+                <table id="table_R4_old">
+            <tr>
+                <th>Network</th><th>Interface</th><th>Hop</th>
+            </tr>
+        </table>
+    </div>
+</div>
+<script type="text/javascript">
+    $.global_val_route_summarize();
+</script>

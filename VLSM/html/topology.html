@@ -1,0 +1,85 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<div id="container_left">
+    <div id="container_left_top">
+        <img src="lib/img/topology.png" title="topology" alt="topology"/>
+    </div>
+</div>
+<div id="container_right">
+    <div id="container_right_top">
+        <div>
+            <fieldset>
+                <legend>VLSM</legend>
+                <p>
+                    <label>Subnetted address</label>
+                    <input type="text" name="subnetted_address" id="subnetted_address_input" maxlength="15"/>
+                    <label id="subnetted_cidr_label">/</label>
+                    <input type="text" id="subnetted_cidr_input" maxlength="2"/>
+                </p>
+            </fieldset>
+        </div>
+    </div>
+    <div id="container_right_bottom">
+        <div id="input_form">
+            <fieldset>
+                <legend>
+                    กำหนดจำนวน PC ที่ต้องการ
+                </legend>
+                <p>
+                    <label>LAN1 จำนวน PC ที่ต้องการ </label>
+                    <input type="text" name="lan1_host" id="lan1_host_input" maxlength="12"/>
+                </p>
+                <p>
+                    <label>LAN2 จำนวน PC ที่ต้องการ </label>
+                    <input type="text" name="lan2_host" id="lan2_host_input" maxlength="12"/>
+                </p>
+                <p>
+                    <label>LAN3 จำนวน PC ที่ต้องการ </label>
+                    <input type="text" name="lan3_host" id="lan3_host_input" maxlength="12"/>
+                </p>
+                <p>
+                    <label>LAN4 จำนวน PC ที่ต้องการ </label>
+                    <input type="text" name="lan4_host" id="lan4_host_input" maxlength="12"/>
+                </p>
+                <p>
+                    <label>LAN5 จำนวน PC ที่ต้องการ </label>
+                    <input type="text" name="lan5_host" id="lan5_host_input" maxlength="12"/>
+                </p>
+                <p>
+                    <label>LAN6 จำนวน PC ที่ต้องการ </label>
+                    <input type="text" name="lan6_host" id="lan6_host_input" maxlength="12"/>
+                </p>
+                <p>
+                    <label>LAN7 จำนวน PC ที่ต้องการ </label>
+                    <input type="text" name="lan7_host" id="lan7_host_input" maxlength="12"/>
+                </p>
+                <div class="hidden">
+                <p>
+                    <label>R4-R1 จำนวน Router ที่ต้องการ </label>
+                    <input type="text" name="lan4_1" id="lan4_1_input" maxlength="12" value="2" class="readonly" readonly/>
+                </p>
+                <p>
+                    <label>R4-R2 จำนวน Router ที่ต้องการ </label>
+                    <input type="text" name="lan4_2" id="lan4_2_input" maxlength="12" value="2" class="readonly" readonly/>
+                </p>
+                <p>
+                    <label>R4-R3 จำนวน Router ที่ต้องการ </label>
+                    <input type="text" name="lan4_3" id="lan4_3_input" maxlength="12" value="2" class="readonly" readonly/>
+                </p>
+                </div>
+            </fieldset>
+        </div>
+        <div id="description">
+            <fieldset>
+                <legend>
+                    คำอธิบาย
+                </legend>
+                <span></span>
+            </fieldset>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $.validate();
+    $.global_val_topology();
+</script>
