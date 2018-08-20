@@ -1,0 +1,65 @@
+/*
+ * It is advised not to edit the smartadmin_production.css
+ * as this will override any changes you make in the
+ * later versions of this theme.
+ *
+ * We advise that you use use this CSS to override
+ * SmartAdmin styles.
+ *
+ * Rename the stylesheet to whatever your liking so it will stay
+ * unique to you with each update of SmartAdmin.
+ */
+
+/*
+ * INDEX
+ *
+ * - HTML
+ * - BODY
+ * - CUSTOM STYLES
+ */
+
+ .badge {
+    display: inline-block;
+    min-width: 10px;
+    padding: 3px 7px !important;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    vertical-align: baseline;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #999;
+    border-radius: 10px;
+}
+
+.dropzone-container { overflow: hidden; position: relative }
+.dropzone-container .file_preview {  background-repeat: no-repeat;background-size: 100%;background-origin: content-box;background-position: center center;position: absolute; top:0; bottom: 0; left: 0;right: 0; width: 100%; background-color: rgba(0,0,0,0.15); }
+
+
+
+
+.dropzone-container .file_preview {  background-repeat: no-repeat;background-size: 100%;background-origin: content-box;background-position: center center;position: absolute; top:0; bottom: 0; left: 0;right: 0; width: 100%; background-color: rgba(0,0,0,0.15); }
+.dropzone-container .dropzone  { position: absolute; top:0; bottom: 0; left: 0;right: 0; width: 100%; height: 100%; background: transparent; border: none; min-height: 0; }
+.dropzone-container .dz-message { position: absolute; top:0; bottom: 0; left: 0;right: 0; width: 100%; height: 100%; background: transparent; border: none; min-height: 0; text-align: center; margin: auto}
+.dropzone-container .dz-message>span{ height: 20px; width: 100%; display: block; position: absolute; bottom: 0;left: 0;right: 0;color: rgba(0,0,0,0.5);background-color: rgba(255,255,255,0.3) }
+.dropzone-container .dz-message>span{ display: none;}
+.dropzone-container .dz-message:hover>span{ display: block;}
+
+.dropzone-container .dz-preview { position: absolute; top:0; bottom: 0; left: 0;right: 0; width: 100%; height: 100%; background: transparent; border: none; min-height: 0; text-align: center; margin: auto}
+.dropzone-container .dz-preview .dz-progress { position: absolute; top:0; bottom: 0; left: 0;right: 0; width: 100%; height: 100%; background: transparent; border: none; min-height: 0; text-align: center; margin: auto; zoom: 1; filter: alpha(opacity=50);opacity: 0.5;}
+.dropzone-container .dz-preview .dz-details, .dropzone-container .dz-preview .dz-success-mark, .dropzone-container .dz-preview .dz-error-mark, .dropzone-container .dz-preview .dz-error-message, .dropzone-container .dz-preview .dz-remove { display: none}
+
+.ui-autocomplete {
+    z-index: 9999!important;
+}
+
+.note-popover .popover .popover-content, .note-toolbar {
+    margin: 0 !important;
+    padding: 0 0 5px 5px !important;
+}
+
+.no-padding .note-editor
+{
+    border: 1px solid #BDBDBD !important;
+}
