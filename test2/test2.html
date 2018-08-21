@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title>Campaign</title>
+		<meta name="description" content="Campaign">
+		<meta name="author" content="Starbucks Thailand">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- #CSS Links -->
+		<!-- Basic Styles -->
+		<link rel="stylesheet" type="text/css" media="screen" href="https://starbucksthcampaign.com/assets/smartadmin/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="https://starbucksthcampaign.com/assets/smartadmin/css/font-awesome.min.css">
+
+		<!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
+		<link rel="stylesheet" type="text/css" media="screen" href="https://starbucksthcampaign.com/assets/smartadmin/css/smartadmin-production-plugins.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="https://starbucksthcampaign.com/assets/smartadmin/css/smartadmin-production.min.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="https://starbucksthcampaign.com/assets/smartadmin/css/smartadmin-skins.min.css">
+
+		<!-- SmartAdmin RTL Support is under construction
+			 This RTL CSS will be released in version 1.5
+		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-rtl.min.css"> -->
+
+		<!-- We recommend you use "your_style.css" to override SmartAdmin
+		     specific styles this will also ensure you retrain your customization with each SmartAdmin update.
+		<link rel="stylesheet" type="text/css" media="screen" href="css/your_style.css"> -->
+
+		<!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+		<link rel="stylesheet" type="text/css" media="screen" href="https://starbucksthcampaign.com/assets/smartadmin/css/your_style.css">
+
+		<!-- #FAVICONS -->
+
+
+
+		<!-- #GOOGLE FONT -->
+		<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700">
+
+		<!-- #APP SCREEN / ICONS -->
+		<!-- Specifying a Webpage Icon for Web Clip
+			 Ref: https://developer.apple.com/library/ios/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html -->
+		<link rel="apple-touch-icon" href="https://starbucksthcampaign.com/assets/smartadmin/img/splash/sptouch-icon-iphone.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="https://starbucksthcampaign.com/assets/smartadmin/img/splash/touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="https://starbucksthcampaign.com/assets/smartadmin/img/splash/touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="https://starbucksthcampaign.com/assets/smartadmin/img/splash/touch-icon-ipad-retina.png">
+
+		<!-- iOS web-app metas : hides Safari UI Components and Changes Status Bar Appearance -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- Startup image for web apps -->
+		<link rel="apple-touch-startup-image" href="https://starbucksthcampaign.com/assets/smartadmin/img/splash/ipad-landscape.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:landscape)">
+		<link rel="apple-touch-startup-image" href="https://starbucksthcampaign.com/assets/smartadmin/img/splash/ipad-portrait.png" media="screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait)">
+		<link rel="apple-touch-startup-image" href="https://starbucksthcampaign.com/assets/smartadmin/img/splash/iphone.png" media="screen and (max-device-width: 320px)">
+		<link rel="stylesheet" type="text/css" media="screen" href="https://starbucksthcampaign.com/assets/smartadmin/js/plugin/jquery-ui-month-picker/css/MonthPicker.css">
+		<link rel="stylesheet" type="text/css" media="screen" href="https://starbucksthcampaign.com/assets/starbuck/fonts/stylesheet.css">
+		<style media="screen">
+		.centered-axis-xy {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%,-50%);
+		}
+		.green {
+			color: rgba(2, 100, 69, 1);
+		}
+		</style>
+		<!-- for Facebook -->
+<meta property="og:title" content="ร่วมสนุกตอบคำถาม 3 ข้อ รับคูปองซื้อเครื่องดื่ม 1 แก้ว ฟรี 1 แก้ว" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Share-000.png" />
+<meta property="og:url" content="http://starbucksthcampaign.com/c/quiz_2018_summer_3" />
+<meta property="og:description" content="เล่นเกมและรับคูปองได้ระหว่าง 20 - 29 ส.ค. 61  ใช้คูปองได้ตั้งแต่ 20 ส.ค. - 7 ก.ย. 61 (จันทร์ - ศุกร์ 14.00 - 24.00 น.) เฉพาะร้านที่ร่วมรายการ*" />
+<meta property="og:site_name" content="Starbucks Thailand" />
+<meta property="article:publisher" content="Starbucks Thailand Publisher" />
+<meta property="article:author" content="Starbucks Thailand Author" />
+	</head>
+	<body id="campaign-layout">
+	<style media="screen">
+.pc-font-size
+{
+	font-size: 20px;
+}
+.mobile-font-size
+{
+	font-size: 16px;
+}
+.noshadow {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	}
+.btn.noshadow:active {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	}
+button,
+input,
+select,
+textarea {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.btn, a:link, button
+{
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*:not(input):not(textarea) {
+  -webkit-user-select: none; /* disable selection/Copy of UIWebView */
+  -webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
+}
+
+.knockout-font {
+	font-family: 'Knockout 27 Junior Bantamwt';
+	font-weight: normal;
+	font-style: normal;
+}
+.db-adman-x-font {
+	font-family: 'DB Adman X';
+	font-weight: normal;
+	font-style: normal;
+}
+
+.gotham-font {
+	font-family: 'Gotham';
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+
+#preload-assets
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-color: #000;
+	/* background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2017/pc/update-4/share.jpg); */
+}
+
+.desktop-detected #end
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Conditions-Mobile.jpg);
+}
+
+.mobile-detected #end
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Conditions-Mobile.jpg);
+}
+
+.desktop-detected #login
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Home-Mobile.jpg);
+}
+
+.mobile-detected #login
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Home-Mobile.jpg);
+}
+
+.desktop-detected #end
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Home-Mobile.jpg);
+}
+
+.mobile-detected #end
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Home-Mobile.jpg);
+}
+
+
+.question-pages {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Quiz-03-User_Play-01.jpg);
+	background-color: rgb(0, 0, 0);
+}
+
+.desktop-detected #user-profile
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Form-Mobile.jpg);
+	background-color: rgb(0, 0, 0);
+}
+
+
+.mobile-detected #user-profile
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Form-Mobile.jpg);
+	background-color: rgb(0, 0, 0);
+}
+
+
+.desktop-detected #term-condition
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Conditions-Mobile.jpg);
+}
+
+.mobile-detected #term-condition
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Conditions-Mobile.jpg);
+}
+.desktop-detected #share
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Conditions-Mobile.jpg);
+}
+
+.mobile-detected #share
+{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-repeat: no-repeat;
+	background-position:  top center;
+	background-size: cover;
+	background-image: url(https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Conditions-Mobile.jpg);
+}
+
+
+.radius-8px {
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+}
+.reward-list {
+	color: white;padding: 4px 16px
+}
+.reward-list h4 {
+	font-size: 15px
+}
+.reward-list div:before {
+	content: "- "
+}
+.reward-list div {
+	padding-left: 4px
+}
+</style>
+
+
+<script type="text/javascript">
+
+</script>
+
+
+	<form name="form" action="https://starbucksthcampaign.com/c/quiz_2018_summer_3" method="post" id="q1-form">
+
+		<div style="position: relative;background-color: rgb(0, 0, 0, 0.0);margin: 0 auto;" id="campaign-wrapper">
+
+
+			<!-- start user-profile div -->
+			<div class="no-padding the-game pages" style="display: block" id="preload-assets">
+				<div style="width: 100%;height: 9.5%;background-color: rgba(255, 255,122,0.0);position: absolute; top: 40%; left: 0; right: 0;color: #fff;text-align: center;font-size: 72px" class="db-adman-x-font">
+
+					Loading...
+				</div>
+
+			</div>
+			<!-- end user-profile div -->
+
+			<!-- start user-profile div -->
+			<div class="no-padding the-game pages" style="display: none" id="end">
+				<div style="width: 100%;height: auto;background-color: rgba(255, 255,122,0.0);position: absolute; top: 35%; left: 0; right: 0; text-align: center;color: #744f2b;font-size: 24px;">
+<p class="green db-adman-x-font">ขอบคุณที่ร่วมสนุกกับสตาร์บัคส์</p>
+<p class="green db-adman-x-font">ขณะนี้กิจกรรม ฉลองสตาร์บัคส์ครบรอบ 20 ปี ได้สิ้นสุดลงแล้ว</p>
+<p class="green db-adman-x-font">แล้วพบกันใหม่ในกิจกรรมครั้งต่อไปค่ะ</p>
+				</div>
+
+			</div>
+			<!-- end user-profile div -->
+
+			<!-- start user-profile div -->
+			<script type="text/javascript">
+				function createQuestionElement()
+				{
+					$('.question-pages').remove()
+					var index = 0;
+					$.each(questions,function(k, question)
+					{
+						index++;
+						var questionPages = $('<div />', {
+							id: 'campaign-pages-' + index,
+							css: {
+								'display' : 'none',
+							},
+							class: 'no-padding the-game pages question-pages'
+						})
+
+						var questionBody = $('<div />', {
+							css: {
+								'position' : 'absolute',
+								'top' : '18%',
+								'left' : '8px',
+								'right' : '8px',
+								'bottom' : '8px',
+								'overflow' : 'auto',
+							},
+							class: 'question-body'
+						})
+
+						questionPages.append(questionBody)
+
+						var questionWrapper = $('<div />', {
+							id: 'campaign-' + question.id,
+							css: {
+
+							},
+							class: 'question-wrapper'
+						})
+
+						questionBody.append(questionWrapper)
+
+						var questionTitle = $('<div />', {
+							html: index + '. ' + question.name,
+							id: 'campaign-' + question.id,
+							css: {
+								'background-color' : 'transparent',
+								'border' : 'none',
+								'padding' : '2px 0',
+								'text-align' : 'center',
+								'font-size' : '22px',
+								'color' : '#A15BA6',
+							},
+							class: 'db-adman-x-font question-title'
+						})
+
+						if (question.contents != '' && question.contents != '<p><br></p>') {
+
+							var questionContent = $('<div />', {
+								html: question.contents,
+								css: {
+									'text-align' : 'center',
+								},
+								class: 'question-content'
+							})
+							questionTitle.append(questionContent);
+						}
+
+						questionWrapper.append(questionTitle)
+
+
+						var choicesList = $('<div />', {
+							class: 'choices-list'
+						})
+
+						colors = ['#e3d3e7', '#f5d8a7', '#e3d3e7', '#f5d8a7'];
+						choiceIndex = 0
+
+						question.choices = shuffle(question.choices);
+
+						$.each(question.choices, function(index, choice) {
+
+							choiceColor = colors[choiceIndex]
+
+							var choiceWrapper = $('<div />', {
+								css: {
+									'margin': '8px auto',
+									'width' : choice.choice_width,
+								}
+							})
+
+							choicesList.append(choiceWrapper)
+
+							var choiceBody = $('<div />', {
+								html: choice.name,
+								css: {
+									'margin': '8px auto',
+									'border-radius': '500px',
+									'background': choiceColor,
+									'padding': '2px 4px',
+									'text-align': 'center',
+									'font-size': question.font_size,
+									'color': '#000000'
+								},
+								class: 'db-adman-x-font',
+								onclick: "selectChoince(event, " + question.id + ", " + choice.id + ")"
+							}).width(question.choice_width)
+
+							choiceWrapper.append(choiceBody)
+
+							var choiceInput = $('<input />', {
+								type: 'radio',
+								css: {
+									'display': 'none',
+								},
+								name: 'question_' + question.id,
+								value: choice.id
+							})
+
+							choiceBody.append(choiceInput)
+
+							if (choice.contents != '' && choice.contents != '<p><br></p>') {
+
+								var choiceContent = $('<div />', {
+									html: choice.contents,
+									css: {
+										'text-align' : 'center',
+									},
+									class: 'question-content'
+								})
+								choiceBody.append(choiceContent);
+							}
+
+							choiceIndex++
+						});
+
+						questionWrapper.append(choicesList)
+
+						$('#campaign-wrapper').append(questionPages)
+					})
+
+
+
+				}
+			</script>
+			<!-- end user-profile div -->
+
+			<!-- start user-profile div -->
+			<div class="no-padding the-game pages" style="display: none" id="user-profile">
+
+				<div style="width: 100%;height: 50%;background-color: rgba(255, 255,122,0.0);position: absolute; top: 10%; left: 0; right: 0">
+					<div style="position: absolute;display:block;top: 4px; left: 4px;right: 4px; bottom: 4px;background-color: transparent;text-align: center">
+						<img src="https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Other/Form-Text-04.png" alt="" style="max-width: 100%;max-height: 100%;"  />
+					</div>
+
+				</div>
+
+				<div style="background-color: rgba(255, 255,122,0.0);position: absolute; top: 60%; left: 8px; right: 8px;bottom: 8px;overflow: auto" id="user-profile-field">
+					<header class="db-adman-x-font" style="
+						padding : 8px 0;
+						background-color: transparent;
+						margin-top : 2%;
+						border: none;
+						font-weight: bold;
+						text-align: center;
+						font-size: 30px;
+						color: #a87c4f;
+						line-height: 1em;
+						display: none
+					">ยินดีด้วยคุณได้<br />18 คะแนน</header>
+					<p class="db-adman-x-font" style="
+						padding : 8px 0;
+						background-color: transparent;
+						margin-top : 2%;
+						border: none;
+						text-align: center;
+						font-size: 18px;
+						color: #744f2b;
+						line-height: 1em;
+						display: none
+					">
+					รับคูปองซื้อเครื่องดื่ม 1 แก้ว รับฟรี 1 แก้ว<br />กรุณากรอกเบอร์โทรศัพท์เพื่อรับคูปอง
+					</p>
+										<div>
+						<label for="" class="label db-adman-x-font" style="display: none">
+							เบอร์มือถือ 1
+							 <span style="color: red">*</span>
+						</label>
+						<div class="db-adman-x-font" style="margin: 16px auto;width: 80%">
+							<div style="border-radius: 500px;background: #ffffff;padding:0;text-align: center;font-size: 16px;color: #744f2b">
+
+							<input class="db-adman-x-font" type="tel" name="mobilephone_1" value="" placeholder="08xxxxxxxx" style="width: 90%;
+    margin: 4px 8px;border: none" onchange="onlyNumber(this)" onpaste="onlyNumber(this)" onkeyup="onlyNumber(this)">
+
+							</div>
+							<div class="db-adman-x-font error-mobilephone_1" style="width: 90%;display: none;color: red; font-weight: bold;margin-left: 10px;">
+
+							</div>
+						</div>
+
+					</div>
+										<div>
+						<label for="" class="label db-adman-x-font" style="display: none">
+							เบอร์มือถือ 2
+							 <span style="color: red">*</span>
+						</label>
+						<div class="db-adman-x-font" style="margin: 16px auto;width: 80%">
+							<div style="border-radius: 500px;background: #ffffff;padding:0;text-align: center;font-size: 16px;color: #744f2b">
+
+							<input class="db-adman-x-font" type="tel" name="mobilephone_2" value="" placeholder="08xxxxxxxx" style="width: 90%;
+    margin: 4px 8px;border: none" onchange="onlyNumber(this)" onpaste="onlyNumber(this)" onkeyup="onlyNumber(this)">
+
+							</div>
+							<div class="db-adman-x-font error-mobilephone_2" style="width: 90%;display: none;color: red; font-weight: bold;margin-left: 10px;">
+
+							</div>
+						</div>
+
+					</div>
+										<div>
+						<label for="" class="label db-adman-x-font" style="display: none">
+							เบอร์มือถือ 3
+							 <span style="color: red">*</span>
+						</label>
+						<div class="db-adman-x-font" style="margin: 16px auto;width: 80%">
+							<div style="border-radius: 500px;background: #ffffff;padding:0;text-align: center;font-size: 16px;color: #744f2b">
+
+							<input class="db-adman-x-font" type="tel" name="mobilephone_3" value="" placeholder="08xxxxxxxx" style="width: 90%;
+    margin: 4px 8px;border: none" onchange="onlyNumber(this)" onpaste="onlyNumber(this)" onkeyup="onlyNumber(this)">
+
+							</div>
+							<div class="db-adman-x-font error-mobilephone_3" style="width: 90%;display: none;color: red; font-weight: bold;margin-left: 10px;">
+
+							</div>
+						</div>
+
+					</div>
+										<div>
+						<label for="" class="label db-adman-x-font" style="display: none">
+							เบอร์มือถือ 4
+							 <span style="color: red">*</span>
+						</label>
+						<div class="db-adman-x-font" style="margin: 16px auto;width: 80%">
+							<div style="border-radius: 500px;background: #ffffff;padding:0;text-align: center;font-size: 16px;color: #744f2b">
+
+							<input class="db-adman-x-font" type="tel" name="mobilephone_4" value="" placeholder="08xxxxxxxx" style="width: 90%;
+    margin: 4px 8px;border: none" onchange="onlyNumber(this)" onpaste="onlyNumber(this)" onkeyup="onlyNumber(this)">
+
+							</div>
+							<div class="db-adman-x-font error-mobilephone_4" style="width: 90%;display: none;color: red; font-weight: bold;margin-left: 10px;">
+
+							</div>
+						</div>
+
+					</div>
+										<div class="" style="
+						margin: 0;
+						padding: 4px;
+						position: relative;
+						height: 45px;
+						margin-top: 16px
+					">
+						<a href="javascript://" onclick="submitForm(event)" style="
+							position: absolute;
+							display: block;
+							top: 0.5%;
+							left: 30%;
+							right: 30%;
+							bottom: 0.5%;
+							background-color: transparent;
+							text-align: center
+						">
+							<img src="https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Other/Submit.png" alt="" style="max-width: 100%;max-height: 100%">
+						</a>
+					</div>
+
+				</div>
+
+
+			</div>
+			<!-- end user-profile div -->
+
+			<!-- start login div -->
+			<div class="no-padding the-game pages" style="display: none" id="login">
+
+
+				<div style="width: 100%;height: 62%;background-color: rgba(255, 255,122,0.0);position: absolute; top: 10%; left: 0; right: 0">
+					<div style="position: absolute;display:block;top: 4px; left: 4px;right: 4px; bottom: 4px;background-color: transparent;text-align: center">
+						<img src="https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Other/Home-Text-01.png" alt="หน้าแรก" style="max-width: 100%;max-height: 100%;"  />
+					</div>
+
+				</div>
+
+
+				<div id="facebook-login-wrapper" style="width: 100%;height: 6%;background-color: rgba(255, 255,122,0.0);position: absolute; top: 73%; left: 0; right: 0">
+
+					<a href="javascript:startGame()" style="position: absolute;display:block;top: 4px; left: 4px;right: 4px; bottom: 4px;background-color: transparent;text-align: center">
+						<img src="https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Other/StartButton.png" alt="Start Game" style="max-width: 100%;max-height: 100%;"  />
+					</a>
+
+				</div>
+
+				<div style="width: 100%;height: 4%;background-color: rgba(255, 255,122,0.0);position: absolute; top: 80%; left: 0; right: 0">
+
+					<a href="javascript:showPage('term-condition')" style="position: absolute;display:block;top: 4px; left: 4px;right: 4px; bottom: 4px;background-color: transparent;text-align: center">
+						<img src="https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Other/ConditionButton.png" alt="Condition" style="max-width: 100%;max-height: 100%;"  />
+					</a>
+
+				</div>
+
+			</div>
+			<!-- end login div -->
+
+
+			<!-- start share div -->
+			<div class="no-padding the-game pages" style="display: none" id="share">
+
+				<div style="width: 100%;height: 50%;background-color: rgba(255, 255,122,0.0);position: absolute; top: 10%; left: 0; right: 0">
+					<div style="position: absolute;display:block;top: 4px; left: 4px;right: 4px; bottom: 4px;background-color: transparent;text-align: center">
+						<img src="https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Other/Share-Text-01.png" alt="" style="max-width: 100%;max-height: 100%;"  />
+					</div>
+
+				</div>
+
+
+				<div style="width: 100%;height: 6%;background-color: rgba(255, 255,122,0.0);position: absolute; top: 62%; left: 0; right: 0">
+
+					<a href="javascript:share()" style="position: absolute;display:block;top: 4px; left: 4px;right: 4px; bottom: 4px;background-color: transparent;text-align: center">
+						<img src="https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Other/ShareButton.png" alt="" style="max-width: 100%;max-height: 100%;"  />
+					</a>
+
+				</div>
+
+				<div style="width: 100%;height: 6.5%;background-color: rgba(255, 255,122,0.0);position: absolute; top: 70%; left: 0; right: 0">
+
+					<a href="javascript:location.reload();" style="position: absolute;display:block;top: 4px; left: 4px;right: 4px; bottom: 4px;background-color: transparent;text-align: center">
+						<img src="https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Other/RetryButton.png" alt="" style="max-width: 100%;max-height: 100%;"  />
+					</a>
+
+				</div>
+
+			</div>
+			<!-- end share div -->
+
+
+			<!-- start term condition div -->
+			<div class="no-padding pages" style="display: none" id="term-condition">
+
+
+				<div style="width: 100%;height: 40%;background-color: rgba(255, 255,122,0.0);position: absolute; top: 10%; left: 0; right: 0">
+					<div style="position: absolute;display:block;top: 4px; left: 4px;right: 4px; bottom: 4px;background-color: transparent;text-align: center">
+						<img src="https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Other/Condition-Text.png" alt="" style="max-width: 100%;max-height: 100%;"  />
+					</div>
+
+				</div>
+
+				<div style="font-size: 18px;position: absolute; top: 50%; left: 4%; right: 4%; bottom: 20%; overflow: auto;color: #70615a;" class="db-adman-x-font">
+					เงื่อนไขในการเข้าร่วมกิจกรรมและการใช้คูปอง<br />
+
+1. ผู้เข้าร่วมสนุกจะต้องตอบคำถาม 3 ข้อ ระหว่างวันที่ 20-29 สิงหาคม 2561<br />
+2. รางวัลสำหรับผู้ร่วมสนุก: ผู้ร่วมสนุกที่ตอบคำถามถูกครบ 3 ข้อ จะได้รับคูปองซื้อเครื่องดื่มสตาร์บัคส์ประเภทใดก็ได้ ขนาด 12 ออนซ์ขึ้นไป 1 แก้ว รับฟรี 1 แก้ว จำนวน 4 ใบ ผ่านทาง SMS<br />
+3. จำกัดเครื่องดื่ม 1 แก้ว ฟรี 1 แก้ว / ใบเสร็จ เครื่องดื่มฟรีจะต้องมีราคาเท่ากับหรือน้อยกว่าแก้วที่ซื้อ<br />
+4. 1 คูปอง สามารถใช้สิทธิ์ได้ 1 ครั้ง โดยใช้ได้ตั้งแต่วันที่ 20 สิงหาคม - 7 กันยายน 2561 (จันทร์ - ศุกร์ 14.00 - 24.00 น.) ที่ร้านสตาร์บัคส์ทุกสาขา ยกเว้นสาขาในสนามบิน หรือการซื้อผ่านบริการ Drive Thru<br />
+5. เครื่องดื่มที่ร่วมรายการได้แก่ เครื่องดื่มสตาร์บัคส์ทุกประเภท รวมถึงเครื่องดื่ม Customize กาแฟ Nitro และ Cold Brew ทุกประเภท ยกเว้นเครื่องดื่มที่ทำจากกาแฟ Reserve ทุกชนิด น้ำส้ม น้ำบีทรูท น้ำมะพร้าว และเครื่องดื่มบรรจุขวดทุกประเภท<br />
+6. ไม่สามารถใช้สิทธิ์จากคูปองรูปภาพที่ถูกจัดเก็บหรือคัดลอกทุกกรณี<br />
+7. ไม่สามารถใช้ร่วมกับรายการส่งเสริมการขายอื่นๆ และส่วนลดสำหรับแก้วส่วนตัว<br />
+8. สมาชิก My Starbucks Rewards™ จะได้รับดาว และแก้วสะสมเครื่องดื่ม 12 แก้ว รับฟรี 1 แก้ว ตามจำนวนแก้วที่ชำระเงิน<br />
+9. เงื่อนไขเป็นไปตามที่บริษัทกำหนด<br />
+					 <br />
+					<b>ของรางวัล</b><br />
+					ตอบคำถามถูกครบ 3 ข้อ จะได้รับคูปองซื้อเครื่องดื่มสตาร์บัคส์ประเภทใดก็ได้ ขนาด 12 ออนซ์ขึ้นไป 1 แก้ว รับฟรี 1 แก้ว จำนวน 4 ใบ ผ่านทาง SMS
+				</div>
+
+				<div id="facebook-login-wrapper" style="width: 100%;height: 6%;background-color: rgba(255, 255,122,0.0);position: absolute; top: 82%; left: 0; right: 0">
+
+					<a href="javascript:startGame()" style="position: absolute;display:block;top: 4px; left: 4px;right: 4px; bottom: 4px;background-color: transparent;text-align: center">
+						<img src="https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Other/StartButton.png" alt="Start Game" style="max-width: 100%;max-height: 100%;"  />
+					</a>
+
+				</div>
+
+			</div>
+			<!-- end term condition div -->
+
+		</div>
+
+	</form>
+
+
+
+		<div id="show-error-box" style="display: none;width: 100vw; height: 100vh;position: fixed;z-index: 99999;top: 0;left:0; right: 0;bottom: 0;background-color: rgba(0, 0, 0 , 0.5)">
+
+		    <div style="width: 270px;background-color: rgba(255, 255, 255, 1);border-radius: 8px;" class="centered-axis-xy">
+		        <p style="font-size: 17px; color: rgb(3, 3, 3); text-align: center;margin-top: 20px;margin-bottom: 20px">
+		            ล้มเหลว
+		        </p>
+				<div style="width: 100%;height: 1px; background-color: rgba(77, 77, 77, 0.78)"></div>
+
+		        <button type="button" class="btn" style="background-color: rgba(0,0,0,0);color: rgb(0, 108, 255); line-height: 38px;height: auto; width: 100%;font-size: 17px;border: none !important">ตกลง</button>
+		    </div>
+
+		</div>
+
+<div id="show-loading-box" style="display: none;width: 100vw; height: 100vh;position: fixed;z-index: 99999;top: 0;left:0; right: 0;bottom: 0;background-color: rgba(0, 0, 0 , 0.5)">
+
+    <div style="width: 270px;background-color: rgba(255, 255, 255, 1);border-radius: 8px;" class="centered-axis-xy">
+        <p style="font-size: 17px; color: rgb(3, 3, 3); text-align: center;margin-top: 20px;margin-bottom: 20px">
+            Loading...
+        </p>
+    </div>
+
+</div>
+
+<div id="show-alert-box" style="display: none;width: 100vw; height: 100vh;position: fixed;z-index: 99999;top: 0;left:0; right: 0;bottom: 0;background-color: rgba(0, 0, 0 , 0.5)">
+
+    <div style="width: 270px;background-color: rgba(255, 255, 255, 1);border-radius: 8px;" class="centered-axis-xy">
+        <p style="font-size: 24px;color: #744f2b; text-align: center;margin: 10px" class="db-adman-x-font">
+            ล้มเหลว
+        </p>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+function onlyNumber(obj)
+{
+	console.log('onlyNumber');
+	var name = $(obj).attr('name')
+	var newVal = $(obj).val()
+	if (isNaN(newVal)) {
+		console.log('newVal 0', newVal);
+		newVal = newVal.replace(/[^0-9]/g, "");
+		$(obj).val(newVal)
+		console.log('newVal 1', newVal);
+	} else {
+		console.log('newVal2', parseInt(newVal));
+	}
+
+	$('.error-' + name).hide();
+}
+
+function selectChoince(event, questionId, choiceId)
+{
+	$('[name="question_' + questionId + '"][value=' + choiceId + ']').prop('checked', true);
+	nextPage(event)
+}
+
+function setUpModal()
+{
+	$('#show-error-box button').on('click', function()
+	{
+		$('#show-error-box').fadeOut();
+	})
+	$('#show-alert-box').on('click', function()
+	{
+		$('#show-alert-box').fadeOut();
+	})
+}
+
+function showErrorBox(message)
+{
+	$('#show-error-box').fadeIn().find('p').html(message);
+}
+
+function showLoadingBox(message)
+{
+	$('#show-loading-box').fadeIn().find('p').html(message);
+}
+
+function hideLoadingBox()
+{
+	$('#show-loading-box').fadeOut();
+}
+
+function showAlertBox(message)
+{
+	$('#show-alert-box').fadeIn().find('p').html(message);
+
+	setTimeout(function(){
+		 hideAlertBox()
+	}, 3000);
+}
+
+function hideAlertBox(message)
+{
+	$('#show-alert-box').fadeOut();
+}
+
+function shuffle(a) {
+    var j, x, i;
+    for (i = a.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        x = a[i];
+        a[i] = a[j];
+        a[j] = x;
+    }
+    return a;
+}
+
+function getQuestion()
+{
+	qs = shuffle(campaign.questions)
+	if (campaign.max_display_question != -1) {
+		var temp = qs
+		qs = []
+		for (var i = 1; i <= campaign.max_display_question; i++) {
+			var q = temp.pop()
+			qs.push(q)
+		}
+	}
+
+	//console.log('qs', qs);
+	return qs
+}
+
+var campaign = {"id":"10","name":"Quiz 2018 Summer 3","var":"quiz_2018_summer_3","custom_css":"","custom_html":"","max_per_user_action_per_day":"0","user_once_action":"0","start_at":"2017-06-01 07:15:00","end_at":"2019-01-11 07:15:00","is_enabled":"1","is_single_question":"0","max_display_question":"3","template":"summer3_2018","total_shares":"19","share_title":"\u0e23\u0e48\u0e27\u0e21\u0e2a\u0e19\u0e38\u0e01\u0e15\u0e2d\u0e1a\u0e04\u0e33\u0e16\u0e32\u0e21 3 \u0e02\u0e49\u0e2d \u0e23\u0e31\u0e1a\u0e04\u0e39\u0e1b\u0e2d\u0e07\u0e0b\u0e37\u0e49\u0e2d\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21 1 \u0e41\u0e01\u0e49\u0e27 \u0e1f\u0e23\u0e35 1 \u0e41\u0e01\u0e49\u0e27","share_description":"\u0e40\u0e25\u0e48\u0e19\u0e40\u0e01\u0e21\u0e41\u0e25\u0e30\u0e23\u0e31\u0e1a\u0e04\u0e39\u0e1b\u0e2d\u0e07\u0e44\u0e14\u0e49\u0e23\u0e30\u0e2b\u0e27\u0e48\u0e32\u0e07 20 - 29 \u0e2a.\u0e04. 61  \u0e43\u0e0a\u0e49\u0e04\u0e39\u0e1b\u0e2d\u0e07\u0e44\u0e14\u0e49\u0e15\u0e31\u0e49\u0e07\u0e41\u0e15\u0e48 20 \u0e2a.\u0e04. - 7 \u0e01.\u0e22. 61 (\u0e08\u0e31\u0e19\u0e17\u0e23\u0e4c - \u0e28\u0e38\u0e01\u0e23\u0e4c 14.00 - 24.00 \u0e19.) \u0e40\u0e09\u0e1e\u0e32\u0e30\u0e23\u0e49\u0e32\u0e19\u0e17\u0e35\u0e48\u0e23\u0e48\u0e27\u0e21\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23*","share_image":"https:\/\/starbucksthcampaign.com\/assets\/starbuck\/campaigns\/summer3_2018\/Share-000.png","is_integrate_coupon":"0","coupon_1_count":"-1","coupon_2_count":"0","coupon_3_count":"0","coupon_1_enable":"0","coupon_2_enable":"0","coupon_3_enable":"1","campaign_type":"vote","display_type":"single","result_type":"score","created_by":"1","updated_by":"1","created_at":"2018-07-30 21:08:43","updated_at":"2018-08-19 13:56:02","campaign_fields":[{"id":"8","name":"\u0e40\u0e1a\u0e2d\u0e23\u0e4c\u0e21\u0e37\u0e2d\u0e16\u0e37\u0e2d 1","var":"mobilephone_1","value":"","place_holder":"08xxxxxxxx","input_type":"tel","minimum_length":"0","maximum_length":"0","fixed_length":"10","data_type":"integer","is_required":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 21:10:30","updated_at":"2018-07-30 21:10:30","pivot":{"campaign_id":"10","campaign_field_id":"8","display_order":"1"},"DT_RowId":"8","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"5","name":"\u0e40\u0e1a\u0e2d\u0e23\u0e4c\u0e21\u0e37\u0e2d\u0e16\u0e37\u0e2d 2","var":"mobilephone_2","value":"","place_holder":"08xxxxxxxx","input_type":"tel","minimum_length":"0","maximum_length":"0","fixed_length":"10","data_type":"integer","is_required":"1","display_order":"2","created_by":"1","updated_by":"1","created_at":"2017-06-08 16:10:35","updated_at":"2017-06-08 16:10:35","pivot":{"campaign_id":"10","campaign_field_id":"5","display_order":"1"},"DT_RowId":"5","updated_at_text":"1 \u0e1b\u0e35\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"6","name":"\u0e40\u0e1a\u0e2d\u0e23\u0e4c\u0e21\u0e37\u0e2d\u0e16\u0e37\u0e2d 3","var":"mobilephone_3","value":"","place_holder":"08xxxxxxxx","input_type":"tel","minimum_length":"0","maximum_length":"0","fixed_length":"10","data_type":"integer","is_required":"1","display_order":"3","created_by":"1","updated_by":"1","created_at":"2017-06-08 16:10:42","updated_at":"2017-06-08 16:10:42","pivot":{"campaign_id":"10","campaign_field_id":"6","display_order":"1"},"DT_RowId":"6","updated_at_text":"1 \u0e1b\u0e35\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"7","name":"\u0e40\u0e1a\u0e2d\u0e23\u0e4c\u0e21\u0e37\u0e2d\u0e16\u0e37\u0e2d 4","var":"mobilephone_4","value":"","place_holder":"08xxxxxxxx","input_type":"tel","minimum_length":"0","maximum_length":"0","fixed_length":"10","data_type":"integer","is_required":"1","display_order":"4","created_by":"1","updated_by":"1","created_at":"2017-06-08 16:10:54","updated_at":"2017-06-08 16:10:54","pivot":{"campaign_id":"10","campaign_field_id":"7","display_order":"1"},"DT_RowId":"7","updated_at_text":"1 \u0e1b\u0e35\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"campaign_results":[],"questions":[{"id":"90","campaign_id":"10","name":"\u0e04\u0e33\u0e27\u0e48\u0e32 \"\u0e21\u0e48\u0e27\u0e19\u0e43\u0e08\u0e4b\" \u0e08\u0e32\u0e01\u0e01\u0e32\u0e41\u0e1f\u0e21\u0e48\u0e27\u0e19\u0e43\u0e08\u0e4b \u0e40\u0e1a\u0e25\u0e19\u0e14\u0e4c<br\/>\u0e21\u0e35\u0e04\u0e27\u0e32\u0e21\u0e2b\u0e21\u0e32\u0e22\u0e27\u0e48\u0e32\u0e2d\u0e30\u0e44\u0e23","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:35:49","choices":[{"id":"324","question_id":"90","name":"\u0e04\u0e27\u0e32\u0e21\u0e2d\u0e1a\u0e2d\u0e38\u0e48\u0e19","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"324","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"325","question_id":"90","name":"\u0e04\u0e27\u0e32\u0e21\u0e1c\u0e48\u0e2d\u0e19\u0e04\u0e25\u0e32\u0e22","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"325","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"322","question_id":"90","name":"\u0e04\u0e27\u0e32\u0e21\u0e2a\u0e38\u0e02\u0e2d\u0e22\u0e48\u0e32\u0e07\u0e40\u0e15\u0e47\u0e21\u0e40\u0e1b\u0e35\u0e48\u0e22\u0e21","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"322","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"323","question_id":"90","name":"\u0e04\u0e27\u0e32\u0e21\u0e2a\u0e14\u0e0a\u0e37\u0e48\u0e19","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"323","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"90","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"20px","choice_width":"75%"},{"id":"100","campaign_id":"10","name":"\u0e23\u0e49\u0e32\u0e19\u0e2a\u0e15\u0e32\u0e23\u0e4c\u0e1a\u0e31\u0e04\u0e2a\u0e4c\u0e2a\u0e32\u0e02\u0e32\u0e43\u0e14\u0e17\u0e35\u0e48\u0e21\u0e35\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21<br\/>Starbucks Draft \u0e43\u0e2b\u0e49\u0e25\u0e34\u0e49\u0e21\u0e25\u0e2d\u0e07","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:08:19","choices":[{"id":"364","question_id":"100","name":"\u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25 \u0e02\u0e2d\u0e19\u0e41\u0e01\u0e48\u0e19","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"364","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"362","question_id":"100","name":"\u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25\u0e40\u0e27\u0e34\u0e25\u0e14\u0e4c \u0e0a\u0e31\u0e49\u0e19 1 ","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"362","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"363","question_id":"100","name":"\u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25 \u0e41\u0e08\u0e49\u0e07\u0e27\u0e31\u0e12\u0e19\u0e30  ","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"363","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"365","question_id":"100","name":"\u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25 \u0e1e\u0e23\u0e30\u0e23\u0e32\u0e21 9 ","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"365","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"100","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"20px","choice_width":"75%"},{"id":"93","campaign_id":"10","name":"\u0e40\u0e21\u0e37\u0e48\u0e2d\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32\u0e2a\u0e31\u0e48\u0e07\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21 Starbucks Draft<br\/>\u0e41\u0e1a\u0e1a Flights \u0e08\u0e30\u0e44\u0e14\u0e49\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21\u0e01\u0e35\u0e48\u0e41\u0e01\u0e49\u0e27","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:10:12","choices":[{"id":"335","question_id":"93","name":"1 \u0e41\u0e01\u0e49\u0e27","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"335","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"336","question_id":"93","name":"2 \u0e41\u0e01\u0e49\u0e27","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"336","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"337","question_id":"93","name":"3 \u0e41\u0e01\u0e49\u0e27 ","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"337","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"334","question_id":"93","name":"4 \u0e41\u0e01\u0e49\u0e27 ","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"334","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"93","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"20px","choice_width":"60%"},{"id":"88","campaign_id":"10","name":"\u0e2a\u0e21\u0e32\u0e0a\u0e34\u0e01 My Starbucks Rewards\u2122<br\/>\u0e08\u0e30\u0e44\u0e14\u0e49\u0e23\u0e31\u0e1a\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21\u0e02\u0e19\u0e32\u0e14 Tall \u0e1f\u0e23\u0e35 1 \u0e41\u0e01\u0e49\u0e27<br\/>\u0e40\u0e21\u0e37\u0e48\u0e2d\u0e0b\u0e37\u0e49\u0e2d\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21\u0e04\u0e23\u0e1a\u0e01\u0e35\u0e48\u0e41\u0e01\u0e49\u0e27 ","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:08:58","choices":[{"id":"316","question_id":"88","name":"20 \u0e41\u0e01\u0e49\u0e27","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"316","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"314","question_id":"88","name":"12 \u0e41\u0e01\u0e49\u0e27","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"314","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"317","question_id":"88","name":"25 \u0e41\u0e01\u0e49\u0e27 ","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"317","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"315","question_id":"88","name":"5 \u0e41\u0e01\u0e49\u0e27","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"315","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"88","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"20px","choice_width":"60%"},{"id":"92","campaign_id":"10","name":"\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21\u0e40\u0e21\u0e19\u0e39\u0e43\u0e14 \u0e17\u0e35\u0e48\u0e21\u0e35\u0e08\u0e33\u0e2b\u0e19\u0e48\u0e32\u0e22\u0e40\u0e09\u0e1e\u0e32\u0e30<br\/>\u0e2a\u0e32\u0e02\u0e32\u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25\u0e40\u0e27\u0e34\u0e25\u0e14\u0e4c \u0e0a\u0e31\u0e49\u0e19 1 \u0e40\u0e17\u0e48\u0e32\u0e19\u0e31\u0e49\u0e19","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:18:18","choices":[{"id":"331","question_id":"92","name":"Caramel Macchiato ","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"331","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"330","question_id":"92","name":"Nitro Peach Tea","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"330","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"332","question_id":"92","name":"Nitro Cold Brew","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"332","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"333","question_id":"92","name":"Green Tea Frappuccino Blended Beverage","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"333","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"92","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"19px","choice_width":"90%"},{"id":"94","campaign_id":"10","name":"\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21\u0e0a\u0e19\u0e34\u0e14\u0e43\u0e14\u0e21\u0e35\u0e2a\u0e48\u0e27\u0e19\u0e1c\u0e2a\u0e21\u0e02\u0e2d\u0e07\u0e40\u0e19\u0e37\u0e49\u0e2d\u0e2d\u0e07\u0e38\u0e48\u0e19\u0e41\u0e14\u0e07","contents":"","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","choices":[{"id":"340","question_id":"94","name":"Cold Foam Iced Espresso ","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"340","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"341","question_id":"94","name":"Pistachio Bon Bon Cream Frappuccino<br\/>Blended Beverage","contents":"<p><br><\/p>","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:17:31","DT_RowId":"341","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"339","question_id":"94","name":"Apricot and Peach Yogurt Frappuccino<br\/>Blended Beverage ","contents":"<p><br><\/p>","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:17:48","DT_RowId":"339","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"338","question_id":"94","name":"Ruby Red Grape Frappuccino Blended Beverage","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"338","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"94","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"18px","choice_width":"94%"},{"id":"91","campaign_id":"10","name":"\u0e40\u0e21\u0e19\u0e39\u0e43\u0e14\u0e21\u0e35\u0e2a\u0e48\u0e27\u0e19\u0e1c\u0e2a\u0e21\u0e02\u0e2d\u0e07 Cold Foam<br\/>\u0e40\u0e1b\u0e47\u0e19\u0e2a\u0e48\u0e27\u0e19\u0e1b\u0e23\u0e30\u0e01\u0e2d\u0e1a ","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:15:57","choices":[{"id":"328","question_id":"91","name":"Hot Cappuccino ","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"328","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"326","question_id":"91","name":"Cold Foam Iced Espresso ","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"326","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"329","question_id":"91","name":"Mocha Frappuccino Blended Beverage","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"329","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"327","question_id":"91","name":"Iced Latte ","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"327","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"91","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"19px","choice_width":"85%"},{"id":"98","campaign_id":"10","name":"\u0e02\u0e49\u0e2d\u0e43\u0e14\u0e04\u0e37\u0e2d\u0e02\u0e19\u0e21\u0e41\u0e25\u0e30\u0e2d\u0e32\u0e2b\u0e32\u0e23\u0e40\u0e21\u0e19\u0e39\u0e43\u0e2b\u0e21\u0e48<br\/>\u0e43\u0e19\u0e0a\u0e48\u0e27\u0e07\u0e41\u0e04\u0e21\u0e40\u0e1b\u0e0d\u0e19\u0e35\u0e49 ","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:12:11","choices":[{"id":"354","question_id":"98","name":"\u0e42\u0e2d\u0e40\u0e27\u0e2d\u0e23\u0e4c \u0e44\u0e19\u0e17\u0e4c \u0e42\u0e2d\u0e4a\u0e15 \u0e21\u0e35\u0e25 ","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"354","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"357","question_id":"98","name":"\u0e41\u0e0b\u0e19\u0e14\u0e4c\u0e27\u0e34\u0e0a\u0e1b\u0e39\u0e2d\u0e31\u0e14\u0e44\u0e02\u0e48\u0e01\u0e38\u0e49\u0e07","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"357","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"356","question_id":"98","name":"\u0e04\u0e23\u0e31\u0e27\u0e0b\u0e2d\u0e07\u0e17\u0e4c\u0e41\u0e2e\u0e21\u0e0a\u0e35\u0e2a","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"356","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"355","question_id":"98","name":"\u0e02\u0e19\u0e21\u0e1b\u0e31\u0e07\u0e44\u0e2a\u0e49\u0e0a\u0e32\u0e44\u0e17\u0e22","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"355","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"98","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"20px","choice_width":"75%"},{"id":"101","campaign_id":"10","name":"\u0e23\u0e49\u0e32\u0e19\u0e43\u0e14\u0e04\u0e37\u0e2d\u0e23\u0e49\u0e32\u0e19 Community Store \u0e17\u0e35\u0e48\u0e19\u0e33\u0e23\u0e32\u0e22\u0e44\u0e14\u0e49<br\/>10 \u0e1a\u0e32\u0e17 \u0e08\u0e32\u0e01\u0e01\u0e32\u0e23\u0e08\u0e33\u0e2b\u0e19\u0e48\u0e32\u0e22\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21\u0e2a\u0e15\u0e32\u0e23\u0e4c\u0e1a\u0e31\u0e04\u0e2a\u0e4c<br\/>\u0e17\u0e38\u0e01\u0e41\u0e01\u0e49\u0e27 \u0e44\u0e1b\u0e0a\u0e48\u0e27\u0e22\u0e40\u0e2b\u0e25\u0e37\u0e2d\u0e0a\u0e38\u0e21\u0e0a\u0e19\u0e0a\u0e32\u0e27\u0e44\u0e23\u0e48\u0e01\u0e32\u0e41\u0e1f","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-19 20:23:37","choices":[{"id":"367","question_id":"101","name":"\u0e2a\u0e22\u0e32\u0e21\u0e2a\u0e41\u0e04\u0e27\u0e23\u0e4c \u0e27\u0e31\u0e19 \u0e41\u0e1f\u0e25\u0e01\u0e0a\u0e34\u0e1e","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"367","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"366","question_id":"101","name":"\u0e2b\u0e25\u0e31\u0e07\u0e2a\u0e27\u0e19","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"366","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"369","question_id":"101","name":"\u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25\u0e40\u0e27\u0e34\u0e25\u0e14\u0e4c \u0e0a\u0e31\u0e49\u0e19 1","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"369","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"368","question_id":"101","name":"\u0e1e\u0e2d\u0e23\u0e4c\u0e42\u0e15 \u0e0a\u0e34\u0e42\u0e19\u0e48","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"368","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"101","updated_at_text":"2 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"20px","choice_width":"75%"},{"id":"87","campaign_id":"10","name":"\u0e01\u0e32\u0e41\u0e1f Starbucks Reserve\u2122 \u0e0a\u0e19\u0e34\u0e14\u0e43\u0e14<br\/>\u0e21\u0e32\u0e08\u0e32\u0e01\u0e20\u0e39\u0e21\u0e34\u0e20\u0e32\u0e04\u0e25\u0e32\u0e15\u0e34\u0e19\u0e2d\u0e40\u0e21\u0e23\u0e34\u0e01\u0e32 ","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:13:52","choices":[{"id":"310","question_id":"87","name":"Peru La Capilla ","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"310","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"311","question_id":"87","name":"Malawi Sable Farms ","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"311","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"312","question_id":"87","name":"Rwanda Abakundakawa ","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"312","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"313","question_id":"87","name":"Kenya Windrush Estate ","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"313","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"87","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"20px","choice_width":"75%"},{"id":"97","campaign_id":"10","name":"\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21\u0e43\u0e14\u0e17\u0e35\u0e48\u0e01\u0e25\u0e31\u0e1a\u0e21\u0e32\u0e2a\u0e23\u0e49\u0e32\u0e07\u0e04\u0e27\u0e32\u0e21\u0e2a\u0e14\u0e0a\u0e37\u0e48\u0e19<br\/>\u0e2d\u0e35\u0e01\u0e04\u0e23\u0e31\u0e49\u0e07\u0e43\u0e19\u0e0a\u0e48\u0e27\u0e07\u0e41\u0e04\u0e21\u0e40\u0e1b\u0e0d\u0e19\u0e35\u0e49 ","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:16:52","choices":[{"id":"352","question_id":"97","name":"Apricot and Peach Yogurt Frappuccino Blended Beverage ","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"352","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"351","question_id":"97","name":"Iced Green Tea Latte","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"351","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"353","question_id":"97","name":"Ruby Red Grape Frappuccino Blended Beverage","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"353","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"350","question_id":"97","name":"Acai Mixed Berry Yogurt Frappuccino Blended Beverage","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"350","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"97","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"18px","choice_width":"94%"},{"id":"96","campaign_id":"10","name":"\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21\u0e2a\u0e15\u0e32\u0e23\u0e4c\u0e1a\u0e31\u0e04\u0e2a\u0e4c\u0e44\u0e0b\u0e2a\u0e4c Venti<br\/>\u0e21\u0e35\u0e02\u0e19\u0e32\u0e14\u0e01\u0e35\u0e48\u0e2d\u0e2d\u0e19\u0e0b\u0e4c","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:12:28","choices":[{"id":"347","question_id":"96","name":"8 \u0e2d\u0e2d\u0e19\u0e0b\u0e4c","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"347","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"349","question_id":"96","name":"16 \u0e2d\u0e2d\u0e19\u0e0b\u0e4c","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"349","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"346","question_id":"96","name":"20 \u0e2d\u0e2d\u0e19\u0e0b\u0e4c","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"346","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"348","question_id":"96","name":"12 \u0e2d\u0e2d\u0e19\u0e0b\u0e4c","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"348","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"96","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"20px","choice_width":"60%"},{"id":"99","campaign_id":"10","name":"\u0e23\u0e49\u0e32\u0e19\u0e2a\u0e15\u0e32\u0e23\u0e4c\u0e1a\u0e31\u0e04\u0e2a\u0e4c\u0e2a\u0e32\u0e02\u0e32\u0e41\u0e23\u0e01\u0e43\u0e19\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28\u0e44\u0e17\u0e22<br\/>\u0e04\u0e37\u0e2d\u0e2a\u0e32\u0e02\u0e32\u0e43\u0e14 ","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:09:29","choices":[{"id":"361","question_id":"99","name":"\u0e42\u0e25\u0e15\u0e31\u0e2a \u0e20\u0e39\u0e40\u0e01\u0e47\u0e15","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"361","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"360","question_id":"99","name":"\u0e01\u0e32\u0e14\u0e2a\u0e27\u0e19\u0e41\u0e01\u0e49\u0e27","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"360","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"359","question_id":"99","name":"\u0e21\u0e32\u0e1a\u0e38\u0e0d\u0e04\u0e23\u0e2d\u0e07","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"359","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"358","question_id":"99","name":"\u0e40\u0e0b\u0e47\u0e19\u0e17\u0e23\u0e31\u0e25 \u0e0a\u0e34\u0e14\u0e25\u0e21","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"358","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"99","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"20px","choice_width":"70%"},{"id":"86","campaign_id":"10","name":"\u0e01\u0e32\u0e41\u0e1f Single Origin : Peru San Ignacio<br\/>\u0e43\u0e0a\u0e49\u0e01\u0e32\u0e23\u0e04\u0e31\u0e48\u0e27\u0e43\u0e19\u0e23\u0e30\u0e14\u0e31\u0e1a\u0e43\u0e14 ","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:10:35","choices":[{"id":"307","question_id":"86","name":"\u0e04\u0e31\u0e48\u0e27\u0e2d\u0e48\u0e2d\u0e19","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"307","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"306","question_id":"86","name":"\u0e04\u0e31\u0e48\u0e27\u0e40\u0e02\u0e49\u0e21","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"306","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"309","question_id":"86","name":"\u0e04\u0e31\u0e48\u0e27\u0e1b\u0e01\u0e15\u0e34","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"309","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"308","question_id":"86","name":"\u0e04\u0e31\u0e48\u0e27\u0e1b\u0e32\u0e19\u0e01\u0e25\u0e32\u0e07","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"308","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"86","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"20px","choice_width":"70%"},{"id":"85","campaign_id":"10","name":"\u0e02\u0e49\u0e2d\u0e43\u0e14\u0e04\u0e37\u0e2d\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21\u0e23\u0e2a\u0e0a\u0e32\u0e15\u0e34\u0e43\u0e2b\u0e21\u0e48<br\/>\u0e43\u0e19\u0e0a\u0e48\u0e27\u0e07\u0e41\u0e04\u0e21\u0e40\u0e1b\u0e0d\u0e19\u0e35\u0e49 ","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 16:56:44","choices":[{"id":"303","question_id":"85","name":"Milk Tea Panna Cotta Cream Frappuccino<br\/>Blended Beverage","contents":"<p><br><\/p>","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 16:58:08","DT_RowId":"303","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"302","question_id":"85","name":" Apricot and Peach Yogurt Frappuccino<br\/>Blended Beverage ","contents":"<p><br><\/p>","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 16:58:19","DT_RowId":"302","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"304","question_id":"85","name":"Pistachio Bon Bon Cream Frappuccino<br\/>Blended Beverage","contents":"<p><br><\/p>","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 16:57:00","DT_RowId":"304","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"305","question_id":"85","name":"Cold Foam Iced Espresso ","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"305","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"85","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"18px","choice_width":"94%"},{"id":"95","campaign_id":"10","name":"\u0e01\u0e32\u0e41\u0e1f\u0e17\u0e35\u0e48\u0e21\u0e32\u0e08\u0e32\u0e01\u0e41\u0e2b\u0e25\u0e48\u0e07\u0e40\u0e1e\u0e32\u0e30\u0e1b\u0e25\u0e39\u0e01<br\/>Single Origin \u0e04\u0e37\u0e2d\u0e01\u0e32\u0e41\u0e1f\u0e2d\u0e30\u0e44\u0e23","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:09:46","choices":[{"id":"344","question_id":"95","name":"Muan Jai Blend","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"344","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"343","question_id":"95","name":"House Blend","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"343","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"345","question_id":"95","name":"Pike Place Roast","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"345","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"342","question_id":"95","name":"Peru San Ignacio","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"342","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"95","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"20px","choice_width":"70%"},{"id":"89","campaign_id":"10","name":"\u0e2a\u0e33\u0e2b\u0e23\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e40\u0e15\u0e34\u0e21\u0e40\u0e07\u0e34\u0e19\u0e43\u0e19\u0e1a\u0e31\u0e15\u0e23\u0e2a\u0e15\u0e32\u0e23\u0e4c\u0e1a\u0e31\u0e04\u0e2a\u0e4c \u0e01\u0e32\u0e23\u0e4c\u0e14<br\/>\u0e15\u0e49\u0e2d\u0e07\u0e21\u0e35\u0e02\u0e31\u0e49\u0e19\u0e15\u0e48\u0e33\u0e40\u0e17\u0e48\u0e32\u0e44\u0e2b\u0e23\u0e48 ","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:16:16","choices":[{"id":"318","question_id":"89","name":"100 \u0e1a\u0e32\u0e17","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"318","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"320","question_id":"89","name":"500 \u0e1a\u0e32\u0e17","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"320","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"321","question_id":"89","name":"1,000 \u0e1a\u0e32\u0e17","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"321","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"319","question_id":"89","name":"50 \u0e1a\u0e32\u0e17","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"319","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"89","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"20px","choice_width":"60%"},{"id":"102","campaign_id":"10","name":"\u0e01\u0e34\u0e08\u0e01\u0e23\u0e23\u0e21 Starbucks for a year<br\/>\u0e2a\u0e21\u0e32\u0e0a\u0e34\u0e01 My Starbucks Rewards\u2122 \u0e15\u0e49\u0e2d\u0e07\u0e21\u0e35\u0e22\u0e2d\u0e14\u0e0b\u0e37\u0e49\u0e2d<br\/>\u0e40\u0e17\u0e48\u0e32\u0e44\u0e2b\u0e23\u0e48 \u0e08\u0e36\u0e07\u0e08\u0e30\u0e44\u0e14\u0e49 1 \u0e2a\u0e34\u0e17\u0e18\u0e34\u0e4c\u0e25\u0e38\u0e49\u0e19\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21 365 \u0e41\u0e01\u0e49\u0e27 ","contents":"<p><br><\/p>","is_required":"1","display_order":"0","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-08-06 18:11:39","choices":[{"id":"371","question_id":"102","name":"100 \u0e1a\u0e32\u0e17 \/ \u0e43\u0e1a\u0e40\u0e2a\u0e23\u0e47\u0e08","contents":"","share_image":"","acquire_score":"0","display_order":"2","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"371","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"370","question_id":"102","name":"250 \u0e1a\u0e32\u0e17 \/ \u0e43\u0e1a\u0e40\u0e2a\u0e23\u0e47\u0e08","contents":"","share_image":"","acquire_score":"1","display_order":"1","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"370","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"373","question_id":"102","name":"300 \u0e1a\u0e32\u0e17 \/ \u0e43\u0e1a\u0e40\u0e2a\u0e23\u0e47\u0e08","contents":"","share_image":"","acquire_score":"0","display_order":"4","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"373","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"},{"id":"372","question_id":"102","name":"200 \u0e1a\u0e32\u0e17 \/ \u0e43\u0e1a\u0e40\u0e2a\u0e23\u0e47\u0e08","contents":"","share_image":"","acquire_score":"0","display_order":"3","created_by":"1","updated_by":"1","created_at":"2018-07-30 23:42:49","updated_at":"2018-07-30 23:42:49","DT_RowId":"372","updated_at_text":"22 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27"}],"DT_RowId":"102","updated_at_text":"15 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","font_size":"20px","choice_width":"70%"}],"DT_RowId":"10","updated_at_text":"2 \u0e27\u0e31\u0e19\u0e17\u0e35\u0e48\u0e41\u0e25\u0e49\u0e27","is_end":"0","share":{"title":"\u0e23\u0e48\u0e27\u0e21\u0e2a\u0e19\u0e38\u0e01\u0e15\u0e2d\u0e1a\u0e04\u0e33\u0e16\u0e32\u0e21 3 \u0e02\u0e49\u0e2d \u0e23\u0e31\u0e1a\u0e04\u0e39\u0e1b\u0e2d\u0e07\u0e0b\u0e37\u0e49\u0e2d\u0e40\u0e04\u0e23\u0e37\u0e48\u0e2d\u0e07\u0e14\u0e37\u0e48\u0e21 1 \u0e41\u0e01\u0e49\u0e27 \u0e1f\u0e23\u0e35 1 \u0e41\u0e01\u0e49\u0e27","desc":"\u0e40\u0e25\u0e48\u0e19\u0e40\u0e01\u0e21\u0e41\u0e25\u0e30\u0e23\u0e31\u0e1a\u0e04\u0e39\u0e1b\u0e2d\u0e07\u0e44\u0e14\u0e49\u0e23\u0e30\u0e2b\u0e27\u0e48\u0e32\u0e07 20 - 29 \u0e2a.\u0e04. 61  \u0e43\u0e0a\u0e49\u0e04\u0e39\u0e1b\u0e2d\u0e07\u0e44\u0e14\u0e49\u0e15\u0e31\u0e49\u0e07\u0e41\u0e15\u0e48 20 \u0e2a.\u0e04. - 7 \u0e01.\u0e22. 61 (\u0e08\u0e31\u0e19\u0e17\u0e23\u0e4c - \u0e28\u0e38\u0e01\u0e23\u0e4c 14.00 - 24.00 \u0e19.) \u0e40\u0e09\u0e1e\u0e32\u0e30\u0e23\u0e49\u0e32\u0e19\u0e17\u0e35\u0e48\u0e23\u0e48\u0e27\u0e21\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23*","image":"https:\/\/starbucksthcampaign.com\/assets\/starbuck\/campaigns\/summer3_2018\/Share-000.png"}};
+var questions = getQuestion()
+var pages = questions;
+var userId = 0
+var userCampaign = null;
+var totalCorrect = 0 ;
+var shareLink = null;
+var currentPage = null;
+var previousPage = null;
+
+function share()
+{
+	var url = 'http://www.facebook.com/sharer.php?u=http://starbucksthcampaign.com/c/quiz_2018_summer_3' + '/share_quiz/' + (totalCorrect > 0 ? 1 : 0)
+	//window.location = url
+	if (shareLink != null) {
+		url = 'http://www.facebook.com/sharer.php?u=' + shareLink
+		console.log('shareLink', shareLink);
+	}
+
+	window.open(
+	  url,
+	  '_blank' // <- This is what makes it open in a new window.
+	);
+
+	if (userCampaign == null) {
+		return;
+	}
+
+	$.ajax({
+		data: {'update_share_count' : 1, 'user_campaign_id' : userCampaign.id },
+		url: 'http://starbucksthcampaign.com/c/quiz_2018_summer_3',
+		type: 'POST',
+		dataType: 'json',
+		success: function(response)
+		{
+			console.log('Success', response);
+		},
+		error: function(a,b,c)
+		{
+			console.log('error', a);
+		}
+	})
+}
+
+function getWidth() {
+	if ( $('body').hasClass('desktop-detected') ) {
+		return $(window).width();
+	}
+	return screen.width;
+}
+
+function getHeight() {
+	if ( $('body').hasClass('desktop-detected') ) {
+		return $(window).height();
+	}
+	return screen.height;
+}
+
+function setDisplayPages()
+{
+	var isEnd = campaign.is_end == "1" ? true : false;
+	if (isEnd) {
+		showPage('end');
+		return
+	}
+
+	createQuestionElement();
+
+	var bgsO = [
+		'https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Quiz-03-User_Play-01.jpg',
+		'https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Quiz-03-User_Play-02.jpg',
+		'https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Quiz-03-User_Play-03.jpg',
+		'https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Quiz-03-User_Play-04.jpg',
+		'https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Quiz-03-User_Play-05.jpg',
+		'https://starbucksthcampaign.com/assets/starbuck/campaigns/summer3_2018/Mobile/Quiz-03-User_Play-06.jpg'
+	]
+	var bgs = bgsO
+	var randomIndex = Math.floor(Math.random() * 6)
+
+	for (var i = 1; i <= pages.length; i++) {
+		//var bg = bgs.pop()
+		var bg = bgs[randomIndex]
+		//console.log('bg', bg);
+		$('#campaign-pages-' + i).css('background-image', 'url(' + bg + ')');
+
+		if (bgs.length <= 0) {
+			bgs = bgsO
+		}
+	}
+
+	//$('#campaign-pages').fadeIn();
+	if (userId != 0 ) {
+		startGame();
+	} else {
+		showPage('login');
+	}
+
+	//showPage('share')
+}
+
+function startGame()
+{
+	showPage(1);
+}
+
+
+function prevPage(e)
+{
+	e.preventDefault();
+	currentPage--;
+
+	if (currentPage < 0 ) {
+		return;
+	}
+	showPage(currentPage);
+}
+
+function nextPage(e)
+{
+	e.preventDefault();
+
+	if (currentPage >= pages.length ) {
+		currentPage = pages.length;
+	}
+
+	if (! validateChecked(currentPage)) {
+		showErrorBox('กรุณาเลือกคำตอบ 1 ตัวเลือก');
+		return;
+	}
+
+	currentPage++;
+
+	if (currentPage > pages.length ) {
+		currentPage = pages.length;
+		//submitForm(e);
+		showPage('user-profile')
+		return;
+	}
+	showPage(currentPage);
+}
+
+function validateChecked(page)
+{
+	var isChecked = $('#campaign-pages-' + page + ' input[type=radio]:checked').val();
+
+	if (isChecked) {
+		return true;
+	}
+	return false;
+}
+
+var isSending = false
+function submitForm(e)
+{
+	e.preventDefault();
+	var formData = $('#q1-form').serializeObject();
+	console.log('Submit', formData);
+
+	var isError = false;
+	$.each(campaign.campaign_fields, function(k, campaignField)
+	{
+		var value = $.trim(formData[campaignField.var] )
+
+		console.log('campaignField.var', campaignField.var, 'value', value);
+		if ( value == "") {
+
+			$('.error-' + campaignField.var).html('กรุณากรอก' + campaignField.name).show();
+			isError = true;
+		} else {
+			$('.error-' + campaignField.var).hide();
+		}
+
+		if (value != '' && campaignField.fixed_length > 0) {
+
+			if ( value.length != campaignField.fixed_length ) {
+				$('.error-' + campaignField.var).html('กรุณากรอก' + campaignField.name + ' ' + campaignField.fixed_length + ' ' + 'หลัก').show();
+				isError = true;
+			} else {
+				$('.error-' + campaignField.var).hide();
+			}
+		}
+
+	});
+
+
+	if (isError) {
+		return
+	}
+
+	if (isSending) {
+		showErrorBox('กรุณารอสักครู่')
+		return
+	}
+
+	isSending = true
+	showLoadingBox('Loading...')
+
+	$.ajax({
+		data: formData,
+		url: $('#q1-form').prop('action'),
+		type: 'POST',
+		dataType: 'json',
+		success: function(response)
+		{
+			hideLoadingBox()
+			isSending = false;
+			console.log('Success', response);
+
+			//return;
+			if ( response.status == 1 ) {
+
+				//showAlertBox('คูปองจะถูกส่งไปยังหมายเลข<br />โทรศัพท์ที่ระบุไว้ภายใน 24 ชั่วโมง');
+				userCampaign = response.data.user_campaign;
+				shareLink = response.data.share_link
+				showPage('share');
+				showAlertBox('คูปองจะถูกส่งไปยังหมายเลข<br />โทรศัพท์ที่ระบุไว้ภายใน 24 ชั่วโมง');
+
+				setTimeout(function(){
+					 hideAlertBox()
+				}, 3000);
+			}
+			else {
+
+				var message = "กรุณาลองอีกครั้ง";
+
+				if ( response.message != '' ) {
+					message = response.message;
+				}
+				showAlertBox(message);
+			}
+		},
+		error: function(a,b,c)
+		{
+			hideLoadingBox()
+			isSending = false;
+			console.log('error', a);
+
+			var message = "กรุณาลองอีกครั้ง";
+
+			showAlertBox(message);
+		}
+	})
+}
+
+function showPreviousPage()
+{
+	showPage(previousPage)
+}
+
+function showPage(index)
+{
+	previousPage = currentPage
+
+	if (index == 'user-profile') {
+
+
+		var formData = $('#q1-form').serializeObject();
+
+		$.each(formData, function(k,value)
+		{
+
+		})
+
+
+		totalCorrect = 0
+		$.each(questions, function(k, question){
+
+			var selectChoiceValueId = $('[name="question_' + question.id + '"]:checked').val()
+
+			$.each(question.choices, function(k,choice){
+				if (choice.id == selectChoiceValueId) {
+					totalCorrect += choice.acquire_score > 0 ? 1 : 0
+				}
+			})
+
+		})
+
+		console.log('totalCorrect', totalCorrect, 'questions.length', questions.length);
+		totalCorrect = 3;
+		//if (totalCorrect != campaign.questions.length ) {
+		if (totalCorrect < 3 ) {
+			if (totalCorrect == 0 ) {
+				showAlertBox('คุณตอบคำถามไม่ถูกเลย<br />ลองใหม่อีกครั้งนะคะ')
+				setTimeout(function()
+				{
+					hideAlertBox()
+					showPage('share')
+					//location.reload();
+				}, 2000)
+				return
+			}
+			if (totalCorrect == 1 ) {
+				showAlertBox('คุณตอบคำถามได้ 1 ข้อ<br />ลองใหม่อีกครั้งนะคะ')
+				setTimeout(function()
+				{
+					hideAlertBox()
+					showPage('share')
+					//location.reload();
+				}, 2000)
+				return
+			}
+			if (totalCorrect == 2 ) {
+				showAlertBox('คุณตอบคำถามได้ 2 ข้อ<br />อีกนิดเดียว ลองใหม่อีกครั้งนะคะ')
+				setTimeout(function()
+				{
+					hideAlertBox()
+					showPage('share')
+					//location.reload();
+				}, 2000)
+				return
+			}
+			if (totalCorrect > 2 ) {
+				showAlertBox('คุณตอบคำถามได้ ' + totalCorrect + ' ข้อ<br />อีกนิดเดียว ลองใหม่อีกครั้งนะคะ')
+				setTimeout(function()
+				{
+					hideAlertBox()
+					showPage('share')
+					//location.reload();
+				}, 2000)
+				return
+			}
+			console.log('totalCorrect', totalCorrect);
+		}
+
+		//showAlertBox('ยินดีด้วยค่ะ<br />อย่าลืมนำคูปองไปใช้สิทธิ์กันนะคะ')
+	}
+
+	if ( isNaN(index)) {
+		$('.pages').hide();
+		$('#' + index).show();
+		currentPage = index;
+		return
+	}
+
+	currentPage = index;
+
+	$('.pages').hide();
+	$('#campaign-pages-' + index).show();
+}
+
+
+function setViewRatio()
+{
+	var isEnd = campaign.is_end == "1" ? true : false;
+	var ratio = window.devicePixelRatio || 1;
+	ratio = 1;
+	var w = getWidth() * ratio;
+	var h = getHeight() * ratio;
+
+	console.log('ratio', ratio);
+	//console.log('w', w);
+	//console.log('h', h);
+
+	var divHeight = 0;
+	var divWidth = 0;
+	var minSize = 600
+
+
+	if ( $('body').hasClass('desktop-detected') ) {
+		if ( w < h ) {
+
+			//console.log('w < h');
+			if (w < minSize) {
+				w = minSize
+			}
+			divWidth = w;
+			divHeight = w * 1334 / 750;
+		}
+		else {
+
+			//console.log('h < w');
+			if (h < minSize) {
+				h = minSize
+			}
+			divHeight = h;
+			divWidth = h * 750 / 1334;
+		}
+	}
+	else {
+		if ( w < h ) {
+
+			//console.log('w < h');
+			if (w < minSize) {
+				//w = minSize
+			}
+			divWidth = w;
+			divHeight = w * 1334 / 750;
+		}
+		else {
+
+			//console.log('h < w');
+			if (h < minSize) {
+				//h = minSize
+			}
+			divHeight = h;
+			divWidth = h * 750 / 1334;
+		}
+
+	}
+
+	$('#campaign-wrapper').css('min-height', divHeight +'px').css('width', divWidth +'px');
+}
+
+var pageJavascriptTrigger = function()
+{
+	page_title = 'Quiz 2018 Summer 3';
+	pageSetUp();
+
+	/*
+	 * ALL PAGE RELATED SCRIPTS CAN GO BELOW HERE
+	 * eg alert("my home function");
+	 *
+	 * var pagefunction = function() {
+	 *   ...
+	 * }
+	 * loadScript("js/plugin/_PLUGIN_NAME_.js", pagefunction);
+	 *
+	 */
+
+	// PAGE RELATED SCRIPTS
+
+	/* remove previous elems */
+	if($('.DTTT_dropdown.dropdown-menu').length){
+		$('.DTTT_dropdown.dropdown-menu').remove();
+	}
+
+	// Needed if you are rendering multiple tables in ajax version
+	//var tableDestroyer = [];
+
+	var pagefunction = function()
+	{
+
+		$( window ).resize(function() {
+			console.log('Resize');
+			setViewRatio();
+		});
+
+		setViewRatio();
+		setDisplayPages();
+		setUpModal();
+		//showAlertBox('Error นะ')
+	}
+
+	//alert('Load');
+	pagefunction();
+
+}
+
+	
+</script>
+<!--================================================== -->
+
+		<!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)
+		<script data-pace-options='{ "restartOnRequestAfter": true }' src="js/plugin/pace/pace.min.js"></script>-->
+
+		<!-- #PLUGINS -->
+		<!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script>
+			if (!window.jQuery) {
+				document.write('<script src="https://starbucksthcampaign.com/assets/smartadmin/js/libs/jquery-2.0.2.min.js"><\/script>');
+			}
+		</script>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+		<script>
+			if (!window.jQuery.ui) {
+				document.write('<script src="https://starbucksthcampaign.com/assets/smartadmin/js/libs/jquery-ui-1.10.3.min.js"><\/script>');
+			}
+
+			$.extend( true, jQuery.fn, {
+				serializeObject: function(){
+
+					var o = {};
+					var a = this.serializeArray();
+					$.each(a, function() {
+						if (o[this.name] !== undefined) {
+							if (!o[this.name].push) {
+								o[this.name] = [o[this.name]];
+							}
+							o[this.name].push(this.value || '');
+						} else {
+							o[this.name] = this.value || '';
+						}
+					});
+					return o;
+
+				}
+			});
+
+			(function($){
+				'use strict'
+				$.deviceDetection = {
+					Android: function() {
+						return navigator.userAgent.match(/Android/i);
+					},
+					BlackBerry: function() {
+						return navigator.userAgent.match(/BlackBerry/i);
+					},
+					iOS: function() {
+						return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+					},
+					Opera: function() {
+						return navigator.userAgent.match(/Opera Mini/i);
+					},
+					Windows: function() {
+						return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+					},
+					Desktop: function() {
+						var a = navigator.userAgent.toLowerCase();
+						var isDesktop = !(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(a)||/1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(a.substr(0,4)));
+
+						return isDesktop;
+					}
+				};
+				
+			})($);
+		</script>
+
+		<!-- JS TOUCH : include this plugin for mobile drag / drop touch events-->
+		<script src="https://starbucksthcampaign.com/assets/smartadmin/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js"></script>
+
+		<!-- BOOTSTRAP JS -->
+		<script src="https://starbucksthcampaign.com/assets/smartadmin/js/bootstrap/bootstrap.min.js"></script>
+
+		<!-- CUSTOM NOTIFICATION -->
+		<script src="https://starbucksthcampaign.com/assets/smartadmin/js/notification/SmartNotification.min.js"></script>
+
+		<!-- JARVIS WIDGETS -->
+		<script src="https://starbucksthcampaign.com/assets/smartadmin/js/smartwidgets/jarvis.widget.min.js"></script>
+
+
+		<!-- SPARKLINES -->
+		<script src="https://starbucksthcampaign.com/assets/smartadmin/js/plugin/sparkline/jquery.sparkline.min.js"></script>
+
+		<!-- JQUERY VALIDATE -->
+		<script src="https://starbucksthcampaign.com/assets/smartadmin/js/plugin/jquery-validate/jquery.validate.min.js"></script>
+
+		<!-- JQUERY MASKED INPUT -->
+		<script src="https://starbucksthcampaign.com/assets/smartadmin/js/plugin/masked-input/jquery.maskedinput.min.js"></script>
+
+		<script src="https://starbucksthcampaign.com/assets/smartadmin/js/plugin/jquery-number/jquery.number.min.js"></script>
+
+		<!-- IMPORTANT: APP CONFIG -->
+		<script src="https://starbucksthcampaign.com/assets/smartadmin/js/app.config.js"></script>
+
+		<!-- MAIN APP JS FILE -->
+		<script src="https://starbucksthcampaign.com/assets/smartadmin/js/app.min.js"></script>
+
+
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<script type="text/javascript">
+
+		$(function()
+		{
+			$('.navbar-nav a').on('click', function(e)
+			{
+				$('.navbar-nav li').removeClass('active');
+				$(this).parent().addClass('active');
+			})
+		})
+
+		function ajaxPost(dataSend, url, callback)
+		{
+			$.ajax({
+				dataType: 'json',
+				data: dataSend,
+				url: url,
+				type: 'POST',
+				success: function(data)
+				{
+					//console.log(data);
+
+					if ( data.status == '1' )
+					{
+						$.smallBox({
+							title : "สำเร็จ",
+							content : "<i class='fa fa-clock-o'></i> <i>" + ( data.message == '' ? 'สำเร็จ' : data.message ) + "</i>",
+							color : "#296191",
+							iconSmall : "fa fa-thumbs-up bounce animated",
+							timeout : 3000
+						});
+
+						if ( typeof(callback) == "function" ) {
+
+							callback(data);
+						}
+					}
+					else
+
+					{
+						$.smallBox({
+							title : "ล้มเหลว",
+							content : "<i class='fa fa-clock-o'></i> <i>" + data.message + "</i>",
+							color : "#c26565",
+							iconSmall : "fa fa-thumbs-down bounce animated",
+							timeout : 3000
+						});
+
+						if ( typeof(callback) == "function" ) {
+
+							callback(data);
+						}
+
+					}
+
+				},
+				error: function(a,b,c)
+				{
+
+					if ( typeof(callback) == "function" ) {
+
+						callback(a, b, c);
+					}
+
+					console.log(a);
+
+					$.smallBox({
+							title : "Failed ",
+							content : "<i class='fa fa-clock-o'></i> <i>1 seconds ago...</i>",
+							color : "#c26565",
+							iconSmall : "fa fa-thumbs-down bounce animated",
+							timeout : 3000
+						});
+				}
+			});
+		}
+
+
+		  $.sound_path = "https://starbucksthcampaign.com/assets/smartadmin/sound/";
+
+		   $(function(){ pageJavascriptTrigger() }) 
+
+		</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-65828831-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-65828831-1');
+</script>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1257626714270340');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1257626714270340&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code -->
+	</body>
+</html>
