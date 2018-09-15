@@ -1,0 +1,8321 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)https://page2me.github.io/phpMySQLSearchRecord.html -->
+<html lang="th"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link href="css/style.css" rel="stylesheet"> 
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="Mon, 22 Jul 2002 11:12:01 GMT">
+	<meta name="GOOGLEBOT" content="NOARCHIVE">
+	
+	<meta name="google-site-verification" content="7wIVFGC4m5650D4gZfV1JL4aWkMbAtb8qEOfzhrflDE">
+	<title>สอบกลางภาค 1/61</title>
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+	<script type="text/javascript" class="init">
+		$(document).ready(function() {
+			$('#miyazaki').DataTable();
+		} );
+	</script>
+	<script>
+        var headertext = [];
+        var headers = document.querySelectorAll("#miyazaki th");
+        var tablerows = document.querySelectorAll("#miyazaki th");
+        var tablebody = document.querySelector("#miyazaki tbody");
+        for (var i = 0; i < headertext.length; i++) {
+            var current = headers[i];
+            headertext.push(current.textContent.replace(/\r?\n|\r/, ""));
+        }
+        for (var i = 0, row; row = tablebody.rows[i]; i++) {
+            for (var j = 0, col; col = row.cells[j]; j++) {
+                col.setAttribute("data-th", headertext[j]);
+            }
+        }
+    </script>
+    <style>
+	    input[type=button] {
+    			 background:transparent;
+		    font-size:0;
+ 			border:0;
+		}
+		input[type=text] {
+			padding: 12px 20px 12px 40px;
+            font-family: 'Trirong', serif;
+            font-size: 1rem;
+			box-sizing: border-box;
+			border: 2px solid #ccc;
+			border-radius: 4px;
+			background-color: white;
+			background-image: url('searchicon.png');
+			background-position: 10px 10px; 
+			background-repeat: no-repeat;
+			-webkit-transition: width 0.4s ease-in-out;
+			transition: width 0.4s ease-in-out;
+		}
+
+		input[type=text]:focus {
+			width: 90%;
+		}
+		
+        table#miyazaki caption {
+            font-weight: bold;
+            font-family: 'Trirong', serif;
+            font-size: 1.5rem;
+            color: #444;
+            margin: 1rem;
+        }
+        
+        table#miyazaki {
+            border-collapse: collapse;
+            font-family: 'Trirong', serif;
+            background: #333;
+            color: #fff;
+            border-radius: 5px;
+        }
+        
+        table#miyazaki thead th {
+            font-weight: bold;
+            font-family: 'Trirong', serif;
+            font-size: 1rem;
+            color: #fff;
+            margin: 1rem;
+        }
+        
+        table#miyazaki thead th,
+        table#miyazaki tbody td {
+            font-family: 'Trirong', serif;
+            font-size: 1rem;
+            color: #fff;
+            margin: 1rem;
+        }
+        
+        table#miyazaki tbody td {
+            padding: .5rem;
+            font-family: 'Trirong', serif;
+            font-size: 1rem;
+            color: #444;
+            background: #EEE;
+        }
+        
+        table#miyazaki tbody tr:not(:last-child) {
+            border-top: 1px solid #DDD;
+            border-bottom: 1px solid #DDD;
+            border-left: 1px solid #DDD;
+            border-right: 1px solid #DDD;
+        }
+        
+        @media screen and (max-width: 600px) {
+            table#miyazaki caption {
+                background-image: none;
+            }
+            table#miyazaki thead {
+                display: none;
+            }
+            table#miyazaki tbody td {
+                display: block;
+                padding: .5rem;
+            }
+            table#miyazaki tbody tr td:first-child {
+                background: #333;
+                color: #FFF;
+            }
+            table#miyazazi tbody td:before {
+                content: attr(data-th);
+                font-weight: bold;
+                display: inline-block;
+                width: 6rem;
+            }
+        }
+	table, td, th { border: 1px solid gray }
+	/* cellpadding */
+	th, td { padding: 5px; }
+
+	/* cellspacing */
+	table { border-collapse: separate; border-spacing: 5px; } /* cellspacing="5" */
+	table { border-collapse: collapse; border-spacing: 0; }   /* cellspacing="0" */
+
+	/* valign */
+	th, td { vertical-align: top; }
+
+	/* align (center) */
+	table { margin: 0 auto; }
+    </style>
+
+</head>
+
+<body>
+
+<table id="miyazaki" class="display" style="width:100%">
+	<caption>สอบกลางภาค 1/61</caption>
+	<thead>
+	<tr>
+		<th>รายวิชา</th>
+		<th>หน่วยกิต</th>
+		<th>Sec.</th>
+		<th>กลุ่ม นศ.</th>
+		<th>จน.</th>
+		<th>วันสอบ</th>
+		<th>เวลาสอบ</th>
+		<th>เลขที่</th>
+		<th>ห้องสอบ</th>
+		<th>ผู้กำกับห้องสอบ</th>
+		<th>ผู้ช่วยผู้กำกับห้องสอบ</th>
+		<th>เลขที่</th>
+		<th>ห้องสอบ</th>
+		<th>ผู้กำกับห้องสอบ</th>
+		<th>ผู้ช่วยผู้กำกับห้องสอบ</th>
+	</tr>
+	</thead>
+	<tbody id="data">
+	<tr>
+		<td>04110201-3 : Strength of Materials 1</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60141CVE1</td>
+		<td>41</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-21</td>
+		<td>EN_1 201</td>
+		<td>ผศ.สมชาย</td>
+		<td>อริสา</td>
+		<td> 22-41</td>
+		<td>EN_1 202</td>
+		<td>อ.สำรวม</td>
+		<td>ดวงเดือน</td>
+	</tr>
+	<tr>
+		<td>04110201-3 : Strength of Materials 1</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60141CVE2</td>
+		<td>25</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-25</td>
+		<td>EN_1 308</td>
+		<td>รศ.ดร.สมเกียรติ</td>
+		<td>กาญจนา  ส.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04110201-3 : Strength of Materials 1</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60341CVE1</td>
+		<td>39</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-39</td>
+		<td>EN_1 406</td>
+		<td>ดร.พิมพ์สิรี</td>
+		<td>กาญจนา  ล.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04110201-3 : Strength of Materials 1</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>60341CVE2</td>
+		<td>30</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-30</td>
+		<td>EN_1 403</td>
+		<td>ดร.จรุงวิทย์</td>
+		<td>อภิชาติ  ท.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04110201-3 : Strength of Materials 1</td>
+		<td>3 (3-0-6)</td>
+		<td>5</td>
+		<td>60441CVEในเวลา</td>
+		<td>30</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-30</td>
+		<td>EN_1 404</td>
+		<td>อ.อมเรศ</td>
+		<td>เพ็ญศรี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04110201-3 : Strength of Materials 1</td>
+		<td>3 (3-0-6)</td>
+		<td>6</td>
+		<td>60148IRE</td>
+		<td>26</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-26</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.สุรินทร์</td>
+		<td>เสาวลักษณ์  ว.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04111201-3 : Geology for Engineers</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60141CVE1</td>
+		<td>33</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-33</td>
+		<td>EN_1 401</td>
+		<td>อ.วิเชียร</td>
+		<td>สุทธาทิพย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04111201-3 : Geology for Engineers</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60141CVE2</td>
+		<td>32</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-32</td>
+		<td>EN_1 402</td>
+		<td>ดร.ระพี</td>
+		<td>ชลธิชา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04111201-3 : Geology for Engineers</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60341CVE1</td>
+		<td>37</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-19</td>
+		<td>EN_2 407</td>
+		<td>ดร.จตุพล</td>
+		<td>สมบูรณ์</td>
+		<td> 20-37</td>
+		<td>EN_2 408</td>
+		<td>ผศ.สุคม</td>
+		<td>ผศ.ณัฐชา</td>
+	</tr>
+	<tr>
+		<td>04111201-3 : Geology for Engineers</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>60341CVE2</td>
+		<td>32</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-32</td>
+		<td>EN_1 203</td>
+		<td>อ.ไพศาล</td>
+		<td>ธีรศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04111201-3 : Geology for Engineers</td>
+		<td>3 (3-0-6)</td>
+		<td>5</td>
+		<td>60441CVEในเวลา</td>
+		<td>41</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-21</td>
+		<td>EN_2 402</td>
+		<td>ดร.จรุงวิทย์</td>
+		<td>สุรพงษ์</td>
+		<td> 22-41</td>
+		<td>EN_2 403</td>
+		<td>อ.ศุภกร</td>
+		<td>ดร.ปรกช</td>
+	</tr>
+	<tr>
+		<td>04111202-2 : Soil Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60341CVE2</td>
+		<td>35</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-18</td>
+		<td>EN_2 402</td>
+		<td>ผศ.ดร.สมนึก</td>
+		<td>ผศ.ดร.ธีระวัฒน์</td>
+		<td> 19-35</td>
+		<td>EN_2 403</td>
+		<td>อ.เดชรัตน์</td>
+		<td>อ.ศุภชัย</td>
+	</tr>
+	<tr>
+		<td>04111202-2 : Soil Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60441CVEในเวลา</td>
+		<td>33</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-17</td>
+		<td>EN_1 202</td>
+		<td>ดร.จตุพล</td>
+		<td>อ.วีรศักดิ์, ธนะเกียรติ</td>
+		<td> 18-33</td>
+		<td>EN_1 205</td>
+		<td>อ.คฑาพล</td>
+		<td>สมบูรณ์</td>
+	</tr>
+	<tr>
+		<td>04112302-2 : Structural Analysis</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59141CVE1</td>
+		<td>21</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-21</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ดร.วีระศักดิ์</td>
+		<td>สุรพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04112302-2 : Structural Analysis</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59141CVE2</td>
+		<td>18</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-18</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ดร.วีระศักดิ์</td>
+		<td>สุรพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04112302-2 : Structural Analysis</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59341CVE1</td>
+		<td>27</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-27</td>
+		<td>EN_1 403</td>
+		<td>ผศ.จันทนา</td>
+		<td>ดร.วีรินทร์ดา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04112302-2 : Structural Analysis</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>59341CVE2</td>
+		<td>23</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-23</td>
+		<td>EN_1 301</td>
+		<td>อ.ยศธน</td>
+		<td>ภูเบต</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04112302-2 : Structural Analysis</td>
+		<td>3 (3-0-6)</td>
+		<td>5</td>
+		<td>59441CVEในเวลา</td>
+		<td>13</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-13</td>
+		<td>EN_1 404</td>
+		<td>ดร.กุลยา</td>
+		<td>ดร.ณรงค์ชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04112302-2 : Structural Analysis</td>
+		<td>3 (3-0-6)</td>
+		<td>6</td>
+		<td>59148IRE</td>
+		<td>37</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-37</td>
+		<td>EN_1 405</td>
+		<td>อ.สมพิศ</td>
+		<td>ดร.กุลวดี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04112303-2 : Reinforced Concrete Design  (เปิดตำรา)</td>
+		<td>4 (3-3-7)</td>
+		<td>1</td>
+		<td>59141CVE1</td>
+		<td>21</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-21</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ดร.ปิติศานต์</td>
+		<td>ดร.สุทินัน, เทวิกา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04112303-2 : Reinforced Concrete Design  (เปิดตำรา)</td>
+		<td>4 (3-3-7)</td>
+		<td>2</td>
+		<td>59141CVE2</td>
+		<td>22</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-22</td>
+		<td>EN_1 310</td>
+		<td>ผศ.วัฒนา</td>
+		<td>อ.สมรรถชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04112303-2 : Reinforced Concrete Design  (เปิดตำรา)</td>
+		<td>4 (3-3-7)</td>
+		<td>3</td>
+		<td>59341CVE1</td>
+		<td>28</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-28</td>
+		<td>EN_1 301</td>
+		<td>ผศ.สุธี</td>
+		<td>ผศ.ดร.ปรัชญา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04112303-2 : Reinforced Concrete Design  (เปิดตำรา)</td>
+		<td>4 (3-3-7)</td>
+		<td>4</td>
+		<td>59341CVE2</td>
+		<td>15</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-15</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ดร.ปิติศานต์</td>
+		<td>ดร.สุทินัน, เทวิกา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04112303-2 : Reinforced Concrete Design  (เปิดตำรา)</td>
+		<td>4 (3-3-7)</td>
+		<td>5</td>
+		<td>59441CVEในเวลา</td>
+		<td>22</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-22</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.ธรรมศักดิ์</td>
+		<td>อ.ณัฐพล</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04113301-1 : Highway Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59341CVE1</td>
+		<td>27</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ศิริชัย</td>
+		<td>อภิชาติ  ท.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04113301-1 : Highway Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59341CVE2</td>
+		<td>26</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 401</td>
+		<td>อ.ศุภกร</td>
+		<td>อ.วันเฉลิม</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04113301-1 : Highway Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59441CVEในเวลา</td>
+		<td>6</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-6</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ศิริชัย</td>
+		<td>อภิชาติ  ท.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04113403-1 : Pavement Design  (เปิดตำรา)</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59341CVE1</td>
+		<td>6</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-6</td>
+		<td>EN_1 304</td>
+		<td>ดร.กิตติพงษ์</td>
+		<td>สุรพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04113403-1 : Pavement Design  (เปิดตำรา)</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59341CVE2</td>
+		<td>2</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-2</td>
+		<td>EN_1 304</td>
+		<td>ดร.กิตติพงษ์</td>
+		<td>สุรพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04113403-1 : Pavement Design  (เปิดตำรา)</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59441CVEในเวลา</td>
+		<td>2</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-2</td>
+		<td>EN_1 304</td>
+		<td>ดร.กิตติพงษ์</td>
+		<td>สุรพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04114201-0 : Hydraulics</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60341CVE1</td>
+		<td>23</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-23</td>
+		<td>EN_1 403</td>
+		<td>ผศ.ดร.วีระศักดิ์</td>
+		<td>น้ำอ้อย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04114201-0 : Hydraulics</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60341CVE2</td>
+		<td>25</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-25</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ดร.สมหมาย</td>
+		<td>อ.พร้อมศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04114201-0 : Hydraulics</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60441CVEในเวลา</td>
+		<td>12</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-12</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ดร.สมหมาย</td>
+		<td>อ.พร้อมศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04114201-0 : Hydraulics</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>60141EVE</td>
+		<td>19</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-19</td>
+		<td>EN_1 310</td>
+		<td>ดร.วิเชียร</td>
+		<td>นิรุตย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04114201-0 : Hydraulics</td>
+		<td>3 (3-0-6)</td>
+		<td>5</td>
+		<td>60148IRE</td>
+		<td>36</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-36</td>
+		<td>EN_1 405</td>
+		<td>อ.ชานนท์</td>
+		<td>สุทธาทิพย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04114303-1 : Hydrology  (เปิดตำรา)</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59141CVE1</td>
+		<td>26</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 405</td>
+		<td>อ.ชานนท์</td>
+		<td>ชลธิชา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04114303-1 : Hydrology  (เปิดตำรา)</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59141CVE2</td>
+		<td>35</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-35</td>
+		<td>EN_1 405</td>
+		<td>อ.ชานนท์</td>
+		<td>ชลธิชา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04114404-1 : Hydraulic Engineering  (เปิดตำรา)</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59341CVE1</td>
+		<td>27</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ดร.ขวัญชัย</td>
+		<td>อ.สมควร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04114404-1 : Hydraulic Engineering  (เปิดตำรา)</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59341CVE2</td>
+		<td>42</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-42</td>
+		<td>EN_1 405</td>
+		<td>ผศ.พรรณราย</td>
+		<td>วริศชยา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04114404-1 : Hydraulic Engineering  (เปิดตำรา)</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59441CVEในเวลา</td>
+		<td>9</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-9</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ดร.ขวัญชัย</td>
+		<td>อ.สมควร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04121201-3 : Surveying  (เปิดตำรา)</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60141CVE1</td>
+		<td>33</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-17</td>
+		<td>EN_1 301</td>
+		<td>ผศ.สุธี</td>
+		<td>ผศ.ดร.ปรัชญา</td>
+		<td> 18-33</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ดร.ปิติศานต์</td>
+		<td>ดร.สุทินัน, เทวิกา</td>
+	</tr>
+	<tr>
+		<td>04121201-3 : Surveying  (เปิดตำรา)</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60141CVE2</td>
+		<td>32</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-32</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.ธรรมศักดิ์</td>
+		<td>อ.ณัฐพล</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04121201-3 : Surveying</td>
+		<td>3 (2-3-5)</td>
+		<td>3</td>
+		<td>60148IRE</td>
+		<td>24</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-24</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.บุญชัย</td>
+		<td>อ.สมควร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04121304-2 : Route Surveying  (เปิดตำรา)</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59141CVE1</td>
+		<td>32</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-32</td>
+		<td>EN_1 401</td>
+		<td>ผศ.ดร.สมหมาย</td>
+		<td>อ.พงษ์ศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04121304-2 : Route Surveying  (เปิดตำรา)</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>59141CVE2</td>
+		<td>30</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 407</td>
+		<td>ดร.สุทินัน</td>
+		<td>ผศ.ดร.จุไรวัลย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04130203-1 : Solid Waste Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60141EVE</td>
+		<td>27</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-27</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ดร.ฉันท์ทิพ</td>
+		<td>ละอองทิพย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04130301-3 : Wastewater Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59141EVE</td>
+		<td>23</td>
+		<td> 4  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-23</td>
+		<td>EN_1 204</td>
+		<td>อ.ชานนท์</td>
+		<td>ณัฎฐา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04130302-3 : Water Supply Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59141EVE</td>
+		<td>23</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-23</td>
+		<td>EN_1 310</td>
+		<td>ดร.ฉัตรชัย</td>
+		<td>กุลฉัตร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04130303-3 : Environmental  System  and  Management</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59141EVE</td>
+		<td>24</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-24</td>
+		<td>EN_2 408</td>
+		<td>ผศ.ดร.กุณฑล</td>
+		<td>สุทธาทิพย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211201-2 : Fundamentals of Electrical Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60344INE1</td>
+		<td>40</td>
+		<td> 8  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-20</td>
+		<td>EN_1 301</td>
+		<td>ผศ.องอาจ</td>
+		<td>กรุณา</td>
+		<td> 21-40</td>
+		<td>EN_1 302</td>
+		<td>รศ.ดร.บุญยัง</td>
+		<td>พงษ์ศรี, ศิวพร</td>
+	</tr>
+	<tr>
+		<td>04211201-2 : Fundamentals of Electrical Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60344INE2</td>
+		<td>43</td>
+		<td> 8  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-22</td>
+		<td>EN_1 201</td>
+		<td>อ.ณัฐพล</td>
+		<td>ชริณพร</td>
+		<td> 23-43</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ดร.ณัฐวุฒิ</td>
+		<td>บังอร</td>
+	</tr>
+	<tr>
+		<td>04211203-2 : Introduction to Electrical Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>61347PLE</td>
+		<td>29</td>
+		<td> 8  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-29 </td>
+		<td>EN_1 203</td>
+		<td>ผศ.พินิจ</td>
+		<td>ธนัตถ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211203-2 : Introduction to Electrical Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>58145TXE</td>
+		<td>42</td>
+		<td> 8  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-42</td>
+		<td>EN_1 303</td>
+		<td>ดร.อำนวย</td>
+		<td>วัชรากร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211203-2 : Introduction to Electrical Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>3</td>
+		<td>60145TCE</td>
+		<td>22</td>
+		<td> 8  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-22</td>
+		<td>EN_1 310</td>
+		<td>ศศิธร</td>
+		<td>ดวงเดือน</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211203-2 : Introduction to Electrical Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>4</td>
+		<td>60145TFE</td>
+		<td>36</td>
+		<td> 8  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-36</td>
+		<td>EN_1 306</td>
+		<td>อุไรวรรณ</td>
+		<td>เพ็ญศรี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211203-2 : Introduction to Electrical Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>7</td>
+		<td>60147POE</td>
+		<td>27</td>
+		<td> 8  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-27</td>
+		<td>EN_1 204</td>
+		<td>อ.สำรวม</td>
+		<td>กัลยาณี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211204-2 : Electric Circuits</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60142EPE</td>
+		<td>31</td>
+		<td> 4  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-31</td>
+		<td>EN_1 207</td>
+		<td>ดร.ฐนียา</td>
+		<td>ละอองทิพย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211206-2 : Electrical Apparatus and Control</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60342EPE1</td>
+		<td>31</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-31</td>
+		<td>EN_1 406</td>
+		<td>ดร.ฐนียา</td>
+		<td>ผศ.นชิรัตน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211206-2 : Electrical Apparatus and Control</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60342EPE2</td>
+		<td>28</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-28</td>
+		<td>EN_1 306</td>
+		<td>อ.รำพึง</td>
+		<td>ผศ.สุนีย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211208-2 : Electrical Engineering Mathematics</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60442EPE</td>
+		<td>30</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-30</td>
+		<td>EN_1 401</td>
+		<td>ผศ.ดร.พิพัฒน์</td>
+		<td>โชติกา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211209-2 : Numerical Methods for Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60142EPE</td>
+		<td>33</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-33</td>
+		<td>EN_1 403</td>
+		<td>ดร.วิชุดา</td>
+		<td>ธนะเกียรติ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211210-2 : Electrical Machines 1</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60342EPE1</td>
+		<td>33</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-17</td>
+		<td>EN_2 402</td>
+		<td>บังอร</td>
+		<td>วิเชียร</td>
+		<td> 18-33</td>
+		<td>EN_2 403</td>
+		<td>ดร.ศิริชัย</td>
+		<td>ชุติกาญจน์</td>
+	</tr>
+	<tr>
+		<td>04211210-2 : Electrical Machines 1</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60342EPE2</td>
+		<td>26</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-26</td>
+		<td>EN5-2308</td>
+		<td>อ.ชวลิต</td>
+		<td>ชเนรินทร์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211210-2 : Electrical Machines 1</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60442EPE</td>
+		<td>30</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-30</td>
+		<td>EN_1 203</td>
+		<td>ผศ.ดร.จิรวัฒน์</td>
+		<td>ศิวพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211211-2 : Electrical Machines 2</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59142EPE</td>
+		<td>38</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 402</td>
+		<td>ผศ.ดร.สโรชา</td>
+		<td>วิทวัฒน์</td>
+		<td> 31-38</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ดร.จตุรงค์</td>
+		<td>ผศ.ศิริชัย</td>
+	</tr>
+	<tr>
+		<td>04211213-1 : Electrical Power Generation, Transmission and Distribution</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60442EPE</td>
+		<td>31</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-31</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.พิพัฒน์</td>
+		<td>สุทธาทิพย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211315-2 : Electromagnetic Fields</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60342EPE1</td>
+		<td>35</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-36</td>
+		<td>EN_1 406</td>
+		<td>ผศ.สุธี</td>
+		<td>อ.กวิตา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211315-2 : Electromagnetic Fields</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60342EPE2</td>
+		<td>25</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-25</td>
+		<td>EN_1 301</td>
+		<td>ผศ.พินิจ</td>
+		<td>อภิชาติ  ท.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211316-2 : Power Electronics</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59142EPE</td>
+		<td>37</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-37</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.บุญชัย</td>
+		<td>ผศ.ดร.กุณฑล</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211316-2 : Power Electronics</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59342EPE1</td>
+		<td>30</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 401</td>
+		<td>อ.ศุภกร</td>
+		<td>อ.วันเฉลิม</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211316-2 : Power Electronics</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59342EPE2</td>
+		<td>25</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-25</td>
+		<td>EN_1 404</td>
+		<td>ผศ.ดร.ณัฐวุฒิ</td>
+		<td>สุทธิศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211318-2 : Electric Power System Analysis</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59342EPE1</td>
+		<td>28</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-28</td>
+		<td>EN_1 402</td>
+		<td>อ.ทินวัฒน์</td>
+		<td>ภูเบต</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211318-2 : Electric Power System Analysis</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59342EPE2</td>
+		<td>29</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-29</td>
+		<td>EN_1 403</td>
+		<td>อ.สมควร</td>
+		<td>นงนุช</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211318-2 : Electric Power System Analysis</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59442EPE</td>
+		<td>32</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-32</td>
+		<td>EN_1 405</td>
+		<td>อ.ฉัตรชัย</td>
+		<td>กิตติพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211422-3 : High Voltage Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59342EPE1</td>
+		<td>28</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-28</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.สุรชัย</td>
+		<td>ธีรศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211422-3 : High Voltage Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59342EPE2</td>
+		<td>24</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-24</td>
+		<td>EN_2 407</td>
+		<td>ผศ.พรรณราย</td>
+		<td>ดร.สุชาลิณี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04114201-0 : Hydraulics</td>
+		<td>3 (3-0-6)</td>
+		<td>6</td>
+		<td>60141CVE1</td>
+		<td>29</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-29</td>
+		<td>EN_1 401</td>
+		<td>อ.สมพิศ</td>
+		<td>วิทวัฒน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04114201-0 : Hydraulics</td>
+		<td>3 (3-0-6)</td>
+		<td>7</td>
+		<td>60141CVE2</td>
+		<td>21</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-21</td>
+		<td>EN_2 406</td>
+		<td>ดร.นิธินาถ</td>
+		<td>ณัฎฐา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211424-3 : Illumination Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59142EPE</td>
+		<td>40</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-20</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.สุรชัย</td>
+		<td>กาญจนา  ล.</td>
+		<td> 21-40</td>
+		<td>EN_1 302</td>
+		<td>รศ.ดร.บวร</td>
+		<td>อุทัย</td>
+	</tr>
+	<tr>
+		<td>04211424-3 : Illumination Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59342EPE1</td>
+		<td>29</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-29</td>
+		<td>EN_1 401</td>
+		<td>อ.สมพิศ</td>
+		<td>วิทวัฒน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211424-3 : Illumination Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59342EPE2</td>
+		<td>30</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 303</td>
+		<td>ดร.นที</td>
+		<td>ธนะเกียรติ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211427-2 : Electrical System Design</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>58442EPE</td>
+		<td>26</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-26</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.ภาณุ</td>
+		<td>มรกต</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04211428-2 : Electric Drives</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>58442EPE</td>
+		<td>26</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-26</td>
+		<td>EN_1 203</td>
+		<td>ดร.อนินท์</td>
+		<td>อ.สมควร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04212201-2 : Engineering Electronics</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60142EPE</td>
+		<td>39</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-39</td>
+		<td>EN_1 405</td>
+		<td>ดร.วิเชียร</td>
+		<td>สุทธิศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04212201-2 : Engineering Electronics</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60342EPE1</td>
+		<td>33</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-33</td>
+		<td>EN_1  406</td>
+		<td>ดร.ศิริชัย</td>
+		<td>กิตติพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04212201-2 : Engineering Electronics</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60342EPE2</td>
+		<td>27</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-27</td>
+		<td>EN_1  301</td>
+		<td>ผศ.ดร.มนฑล</td>
+		<td>วิเชียร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04212201-2 : Engineering Electronics</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>60442EPE</td>
+		<td>30</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-30</td>
+		<td>EN_1 404</td>
+		<td>อ.วีระชัย</td>
+		<td>กาญจนา  ส.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04212203-2 : Electrical Instruments and Measurements</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60142EPE</td>
+		<td>31</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-31</td>
+		<td>EN_1 402</td>
+		<td>บังอร</td>
+		<td>วิทวัฒน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04212203-2 : Electrical Instruments and Measurements</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60442EPE</td>
+		<td>32</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-32</td>
+		<td>EN_1 401</td>
+		<td>อ.ไพศาล</td>
+		<td>ชริณพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04212306-2 : Control Systems</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59142EPE</td>
+		<td>39</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-39</td>
+		<td>EN_1 405</td>
+		<td>ผศ.ดร.จินดารัตน์</td>
+		<td>น้ำอ้อย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04212306-2 : Control Systems</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59342EPE1</td>
+		<td>28</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-28</td>
+		<td>EN_1 201</td>
+		<td>รศ.นิรชร</td>
+		<td>สุรพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04212306-2 : Control Systems</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59342EPE2</td>
+		<td>35</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-35</td>
+		<td>EN_1 301</td>
+		<td>ดร.กิตติพงษ์</td>
+		<td>อภิชาติ  ท.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04212308-3 : Microprocessor</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59442EPE</td>
+		<td>33</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-33</td>
+		<td>EN_1  407</td>
+		<td>ผศ.ดร.ไพฑูรย์</td>
+		<td>ผศ.ดร.บุญยิ่ง</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311201-2 : Engineering Mechanics : Statics</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>61343MEE</td>
+		<td>42</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-21</td>
+		<td>EN_1 203</td>
+		<td>ผศ.ปัณณธร</td>
+		<td>ศิริเมศ</td>
+		<td> 22-42</td>
+		<td>EN_1 204</td>
+		<td>อ.จักรวาล</td>
+		<td>วัชรากร</td>
+	</tr>
+	<tr>
+		<td>04311201-2 : Engineering Mechanics : Statics</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>61343RME</td>
+		<td>65</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-33</td>
+		<td>EN_1 405</td>
+		<td>รศ.นิรชร</td>
+		<td>พงษ์ศรี</td>
+		<td> 34-65</td>
+		<td>EN_1 406</td>
+		<td>ดร.พิมพ์สิรี</td>
+		<td>กาญจนา  ล.</td>
+	</tr>
+	<tr>
+		<td>04311201-2 : Engineering Mechanics : Statics</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60143MEE</td>
+		<td>28</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-28</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.ปิติศานต์</td>
+		<td>ศิวพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>61346CPE</td>
+		<td>46</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-30</td>
+		<td>EN_1 207</td>
+		<td>ปวีณา</td>
+		<td>น้ำอ้อย</td>
+		<td> 31-46</td>
+		<td>EN_1 205</td>
+		<td>อุทัย</td>
+		<td>ชุติกาญจน์</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>61446CPEในเวลา</td>
+		<td>51</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-26</td>
+		<td>EN_1 401</td>
+		<td>อ.ไพศาล</td>
+		<td>ชริณพร</td>
+		<td> 27-51</td>
+		<td>EN_1 402</td>
+		<td>บังอร</td>
+		<td>วิทวัฒน์</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59442EPE</td>
+		<td>46</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-42</td>
+		<td>EN_1 310</td>
+		<td>ศศิธร</td>
+		<td>อุไรวรรณ</td>
+		<td> 43-46</td>
+		<td>EN_1 201</td>
+		<td>ผศ.สมชาย</td>
+		<td>อริสา</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>60342EPE1</td>
+		<td>47</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-24</td>
+		<td>EN_1 403</td>
+		<td>ดร.จรุงวิทย์</td>
+		<td>อภิชาติ  ท.</td>
+		<td> 25-47</td>
+		<td>EN_1 404</td>
+		<td>อ.อมเรศ</td>
+		<td>เพ็ญศรี</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>5</td>
+		<td>60342EPE2</td>
+		<td>50</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-25</td>
+		<td>EN5-2307</td>
+		<td>ผศ.วิรัช</td>
+		<td>เยาวลักษณ์</td>
+		<td> 26-49</td>
+		<td>EN5-2308</td>
+		<td>ดร.อภิรัฐ</td>
+		<td>ชเนรินทร์</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>6</td>
+		<td>60344INE1</td>
+		<td>49</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-39</td>
+		<td>EN_1 405</td>
+		<td>รศ.นิรชร</td>
+		<td>พงษ์ศรี</td>
+		<td>40-49</td>
+		<td>EN_1 201</td>
+		<td>ผศ.สมชาย</td>
+		<td>อริสา</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>7</td>
+		<td>60344INE2</td>
+		<td>45</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-24</td>
+		<td>3321</td>
+		<td>อ.คฑาพล</td>
+		<td>วิริยะ</td>
+		<td> 25-36</td>
+		<td>EN_1 203</td>
+		<td>ผศ.ปัณณธร</td>
+		<td>ศิริเมศ</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>7</td>
+		<td>60344INE2</td>
+		<td>45</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 37-45</td>
+		<td>EN_1 204</td>
+		<td>อ.จักรวาล</td>
+		<td>วัชรากร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>8</td>
+		<td>60444INE</td>
+		<td>40</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-40</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.จินดารัตน์</td>
+		<td>วิเชียร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>9</td>
+		<td>60346ELE</td>
+		<td>44</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-22</td>
+		<td>EN_1 307</td>
+		<td>กุลฉัตร</td>
+		<td>นิรุตย์</td>
+		<td> 23-44</td>
+		<td>EN_1 309</td>
+		<td>ธีรภัทร</td>
+		<td>สาโรจน์</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>10</td>
+		<td>60346TLE</td>
+		<td>46</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-23</td>
+		<td>EN_1 201</td>
+		<td>ผศ.สมชาย</td>
+		<td>อริสา</td>
+		<td> 24-46</td>
+		<td>EN_1 202</td>
+		<td>อ.สำรวม</td>
+		<td>ดวงเดือน</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>11</td>
+		<td>60446TLE</td>
+		<td>32</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-32</td>
+		<td>EN_1 308</td>
+		<td>รศ.ดร.สมเกียรติ</td>
+		<td>กาญจนา  ส.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>12</td>
+		<td>60347POE</td>
+		<td>46</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-23</td>
+		<td>EN_1 203</td>
+		<td>ผศ.ปัณณธร</td>
+		<td>ศิริเมศ</td>
+		<td> 24-46</td>
+		<td>EN_1 204</td>
+		<td>อ.จักรวาล</td>
+		<td>วัชรากร</td>
+	</tr>
+	<tr>
+		<td>04211203-2 : Introduction to Electrical Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>8</td>
+		<td>61343RWE</td>
+		<td>38</td>
+		<td> 8  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-38</td>
+		<td>EN_1 207</td>
+		<td>ดร.อรรถพล</td>
+		<td>รัตติยา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311203-2 : Mechanics of Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60343MEE</td>
+		<td>51</td>
+		<td> 8  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-26</td>
+		<td>EN_1 201</td>
+		<td>อ.ณัฐพล</td>
+		<td>ชริณพร</td>
+		<td> 27-51</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ดร.ณัฐวุฒิ</td>
+		<td>บังอร</td>
+	</tr>
+	<tr>
+		<td>04311203-2 : Mechanics of Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60443MEE</td>
+		<td>29</td>
+		<td> 8  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-29</td>
+		<td>EN_1 302</td>
+		<td>รศ.ดร.บุญยัง</td>
+		<td>พงษ์ศรี, ศิวพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311203-2 : Mechanics of Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60343RME</td>
+		<td>14</td>
+		<td> 8  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-14</td>
+		<td>EN_1 207</td>
+		<td>ดร.อรรถพล</td>
+		<td>รัตติยา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311204-3 : Thermodynamics</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60143MEE</td>
+		<td>36</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-36</td>
+		<td>EN_1 405</td>
+		<td>ดร.วิเชียร</td>
+		<td>สุทธิศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311204-3 : Thermodynamics</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60443MEE</td>
+		<td>22</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-22</td>
+		<td>EN_1  302</td>
+		<td>ผศ.ดร.อิฐอารัญ</td>
+		<td>ศิวพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311204-3 : Thermodynamics</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60144INE1</td>
+		<td>35</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-35</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.ไพฑูรย์</td>
+		<td>ผศ.ดร.บุญยิ่ง</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311204-3 : Thermodynamics</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>60144INE2</td>
+		<td>26</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-26</td>
+		<td>EN_1  403</td>
+		<td>อ.เดชรัตน์</td>
+		<td>เสาวลักษณ์  ท.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311204-3 : Thermodynamics</td>
+		<td>3 (3-0-6)</td>
+		<td>5</td>
+		<td>60148AME+60148FDE</td>
+		<td>40</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-40</td>
+		<td>EN_1  406</td>
+		<td>ดร.ศิริชัย</td>
+		<td>กิตติพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311205-3 : Fluid Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60343MEE</td>
+		<td>57</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-29</td>
+		<td>EN_1 201</td>
+		<td>ผศ.สุคม</td>
+		<td>ผศ.ดร.จิรวัฒน์</td>
+		<td> 30-57</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ดร.กำธรเกียรติ</td>
+		<td>อ.ไพศาล</td>
+	</tr>
+	<tr>
+		<td>04311205-3 : Fluid Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60343RME</td>
+		<td>28</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-28</td>
+		<td>EN_1 402</td>
+		<td>อ.พร้อมศักดิ์</td>
+		<td>วิรัญญา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311208-1 : Engineering Mechanics : Dynamics</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60443MEE</td>
+		<td>28</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-28</td>
+		<td>EN_1 404</td>
+		<td>อ.ธีระพล</td>
+		<td>วัชรากร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311302-3 : Mechanical Design</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59343MEE</td>
+		<td>33</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-33</td>
+		<td>EN_1 405</td>
+		<td>ผศ.ณัฐสิทธิ์</td>
+		<td>ดร.ศิริชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311302-3 : Mechanical Design</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59343RME</td>
+		<td>30</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 403</td>
+		<td>ผศ.ดร.สโรชา</td>
+		<td>ผศ.ดร.อิฐอารัญ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311303-3 : Mechanics of Machinery</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59143MEE</td>
+		<td>46</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-23</td>
+		<td>EN_2 402</td>
+		<td>อ.สุเทพ</td>
+		<td>อ.สุรพล</td>
+		<td> 24-46</td>
+		<td>EN_2 403</td>
+		<td>ผศ.ดร.ปรัชญา</td>
+		<td>กิตติพงษ์</td>
+	</tr>
+	<tr>
+		<td>04311304-2 : Heat Transfer</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59143MEE</td>
+		<td>31</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-31</td>
+		<td>EN_1 302</td>
+		<td>ผศ.องอาจ</td>
+		<td>กรุณา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311304-2 : Heat Transfer</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59443MEE</td>
+		<td>15</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-15</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ดร.ณฐภัทร</td>
+		<td>สันติ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311305-2 : Air Conditioning</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59343MEE</td>
+		<td>33</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-33</td>
+		<td>EN_1  306</td>
+		<td>นุชจรินทร์</td>
+		<td>อภิชาติ  อ.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311305-2 : Air Conditioning</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59443MEE</td>
+		<td>25</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-25</td>
+		<td>EN_1  303</td>
+		<td>ภูเบต</td>
+		<td>อุทัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311305-2 : Air Conditioning</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59343RME</td>
+		<td>35</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-18</td>
+		<td>EN_1  401</td>
+		<td>อ.ธีระพล</td>
+		<td>สันติ</td>
+		<td> 19-35</td>
+		<td>EN_1 402</td>
+		<td>อ.พร้อมศักดิ์</td>
+		<td>อภิชาติ  ท.</td>
+	</tr>
+	<tr>
+		<td>04311306-1 : Introduction to Instrument and Control</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59143MEE</td>
+		<td>37</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-19</td>
+		<td>EN_2 402</td>
+		<td>ดร.ฐนียา</td>
+		<td>ธนัตถ์</td>
+		<td> 20-37</td>
+		<td>EN_2 403</td>
+		<td>ดร.กิตติพงษ์</td>
+		<td>เสาวลักษณ์  ว.</td>
+	</tr>
+	<tr>
+		<td>04311312-1 : Measurement and Instrumentation</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>58443MEE</td>
+		<td>16</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-16</td>
+		<td>EN_1 203</td>
+		<td>ผศ.ดร.ปิติศานต์</td>
+		<td>พงษ์ศรี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311312-1 : Measurement and Instrumentation</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59143MEE</td>
+		<td>39</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-39</td>
+		<td>EN_1 405</td>
+		<td>ผศ.ดร.จินดารัตน์</td>
+		<td>น้ำอ้อย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311314-1 : Fluid Machinery</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59343MEE</td>
+		<td>36</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-36</td>
+		<td>EN_1 405</td>
+		<td>รศ.ดร.บวร</td>
+		<td>ผศ.จักรกฤษ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311315-1 : Safety Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59143MEE</td>
+		<td>36</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-18</td>
+		<td>EN_2 407</td>
+		<td>นุชจรินทร์</td>
+		<td>อภิชาติ  อ.</td>
+		<td> 19-36</td>
+		<td>EN_2 408</td>
+		<td>อ.ฉัตรชัย</td>
+		<td>วิรัญญา</td>
+	</tr>
+	<tr>
+		<td>04311315-1 : Safety Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59443MEE</td>
+		<td>27</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-27</td>
+		<td>EN_1 204</td>
+		<td>ผศ.ดร.ณฐภัทร</td>
+		<td>เพ็ญศรี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311401-2 : Automatic Control</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59343MEE+ เรียนข้ามม.1 คน</td>
+		<td>53</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 201</td>
+		<td>อ.กวิพงษ์</td>
+		<td>มณเฑียรชัย</td>
+		<td> 28-53</td>
+		<td>EN_1 202</td>
+		<td>อ.กฤษณ์</td>
+		<td>นิรุตย์</td>
+	</tr>
+	<tr>
+		<td>04311401-2 : Automatic Control</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59443MEE</td>
+		<td>23</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-12</td>
+		<td>EN_1 203</td>
+		<td>ผศ.ประจักษ์</td>
+		<td>ธีรภัทร</td>
+		<td> 13-23</td>
+		<td>EN_1 204</td>
+		<td>ดร.สุทินัน</td>
+		<td>ผศ.อารียา</td>
+	</tr>
+	<tr>
+		<td>04311402-3 : Power Plant Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>58443MEE</td>
+		<td>23</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-23</td>
+		<td>EN_2 406</td>
+		<td>อ.เฉลิมศักดิ์</td>
+		<td>อ.ปราโมทย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311402-3 : Power Plant Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59343RME</td>
+		<td>35</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-35</td>
+		<td>EN_1 407</td>
+		<td>อ.วิเชียร</td>
+		<td>นุชจรินทร์, อภิชาติ  อ.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311403-2 : Internal Combustion Engines</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>58443MEE</td>
+		<td>18</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-18</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ดร.กิตติพงษ์</td>
+		<td>ศิวพร, ศรีรัตน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04311403-2 : Internal Combustion Engines</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59343MEE</td>
+		<td>38</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-19</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ดร.กิตติพงษ์</td>
+		<td>ศิวพร, ศรีรัตน์</td>
+		<td> 30-38</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ดร.ณฐภัทร</td>
+		<td>สันติ</td>
+	</tr>
+	<tr>
+		<td>04313201-3 : Introduction to Railway System Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60343RME</td>
+		<td>27</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 402</td>
+		<td>ดร.กุลยา</td>
+		<td>ผศ.ดร.บุญยิ่ง</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04313401-1 : Train Opertion and Control</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59343RME</td>
+		<td>35</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-18</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ดร.บุญชัย</td>
+		<td>สุทธิศักดิ์</td>
+		<td> 19-35</td>
+		<td>EN_1 303</td>
+		<td>ผศ.นฤทธิ์</td>
+		<td>กัลยาณี</td>
+	</tr>
+	<tr>
+		<td>04411101-2 : Basic Engineering Training</td>
+		<td>3 (1-6-4)</td>
+		<td>1</td>
+		<td>EN01ห้ามจัดพฤ.เช้า</td>
+		<td>44</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-26</td>
+		<td>EN_1 402</td>
+		<td>ดร.ระพี</td>
+		<td>ชลธิชา</td>
+		<td> 27-44</td>
+		<td>EN_1 403</td>
+		<td>ดร.วิชุดา</td>
+		<td>ธนะเกียรติ</td>
+	</tr>
+	<tr>
+		<td>04411101-2 : Basic Engineering Training</td>
+		<td>3 (1-6-4)</td>
+		<td>2</td>
+		<td>EN02ห้ามจัดพฤ.เช้า</td>
+		<td>44</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-22</td>
+		<td>EN_2 407</td>
+		<td>ดร.จตุพล</td>
+		<td>สมบูรณ์</td>
+		<td> 23-44</td>
+		<td>EN_2 408</td>
+		<td>ผศ.สุคม</td>
+		<td>ผศ.ณัฐชา</td>
+	</tr>
+	<tr>
+		<td>04411101-2 : Basic Engineering Training</td>
+		<td>3 (1-6-4)</td>
+		<td>3</td>
+		<td>EN03ห้ามจัดพฤ.เช้า</td>
+		<td>43</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-22</td>
+		<td>EN_1 301</td>
+		<td>อ.รำพึง</td>
+		<td>อ.วรญา</td>
+		<td> 23-43</td>
+		<td>EN_1 302</td>
+		<td>ผศ.นฤทธิ์</td>
+		<td>ทวีศักดิ์</td>
+	</tr>
+	<tr>
+		<td>04411101-2 : Basic Engineering Training</td>
+		<td>3 (1-6-4)</td>
+		<td>4</td>
+		<td>EN04ห้ามจัดพฤ.เช้า</td>
+		<td>42</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-42</td>
+		<td>EN_1 405</td>
+		<td>ผศ.ดร.มนฑล</td>
+		<td>ศรีรัตน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411101-2 : Basic Engineering Training</td>
+		<td>3 (1-6-4)</td>
+		<td>5</td>
+		<td>EN05ห้ามจัดพฤ.เช้า</td>
+		<td>42</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-42</td>
+		<td>EN_1 406</td>
+		<td>อ.ชวลิต</td>
+		<td>ธนัตถ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411101-2 : Basic Engineering Training</td>
+		<td>3 (1-6-4)</td>
+		<td>6</td>
+		<td>EN06ห้ามจัดพฤ.เช้า</td>
+		<td>42</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-42</td>
+		<td>EN_1 407</td>
+		<td>อ.วีระพงษ์</td>
+		<td>รศ.ดร.รุ่งเรือง</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411101-2 : Basic Engineering Training</td>
+		<td>3 (1-6-4)</td>
+		<td>7</td>
+		<td>EN07ห้ามจัดพฤ.เช้า</td>
+		<td>42</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-21</td>
+		<td>EN_1 303</td>
+		<td>อ.กวิพงษ์</td>
+		<td>มณเฑียรชัย</td>
+		<td> 22-42</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.สานิตย์ดา</td>
+		<td>ธีรภทัร</td>
+	</tr>
+	<tr>
+		<td>04411101-2 : Basic Engineering Training</td>
+		<td>3 (1-6-4)</td>
+		<td>8</td>
+		<td>EN08ห้ามจัดพฤ.เช้า</td>
+		<td>42</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-30</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ดร.สมนึก</td>
+		<td>อ.อัครเดช</td>
+		<td> 31-42</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ปิยนุช</td>
+		<td>อ.พุทธิพร</td>
+	</tr>
+	<tr>
+		<td>04411101-2 : Basic Engineering Training</td>
+		<td>3 (1-6-4)</td>
+		<td>9</td>
+		<td>EN09ห้ามจัดพฤ.เช้า</td>
+		<td>46</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-23</td>
+		<td>EN_2 402</td>
+		<td>ดร.จรุงวิทย์</td>
+		<td>สุรพงษ์</td>
+		<td> 24-46</td>
+		<td>EN_2 403</td>
+		<td>อ.ศุภกร</td>
+		<td>ดร.ปรกช</td>
+	</tr>
+	<tr>
+		<td>04411101-2 : Basic Engineering Training</td>
+		<td>3 (1-6-4)</td>
+		<td>10</td>
+		<td>EN10ห้ามจัดพฤ.เช้า</td>
+		<td>43</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-22</td>
+		<td>EN_1 203</td>
+		<td>อ.ไพศาล</td>
+		<td>ธีรศักดิ์</td>
+		<td> 23-43</td>
+		<td>EN_1 204</td>
+		<td>ผศ.สุรัตน์</td>
+		<td>ผศ.ดร.จุไรวัลย์</td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>EN11ห้ามจัดพฤ.บ่าย</td>
+		<td>44</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-44</td>
+		<td>EN_1 207</td>
+		<td>อ.วิเชียร</td>
+		<td>ชบารัตน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>EN12ห้ามจัดพฤ.บ่าย</td>
+		<td>42</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-42</td>
+		<td>EN_1 301</td>
+		<td>อุทัย</td>
+		<td>วัชรากร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>3</td>
+		<td>EN13ห้ามจัดพฤ.บ่าย</td>
+		<td>40</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-40</td>
+		<td>EN_1 302</td>
+		<td>อ.วีระชัย</td>
+		<td>กาญจนา  ส.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>4</td>
+		<td>EN14ห้ามจัดพฤ.บ่าย</td>
+		<td>47</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-24</td>
+		<td>EN_2 407</td>
+		<td>นุชจรินทร์</td>
+		<td>อภิชาติ  อ.</td>
+		<td> 25-47</td>
+		<td>EN_2 408</td>
+		<td>อ.ฉัตรชัย</td>
+		<td>วิรัญญา</td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>5</td>
+		<td>EN15ห้ามจัดพฤ.บ่าย</td>
+		<td>54</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-27</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ณัฐสิทธิ์</td>
+		<td>เสาวลักษณ์  ท.</td>
+		<td> 28-54</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ศรีไร</td>
+		<td>วาสนา</td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>6</td>
+		<td>EN16ห้ามจัดพฤ.บ่าย</td>
+		<td>43</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-43</td>
+		<td>EN_1 303</td>
+		<td>อ.เฉลิมศักดิ์</td>
+		<td>พิสมัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>7</td>
+		<td>EN17ห้ามจัดพฤ.บ่าย</td>
+		<td>44</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-44</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.กุณฑล</td>
+		<td>สุทธาทิพย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>8</td>
+		<td>EN18ห้ามจัดพฤ.บ่าย</td>
+		<td>52</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-26</td>
+		<td>EN_1 203</td>
+		<td>ผศ.ดร.จิรวัฒน์</td>
+		<td>ศิวพร</td>
+		<td> 27-52</td>
+		<td>EN_1 204</td>
+		<td>ผศ.ดร.ณฐภัทร</td>
+		<td>เพ็ญศรี</td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>9</td>
+		<td>EN19ห้ามจัดพฤ.บ่าย</td>
+		<td>47</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-47</td>
+		<td>EN_1 308</td>
+		<td>ผศ.วิรัช</td>
+		<td>เสาวลักษณ์  ว.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>10</td>
+		<td>EN20ห้ามจัดพฤ.บ่าย</td>
+		<td>45</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-45</td>
+		<td>EN_1 401</td>
+		<td>ผศ.ดร.พิพัฒน์</td>
+		<td>ศรีรัตน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>11</td>
+		<td>61341CVE1</td>
+		<td>37</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-19</td>
+		<td>EN_1 205</td>
+		<td>อุไรวรรณ</td>
+		<td>นัยนา</td>
+		<td> 20-37</td>
+		<td>EN_1 206</td>
+		<td>วิทวัฒน์</td>
+		<td>สุรพงษ์</td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>12</td>
+		<td>61341CVE2</td>
+		<td>37</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-19</td>
+		<td>EN_1 208</td>
+		<td>กรุณา</td>
+		<td>กาญจนา  ล.</td>
+		<td> 20-37</td>
+		<td>EN_1 209</td>
+		<td>อ.วรญา</td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>13</td>
+		<td>61441CVEในเวลา</td>
+		<td>56</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-36</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.ณัฐวุฒิ</td>
+		<td>วิริยะ</td>
+		<td> 37-56</td>
+		<td>EN_1 310</td>
+		<td>ศศิธร</td>
+		<td>พงษ์ศรี</td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>14</td>
+		<td>61344INE1</td>
+		<td>37</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-16</td>
+		<td>EN_1 403</td>
+		<td>ผศ.นฤทธิ์</td>
+		<td>นงนุช</td>
+		<td> 17-39</td>
+		<td>EN_1 307</td>
+		<td>ปวีณา</td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>15</td>
+		<td>61344INE2</td>
+		<td>39</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-10</td>
+		<td>EN_1 205</td>
+		<td>อุไรวรรณ</td>
+		<td>นัยนา</td>
+		<td> 11-20</td>
+		<td>EN_1 206</td>
+		<td>วิทวัฒน์</td>
+		<td>สุรพงษ์</td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>15</td>
+		<td>61344INE2</td>
+		<td>39</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 21-30</td>
+		<td>EN_1 208</td>
+		<td>กรุณา</td>
+		<td>กาญจนา  ล.</td>
+		<td> 31-39</td>
+		<td>EN_1 307</td>
+		<td>ปวีณา</td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>16</td>
+		<td>61444INE</td>
+		<td>48</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-24</td>
+		<td>EN_2 402</td>
+		<td>บังอร</td>
+		<td>วิเชียร</td>
+		<td> 25-48</td>
+		<td>EN_2 403</td>
+		<td>ดร.ศิริชัย</td>
+		<td>ชุติกาญจน์</td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>17</td>
+		<td>61346ELE</td>
+		<td>38</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-38</td>
+		<td>EN5-2307</td>
+		<td>อ.บุญส่ง</td>
+		<td>ธีรศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>18</td>
+		<td>61346TLE</td>
+		<td>41</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-41</td>
+		<td>IE409</td>
+		<td>ดร.ปรกช</td>
+		<td>ชลธิชา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>19</td>
+		<td>61446TLE</td>
+		<td>43</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-43</td>
+		<td>EN_1 403</td>
+		<td>ผศ.นฤทธิ์</td>
+		<td>นงนุช</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>20</td>
+		<td>61347PLE</td>
+		<td>29</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-29</td>
+		<td>EN_1 404</td>
+		<td>สันติ</td>
+		<td>ชริณพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>21</td>
+		<td>61347POE</td>
+		<td>32</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-10</td>
+		<td>EN_1 308</td>
+		<td>ผศ.วิรัช</td>
+		<td>เสาวลักษณ์  ว.</td>
+		<td> 11-20</td>
+		<td>EN_1 401</td>
+		<td>ผศ.ดร.พิพัฒน์</td>
+		<td>ศรีรัตน์</td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>21</td>
+		<td>61347POE</td>
+		<td>32</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 21-32</td>
+		<td>EN_1 402</td>
+		<td>สาโรจน์</td>
+		<td>ธีรภัทร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>22</td>
+		<td>6107 MEC/1</td>
+		<td>41</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-41</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.ณัฐวุฒิ</td>
+		<td>วิริยะ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>23</td>
+		<td>60346CPE</td>
+		<td>31</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-31</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ณัฐสิทธิ์</td>
+		<td>เสาวลักษณ์  ท.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>24</td>
+		<td>60446CPE</td>
+		<td>26</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-26</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ศรีไร</td>
+		<td>วาสนา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>25</td>
+		<td>61346CPE</td>
+		<td>43</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-18</td>
+		<td>IE409</td>
+		<td>ดร.ปรกช</td>
+		<td>ชลธิชา</td>
+		<td> 19-43</td>
+		<td>IE405</td>
+		<td>ดร.อนินท์</td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>26</td>
+		<td>61446CPEในเวลา</td>
+		<td>25</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-25</td>
+		<td>IE406</td>
+		<td>อ.ไพศาล</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>27</td>
+		<td>6107 MEC/เทียบโอน1</td>
+		<td>29</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-29</td>
+		<td>EN_1 404</td>
+		<td>สันติ</td>
+		<td>ชริณพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>28</td>
+		<td>6107 MEC/เทียบโอน2</td>
+		<td>24</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-12</td>
+		<td>EN_1 301</td>
+		<td>อุทัย</td>
+		<td>วัชรากร</td>
+		<td> 13-24</td>
+		<td>EN_1 302</td>
+		<td>อ.วีระชัย</td>
+		<td>กาญจนา  ส.</td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>30</td>
+		<td>6007MECเทียบโอน1</td>
+		<td>24</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-12</td>
+		<td>EN_1 303</td>
+		<td>อ.เฉลิมศักดิ์</td>
+		<td>พิสมัย</td>
+		<td> 13-24</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.กุณฑล</td>
+		<td>สุทธาทิพย์</td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>31</td>
+		<td>6007MECเทียบโอน2</td>
+		<td>23</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-23</td>
+		<td>EN_2 406</td>
+		<td>ภูเบต</td>
+		<td>มรกต</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411102-2 : Engineering Drawing</td>
+		<td>3 (2-3-5)</td>
+		<td>29</td>
+		<td>61146ALE</td>
+		<td>15</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-44</td>
+		<td>EN_1 402</td>
+		<td>สาโรจน์</td>
+		<td>ธีรภัทร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411203-2 : Manufacturing Processes</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60144INE1</td>
+		<td>33</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-17</td>
+		<td>IE405</td>
+		<td>อ.ศักดิ์ชัย</td>
+		<td>วิริยะ</td>
+		<td> 18-33</td>
+		<td>IE406</td>
+		<td>ผศ.สญชัย</td>
+		<td>ชเนรินทร์</td>
+	</tr>
+	<tr>
+		<td>04411203-2 : Manufacturing Processes</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60144INE2</td>
+		<td>36</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-36</td>
+		<td>EN_1 405</td>
+		<td>ผศ.ประยุทธ</td>
+		<td>ศิริเมศ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411203-2 : Manufacturing Processes</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60444INE</td>
+		<td>27</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 401</td>
+		<td>อ.สำรวม</td>
+		<td>อุทัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411203-2 : Manufacturing Processes</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>60148AME+60148FDE</td>
+		<td>45</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-23</td>
+		<td>EN_1 403</td>
+		<td>อ.สมศักดิ์</td>
+		<td>ศรีรัตน์</td>
+		<td> 24-45</td>
+		<td>EN_1 404</td>
+		<td>รศ.ดร.สมเกียรติ</td>
+		<td>กิตติพงษ์</td>
+	</tr>
+	<tr>
+		<td>04411204-3 : Industrial Engineering Design and Build</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60144INE1</td>
+		<td>32</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-32</td>
+		<td>EN_1 203</td>
+		<td>ดร.อนินท์</td>
+		<td>อ.สมควร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411204-3 : Industrial Engineering Design and Build</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60144INE2</td>
+		<td>31</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-31</td>
+		<td>EN_1 306</td>
+		<td>ดร.วิเชียร</td>
+		<td>ชลธิชา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411204-3 : Industrial Engineering Design and Build</td>
+		<td>3 (2-3-5)</td>
+		<td>3</td>
+		<td>60444INE</td>
+		<td>25</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-25</td>
+		<td>EN_1 302</td>
+		<td>ผศ.องอาจ</td>
+		<td>กรุณา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411206-2 : Engineering Metrology Laboratory</td>
+		<td>2 (1-3-3)</td>
+		<td>1</td>
+		<td>61444INE</td>
+		<td>34</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-24</td>
+		<td>EN_1 301</td>
+		<td>ดร.กิตติพงษ์</td>
+		<td>อภิชาติ  ท.</td>
+		<td> 25-48</td>
+		<td>EN_1 302</td>
+		<td>ดร.จรุงวิทย์</td>
+		<td>กาญจนา  ล.</td>
+	</tr>
+	<tr>
+		<td>04411206-2 : Engineering Metrology Laboratory</td>
+		<td>2 (1-3-3)</td>
+		<td>2</td>
+		<td>60144INE1</td>
+		<td>31</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-33</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.ฉันท์ทิพ</td>
+		<td>อริสา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411206-2 : Engineering Metrology Laboratory</td>
+		<td>2 (1-3-3)</td>
+		<td>3</td>
+		<td>60144INE2</td>
+		<td>48</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-31</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.สุรินทร์</td>
+		<td>สุทธิศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411309-1 : Tool Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59144INE2(1-36)</td>
+		<td>36</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-18</td>
+		<td>EN_1 401</td>
+		<td>ผศ.สมชาย</td>
+		<td>ศิริเมศ</td>
+		<td> 19-36</td>
+		<td>EN_1 402</td>
+		<td>ผศ.วิรัช</td>
+		<td>กิตติพงษ์</td>
+	</tr>
+	<tr>
+		<td>04411309-1 : Tool Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59144INE2(37-72)</td>
+		<td>36</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-36</td>
+		<td>EN_1 407</td>
+		<td>อ.อมเรศ</td>
+		<td>ธีรภัทร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04313201-3 : Introduction to Railway System Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60343RWE</td>
+		<td>35</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-35</td>
+		<td>EN_1 403</td>
+		<td>ผศ.ดร.วีระศักดิ์</td>
+		<td>น้ำอ้อย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411310-1 : Forming Processes</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59344INE2</td>
+		<td>42</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-21</td>
+		<td>EN_2 407</td>
+		<td>ผศ.จันทนา</td>
+		<td>พิสมัย</td>
+		<td> 22-42</td>
+		<td>EN_2 408</td>
+		<td>ดร.วิชุดา</td>
+		<td>ธีรภัทร</td>
+	</tr>
+	<tr>
+		<td>04411310-1 : Forming Processes</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59144INE2(1-36)</td>
+		<td>36</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-36</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ดร.สมหมาย</td>
+		<td>อ.พร้อมศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411310-1 : Forming Processes</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59144INE2(37-72)</td>
+		<td>36</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-36</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.มนฑล</td>
+		<td>พงษ์ศรี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411311-1 : Automation Control System</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59344INE2</td>
+		<td>42</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-42</td>
+		<td>EN_1 405</td>
+		<td>ผศ.ณัฐสิทธิ์</td>
+		<td>ดร.ศิริชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411311-1 : Automation Control System</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59144INE2(1-36)</td>
+		<td>36</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-36</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.บุญชัย</td>
+		<td>ผศ.ดร.กุณฑล</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411311-1 : Automation Control System</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59144INE2(37-72)</td>
+		<td>36</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-36</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.ขวัญชัย</td>
+		<td>อ.สุเทพ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04411314-2 : Foundry Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59144INE2(1-36)</td>
+		<td>34</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-17</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ดร.จตุรงค์</td>
+		<td>ผศ.ศิริชัย</td>
+		<td> 18-34</td>
+		<td>EN_1 202</td>
+		<td>อ.วรญา</td>
+		<td>พิสมัย</td>
+	</tr>
+	<tr>
+		<td>04411314-2 : Foundry Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>59144INE2(37-72)</td>
+		<td>36</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-18</td>
+		<td>EN_1 306</td>
+		<td>ดร.ปรกช</td>
+		<td>ปวีณา</td>
+		<td> 19-36</td>
+		<td>EN_1 308</td>
+		<td>ผศ.จักรกฤษ</td>
+		<td>วิรัญญา</td>
+	</tr>
+	<tr>
+		<td>04411316-2 : Welding Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59344INE2</td>
+		<td>42</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-21</td>
+		<td>EN_2 402</td>
+		<td>อ.พงษ์ศักดิ์</td>
+		<td>เสาวลักษณ์  ว.</td>
+		<td> 22-42</td>
+		<td>EN_2 403</td>
+		<td>ผศ.ดร.ชัยภพ</td>
+		<td>อ.ยรรยง</td>
+	</tr>
+	<tr>
+		<td>04411419-1 : CNC Technology</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59344INE2</td>
+		<td>42</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-42</td>
+		<td>EN_1 406</td>
+		<td>ดร.ฐนียา</td>
+		<td>ผศ.นชิรัตน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412201-3 : Engineering Statistics</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60344INE1</td>
+		<td>36</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-36</td>
+		<td>EN_1 406</td>
+		<td>อ.นิสิต</td>
+		<td>เพ็ญศรี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412201-3 : Engineering Statistics</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60344INE2</td>
+		<td>45</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-23</td>
+		<td>EN_2 402</td>
+		<td>อ.ณัฐพล</td>
+		<td>ชบารัตน์</td>
+		<td> 24-45</td>
+		<td>EN_2 403</td>
+		<td>ผศ.ดร.ณฐภัทร</td>
+		<td>สันติ</td>
+	</tr>
+	<tr>
+		<td>04412201-3 : Engineering Statistics</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60444INE</td>
+		<td>20</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-20</td>
+		<td>EN_2 406</td>
+		<td>อ.เฉลิมศักดิ์</td>
+		<td>อ.ปราโมทย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412201-3 : Engineering Statistics</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>59144INE2(1-36)</td>
+		<td>39</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-39</td>
+		<td>EN_1 407</td>
+		<td>อ.วิเชียร</td>
+		<td>นุชจรินทร์, อภิชาติ  อ.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412201-3 : Engineering Statistics</td>
+		<td>3 (3-0-6)</td>
+		<td>5</td>
+		<td>59144INE2(37-72)</td>
+		<td>41</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-21</td>
+		<td>EN_2 407</td>
+		<td>ผศ.ศรีไร</td>
+		<td>ชริณพร</td>
+		<td> 22-41</td>
+		<td>EN_2 408</td>
+		<td>ดร.อนินท์</td>
+		<td>บังอร</td>
+	</tr>
+	<tr>
+		<td>04412201-3 : Engineering Statistics</td>
+		<td>3 (3-0-6)</td>
+		<td>6</td>
+		<td>59144INE1</td>
+		<td>36</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-36</td>
+		<td>EN_1 405</td>
+		<td>อ.ฉัตรชัย</td>
+		<td>กิตติพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412201-3 : Engineering Statistics</td>
+		<td>3 (3-0-6)</td>
+		<td>7</td>
+		<td>วศ.ปกติ</td>
+		<td>22</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-22</td>
+		<td>EN_1 310</td>
+		<td>ดร.นรเสฎฐ์</td>
+		<td>เสาวลักษณ์  ท.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412202-2 : Safety Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60344INE1</td>
+		<td>42</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-21</td>
+		<td>EN_1 203</td>
+		<td>ผศ.ประจักษ์</td>
+		<td>ธีรภัทร</td>
+		<td> 22-42</td>
+		<td>EN_1 204</td>
+		<td>ดร.สุทินัน</td>
+		<td>ผศ.อารียา</td>
+	</tr>
+	<tr>
+		<td>04412202-2 : Safety Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59144INE2(1-36)</td>
+		<td>35</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-35</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.จินดารัตน์</td>
+		<td>อ.ฉัตรชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412202-2 : Safety Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59144INE2(37-72)</td>
+		<td>35</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-35</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ศรีประไพ</td>
+		<td>อภิชาติ  ท.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412203-2 : Work Study</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59347PLE</td>
+		<td>29</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-29</td>
+		<td>EN_1 301</td>
+		<td>อ.รำพึง</td>
+		<td>อ.วรญา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412304-2 : Quality Control</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59444INE</td>
+		<td>46</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-23</td>
+		<td>EN_1  401</td>
+		<td>อ.ธีระพล</td>
+		<td>สันติ</td>
+		<td> 24-46</td>
+		<td>EN_1 402</td>
+		<td>อ.พร้อมศักดิ์</td>
+		<td>อภิชาติ  ท.</td>
+	</tr>
+	<tr>
+		<td>04412305-2 : Engineering Economy</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59144INE1</td>
+		<td>50</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 308</td>
+		<td>อ.นิสิต</td>
+		<td>เสาวลักษณ์  ว.</td>
+		<td> 31-50</td>
+		<td>EN_1 310</td>
+		<td>ดร.วิเชียร</td>
+		<td>นิรุตย์</td>
+	</tr>
+	<tr>
+		<td>04412305-2 : Engineering Economy</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59344INE1</td>
+		<td>27</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 402</td>
+		<td>ดร.กุลยา</td>
+		<td>ผศ.ดร.บุญยิ่ง</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412305-2 : Engineering Economy</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59145TXE</td>
+		<td>29</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-29</td>
+		<td>EN_1 303</td>
+		<td>ดร.นที</td>
+		<td>ธนะเกียรติ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412305-2 : Engineering Economy</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>60344INE2</td>
+		<td>48</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-24</td>
+		<td>EN_2 402</td>
+		<td>อ.สุเทพ</td>
+		<td>อ.สุรพล</td>
+		<td> 25-48</td>
+		<td>EN_2 403</td>
+		<td>ผศ.ดร.ปรัชญา</td>
+		<td>กิตติพงษ์</td>
+	</tr>
+	<tr>
+		<td>04412306-2 : Operation Research</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59144INE1</td>
+		<td>36</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-18</td>
+		<td>EN_1 401</td>
+		<td>ผศ.สมชาย</td>
+		<td>ศิริเมศ</td>
+		<td> 19-36</td>
+		<td>EN_1 402</td>
+		<td>ผศ.วิรัช</td>
+		<td>กิตติพงษ์</td>
+	</tr>
+	<tr>
+		<td>04412306-2 : Operation Research</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59444INE</td>
+		<td>57</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 201</td>
+		<td>รศ.นิรชร</td>
+		<td>สุรพงษ์</td>
+		<td> 31-61</td>
+		<td>EN_1 202</td>
+		<td>อ.จักรวาล</td>
+		<td>สาโรจน์</td>
+	</tr>
+	<tr>
+		<td>04412307-2 : Production Planning and Control</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59344INE1</td>
+		<td>40</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-20</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ดร.บุญชัย</td>
+		<td>สุทธิศักดิ์</td>
+		<td> 21-40</td>
+		<td>EN_1 303</td>
+		<td>ผศ.นฤทธิ์</td>
+		<td>กัลยาณี</td>
+	</tr>
+	<tr>
+		<td>04412307-2 : Production Planning and Control</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59344INE2</td>
+		<td>47</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-24</td>
+		<td>EN_2 402</td>
+		<td>ดร.ฐนียา</td>
+		<td>ธนัตถ์</td>
+		<td> 25-47</td>
+		<td>EN_2 403</td>
+		<td>ดร.กิตติพงษ์</td>
+		<td>เสาวลักษณ์  ว.</td>
+	</tr>
+	<tr>
+		<td>04412307-2 : Production Planning and Control</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>58145TXE</td>
+		<td>60</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 403</td>
+		<td>อ.ชวลิต</td>
+		<td>วิริยะ</td>
+		<td> 31-60</td>
+		<td>EN_1 404</td>
+		<td>อ.วันเฉลิม</td>
+		<td>อุทัย</td>
+	</tr>
+	<tr>
+		<td>04412307-2 : Production Planning and Control</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>59145GME+59347POE</td>
+		<td>43</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-22</td>
+		<td>EN_2 407</td>
+		<td>ผศ.ดร.กำธรเกียรติ</td>
+		<td>อ.สมรรถชัย</td>
+		<td> 23-43</td>
+		<td>EN_2 408</td>
+		<td>ผศ.สญชัย</td>
+		<td>ดร.ระพี</td>
+	</tr>
+	<tr>
+		<td>04412307-2 : Production Planning and Control</td>
+		<td>3 (3-0-6)</td>
+		<td>5</td>
+		<td>59347PLE</td>
+		<td>25</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-25</td>
+		<td>EN_1 203</td>
+		<td>ดร.นรเสฎฐ์</td>
+		<td>ธีรภัทร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412308-3 : Maintenance Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59444INE</td>
+		<td>20</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-20</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.บุญยิ่ง</td>
+		<td>อ.บุญฤทธิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412308-3 : Maintenance Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>61343RWE</td>
+		<td>35</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-35</td>
+		<td>EN_1 406</td>
+		<td>อ.นิสิต</td>
+		<td>เพ็ญศรี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412311-2 : Machine Design and Simulation</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59344INE1</td>
+		<td>25</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-25</td>
+		<td>EN5-2308</td>
+		<td>อ.ชวลิต</td>
+		<td>ชเนรินทร์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412311-2 : Machine Design and Simulation</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>58444INE</td>
+		<td>4</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-4</td>
+		<td>EN5-2308</td>
+		<td>อ.ชวลิต</td>
+		<td>ชเนรินทร์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412312-1 : Machine Tool and Automatic System</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59144INE1</td>
+		<td>37</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 402</td>
+		<td>ผศ.ดร.สโรชา</td>
+		<td>วิทวัฒน์</td>
+		<td> 31-37</td>
+		<td>EN_1 202</td>
+		<td>อ.วรญา</td>
+		<td>พิสมัย</td>
+	</tr>
+	<tr>
+		<td>04412315-1 : Ergonomics</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59144INE1</td>
+		<td>37</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-37</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ศิริชัย</td>
+		<td>อภิชาติ  ท.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412316-1 : Introduction to Experimental Design for Engineer</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59344INE1</td>
+		<td>15</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-15</td>
+		<td>IE308</td>
+		<td>อ.บุญส่ง</td>
+		<td>อ.ศักดิ์ชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412316-1 : Introduction to Experimental Design for Engineer</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>59444INE</td>
+		<td>11</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-11</td>
+		<td>IE308</td>
+		<td>อ.บุญส่ง</td>
+		<td>อ.ศักดิ์ชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412418-3 : Industrial Plant Design</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>58444INE</td>
+		<td>11</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-11</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.ไพฑูรย์</td>
+		<td>ชลธิชา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412422-3 : Logistics System Design and Management</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>58444INE</td>
+		<td>10</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-10</td>
+		<td>EN_1 301</td>
+		<td>อ.บุญฤทธิ์</td>
+		<td>ผศ.ดร.บุญยิ่ง</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412422-3 : Logistics System Design and Management</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59344INE1</td>
+		<td>26</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-26</td>
+		<td>EN_1 401</td>
+		<td>ผศ.ดร.พิพัฒน์</td>
+		<td>โชติกา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04500101-1 : Textile Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60145TXE</td>
+		<td>42</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-21</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.สุรชัย</td>
+		<td>กาญจนา  ล.</td>
+		<td> 22-42</td>
+		<td>EN_1 302</td>
+		<td>รศ.ดร.บวร</td>
+		<td>อุทัย</td>
+	</tr>
+	<tr>
+		<td>04500101-1 : Textile Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60145GME</td>
+		<td>19</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-19</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.ขวัญชัย</td>
+		<td>กิตติพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04500104-1 : Garment Manufacturing</td>
+		<td>3 (1-6-4)</td>
+		<td>1</td>
+		<td>60145GME</td>
+		<td>19</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-11.00</td>
+		<td> 1-19</td>
+		<td>EN_1 207</td>
+		<td>ดร.นิธินาถ</td>
+		<td>ณัฎฐา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04500302-1 : Textile Testing</td>
+		<td>3 (1-6-4)</td>
+		<td>1</td>
+		<td>59145TXE</td>
+		<td>30</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-11.00</td>
+		<td> 1-30</td>
+		<td>EN_1 302</td>
+		<td>ผศ.นฤทธิ์</td>
+		<td>ทวีศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04500302-1 : Textile Testing</td>
+		<td>3 (1-6-4)</td>
+		<td>2</td>
+		<td>59145GME</td>
+		<td>17</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-11.00</td>
+		<td> 1-17</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ปิยนุช</td>
+		<td>อ.พุทธิพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04510202-1 : Spinning Calculation</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59145TXE</td>
+		<td>28</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-28</td>
+		<td>EN_1 204</td>
+		<td>ผศ.วัฒนา</td>
+		<td>รศ.ดร.สุนัน</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04510204-4 : Weaving Machineries</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59145TXE</td>
+		<td>26</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 301</td>
+		<td>ผศ.พินิจ</td>
+		<td>อภิชาติ  ท.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04412423   : Computer for Industrial Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>58444INE</td>
+		<td>10</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-10</td>
+		<td>EN_2 509</td>
+		<td>อ.เฉลิมศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04510302-1 : Nonwovens</td>
+		<td>2 (2-0-4)</td>
+		<td>1</td>
+		<td>58145TXE</td>
+		<td>42</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-21</td>
+		<td>10202</td>
+		<td>อ.ทินวัฒน์</td>
+		<td>อภิชาติ  ท.</td>
+		<td> 22-42</td>
+		<td>3321</td>
+		<td>อ.บุญฤทธิ์</td>
+		<td>น้ำอ้อย</td>
+	</tr>
+	<tr>
+		<td>04510302-1 : Nonwovens</td>
+		<td>2 (2-0-4)</td>
+		<td>2</td>
+		<td>59145TXE</td>
+		<td>28</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-28</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ประยุทธ</td>
+		<td>ศรีรัตน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04510306-2 : Man-made Fiber Processing</td>
+		<td>2 (2-0-4)</td>
+		<td>1</td>
+		<td>60145TXE</td>
+		<td>40</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-21</td>
+		<td>EN_1 203</td>
+		<td>ผศ.ดร.ปิติศานต์</td>
+		<td>พงษ์ศรี</td>
+		<td> 22-41</td>
+		<td>EN_1 204</td>
+		<td>รศ.ดร.สมเกียรติ</td>
+		<td>บังอร</td>
+	</tr>
+	<tr>
+		<td>04510307-1 : Yarn to Fabric Formation</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59145TCE</td>
+		<td>14</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-14</td>
+		<td>EN_1 309</td>
+		<td>ผศ.ศิริชัย</td>
+		<td>ธนัตถ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04510309-2 : Textile Physical Testing</td>
+		<td>2 (1-3-3)</td>
+		<td>1</td>
+		<td>59145TFE+59145TCE</td>
+		<td>33</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-11.00</td>
+		<td> 1-33</td>
+		<td>EN_1 303</td>
+		<td>อ.กวิพงษ์</td>
+		<td>มณเฑียรชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04510402-1 : Textile Composite</td>
+		<td>2 (2-0-4)</td>
+		<td>1</td>
+		<td>58145TXE</td>
+		<td>42</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-21</td>
+		<td>EN_2 402</td>
+		<td>อ.พงษ์ศักดิ์</td>
+		<td>เสาวลักษณ์  ว.</td>
+		<td> 22-42</td>
+		<td>EN_2 403</td>
+		<td>ผศ.ดร.ชัยภพ</td>
+		<td>อ.ยรรยง</td>
+	</tr>
+	<tr>
+		<td>04520102-2 : Polymer Technology</td>
+		<td>2 (2-0-4)</td>
+		<td>1</td>
+		<td>60145TCE</td>
+		<td>20</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-11.00</td>
+		<td> 1-20</td>
+		<td>EN_2 408</td>
+		<td>ดร.ศิริชัย</td>
+		<td>อ.ยรรยง</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04520102-2 : Polymer Technology</td>
+		<td>2 (2-0-4)</td>
+		<td>2</td>
+		<td>60145TFE</td>
+		<td>34</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-11.00</td>
+		<td> 1-17</td>
+		<td>EN_2 402</td>
+		<td>ผศ.ดร.สมนึก</td>
+		<td>ผศ.ดร.ธีระวัฒน์</td>
+		<td> 18-34</td>
+		<td>EN_2 403</td>
+		<td>อ.เดชรัตน์</td>
+		<td>อ.ศุภชัย</td>
+	</tr>
+	<tr>
+		<td>04520201-1 : Organic Polymer Chemistry</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60145TCE</td>
+		<td>20</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-20</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.ขวัญชัย</td>
+		<td>กิตติพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04520201-1 : Organic Polymer Chemistry</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60145TFE</td>
+		<td>35</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-35</td>
+		<td>EN_1 405</td>
+		<td>อ.ชานนท์</td>
+		<td>สุทธาทิพย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04520203-1 : Fiber Science</td>
+		<td>2 (2-0-4)</td>
+		<td>1</td>
+		<td>59145TCE</td>
+		<td>14</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-14</td>
+		<td>EN_1 202</td>
+		<td>ดร.จตุพล</td>
+		<td>อ.วีรศักดิ์, ธนะเกียรติ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04520305-1 : Fiber and Textile for Industrial Applications</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59145TFE</td>
+		<td>19</td>
+		<td> 4  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-19</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.ดลหทัย</td>
+		<td>ดร.วริษฐา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04520306-2 : Physical Chemistry and Colouration</td>
+		<td>2 (2-0-4)</td>
+		<td>1</td>
+		<td>59145TCE</td>
+		<td>14</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-7</td>
+		<td>EN_1 306</td>
+		<td>ดร.นิชนันท์</td>
+		<td>ดร.สุชาลิณี</td>
+		<td> 8-14</td>
+		<td>EN_1 308</td>
+		<td>ดร.จตุพล</td>
+		<td>ธนะเกียรติ</td>
+	</tr>
+	<tr>
+		<td>04521306-3 : Advanced Textile Dyeing Processing</td>
+		<td>2 (1-3-3)</td>
+		<td>1</td>
+		<td>59145TCE</td>
+		<td>14</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-14</td>
+		<td>EN_1 406</td>
+		<td>อ.คฑาพล</td>
+		<td>วิทวัฒน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04521308-2 : Advanced  Textile  Printing  Processing</td>
+		<td>2 (1-3-3)</td>
+		<td>1</td>
+		<td>59145TCE</td>
+		<td>14</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-14</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ดร.อิฐอารัญ</td>
+		<td>ศิวพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04521414-2 : Textile Auxiliaries</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59145TCE</td>
+		<td>14</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-14</td>
+		<td>EN_1 203</td>
+		<td>อ.สำรวม</td>
+		<td>วิริยะ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04522303-1 : Theory and Practice of Fiber Formation</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59145TFE</td>
+		<td>19</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-11.00</td>
+		<td> 1-19</td>
+		<td>EN_1 202</td>
+		<td>ดร.จตุพล</td>
+		<td>อ.วีรศักดิ์, ธนะเกียรติ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04522305-3 : Polymer Processing and Polymer-Matrix Composite</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59145TFE</td>
+		<td>19</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-15.00</td>
+		<td> 1-19</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.สุรชัย</td>
+		<td>กาญจนา  ล.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04522306-3 : Synthetic  Materials  Characterization</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59145TFE</td>
+		<td>19</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-19</td>
+		<td>EN_1 203</td>
+		<td>อ.สำรวม</td>
+		<td>วิริยะ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04522307-3 : Catalyst and Additives Technology</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59145TFE</td>
+		<td>19</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-19</td>
+		<td>EN_1 204</td>
+		<td>รศ.ดร.สมเกียรติ</td>
+		<td>บังอร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04530101-5 : Apparel’s Machines and Maintenance</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60145GME</td>
+		<td>20</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-15.00</td>
+		<td> 1-20</td>
+		<td>EN_1 406</td>
+		<td>อ.คฑาพล</td>
+		<td>วิทวัฒน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04530203-1 : Apparel Design</td>
+		<td>2 (1-3-3)</td>
+		<td>1</td>
+		<td>60145GME</td>
+		<td>19</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-19</td>
+		<td>EN_1 310</td>
+		<td>อ.กวิพงษ์</td>
+		<td>ดร.ณรงค์ชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04530302-1 : Garment System 2</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59145GME</td>
+		<td>16</td>
+		<td> 4  ก.ย.  61</td>
+		<td>09.00-11.30</td>
+		<td> 1-16</td>
+		<td>EN_1 201</td>
+		<td>ผศ.จักรกฤษ์</td>
+		<td>สมบูรณ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04530304-1 : Garment Merchandising</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59145GME</td>
+		<td>18</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-18</td>
+		<td>EN_1 207</td>
+		<td>ดร.นิธินาถ</td>
+		<td>ณัฎฐา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04530307-4 : CAD/CAM for Apparel Manufacturing</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59145GME</td>
+		<td>16</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-16</td>
+		<td>EN_1 302</td>
+		<td>รศ.ดร.บวร</td>
+		<td>อุทัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04550614-2 : Special Study for Textile Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>M60TE1ป</td>
+		<td>1</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04550704-2 : Thesis</td>
+		<td>6 (0-0-18)</td>
+		<td>1</td>
+		<td>M60TE1ป</td>
+		<td>1</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610201-1 : Electric Circuits</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60146ELE</td>
+		<td>38</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-38</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.ฉันท์ทิพ</td>
+		<td>อ.สมรรถชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610201-1 : Electric Circuits</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60146TLE</td>
+		<td>23</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-12</td>
+		<td>IE405</td>
+		<td>อ.ศักดิ์ชัย</td>
+		<td>วิริยะ</td>
+		<td> 13-23</td>
+		<td>IE406</td>
+		<td>ผศ.สญชัย</td>
+		<td>ชเนรินทร์</td>
+	</tr>
+	<tr>
+		<td>04610201-1 : Electric Circuits</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60146NLE</td>
+		<td>36</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-18</td>
+		<td>10202</td>
+		<td>อ.อโณทัย</td>
+		<td>ผศ.นชิรัตน์</td>
+		<td> 19-36</td>
+		<td>3321</td>
+		<td>อ.นิสิต</td>
+		<td>น้ำอ้อย</td>
+	</tr>
+	<tr>
+		<td>04610203-2 : Engineering Electronics</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60146ELE</td>
+		<td>25</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-25</td>
+		<td>EN_1 302</td>
+		<td>อ.วันเฉลิม</td>
+		<td>ศรีรัตน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610203-2 : Engineering Electronics</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60146TLE</td>
+		<td>26</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 308</td>
+		<td>อ.อัครเดช</td>
+		<td>นิรุตย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610203-2 : Engineering Electronics</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60146NLE</td>
+		<td>42</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-21</td>
+		<td>EN_2 407</td>
+		<td>ผศ.พรรณราย</td>
+		<td>ดร.สุชาลิณี</td>
+		<td> 22-42</td>
+		<td>EN_2 408</td>
+		<td>ผศ.ดร.กุณฑล</td>
+		<td>สุทธาทิพย์</td>
+	</tr>
+	<tr>
+		<td>04610205-2 : Signal and Systems</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60146ELE</td>
+		<td>21</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-21</td>
+		<td>EN_2 406</td>
+		<td>ดร.นิธินาถ</td>
+		<td>ณัฎฐา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610205-2 : Signal and Systems</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60346ELE</td>
+		<td>31</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-31</td>
+		<td>EN_1 203</td>
+		<td>ดร.วีรินทร์ดา</td>
+		<td>ปวีณา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610205-2 : Signal and Systems</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60146TLE</td>
+		<td>18</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-18</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.ขวัญชัย</td>
+		<td>กิตติพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610205-2 : Signal and Systems</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>60146NLE</td>
+		<td>28</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-28</td>
+		<td>EN_1 308</td>
+		<td>อ.นิสิต</td>
+		<td>เสาวลักษณ์  ว.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610206-2 : Electromagnetic Fields</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60346ELE</td>
+		<td>27</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-27</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ประจักษ์</td>
+		<td>ชเนรินทร์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610206-2 : Electromagnetic Fields</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60346TLE</td>
+		<td>38</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-38</td>
+		<td>EN_1 407</td>
+		<td>อ.จักรกฤษณ์</td>
+		<td>พงษ์ศรี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610206-2 : Electromagnetic Fields</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60446TLE</td>
+		<td>29</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-29</td>
+		<td>EN_1 202</td>
+		<td>ผศ.สุรัตน์</td>
+		<td>อุทัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610207-2 : Principle of Communication Systems</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60346ELE</td>
+		<td>32</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-32</td>
+		<td>EN_1 204</td>
+		<td>ผศ.ดร.จิรวัฒน์</td>
+		<td>อ.ทินวัฒน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610207-2 : Principle of Communication Systems</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60346TLE</td>
+		<td>41</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-21</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ดร.กิตติพงษ์</td>
+		<td>ศิวพร, ศรีรัตน์</td>
+		<td> 22-41</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ดร.ณฐภัทร</td>
+		<td>สันติ</td>
+	</tr>
+	<tr>
+		<td>04610207-2 : Principle of Communication Systems</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60446TLE</td>
+		<td>30</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-30</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.ไพฑูรย์</td>
+		<td>ชลธิชา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610209-1 : Digital Circuits and Systems Design</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60346ELE</td>
+		<td>30</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-30</td>
+		<td>EN_1 402</td>
+		<td>อ.ทินวัฒน์</td>
+		<td>ภูเบต</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610209-1 : Digital Circuits and Systems Design</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60346TLE</td>
+		<td>42</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-21</td>
+		<td>EN_2 402</td>
+		<td>อ.ณัฐพล</td>
+		<td>ชบารัตน์</td>
+		<td> 22-42</td>
+		<td>EN_2 403</td>
+		<td>ผศ.ดร.ณฐภัทร</td>
+		<td>สันติ</td>
+	</tr>
+	<tr>
+		<td>04610209-1 : Digital Circuits and Systems Design</td>
+		<td>3 (2-3-5)</td>
+		<td>3</td>
+		<td>60446TLE</td>
+		<td>27</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-27</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.บุญยิ่ง</td>
+		<td>อ.บุญฤทธิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610301-1 : Electrical Instrumentations and Measurements</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59146ELE</td>
+		<td>37</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-15.30</td>
+		<td> 1-37</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.มนฑล</td>
+		<td>พงษ์ศรี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610301-1 : Electrical Instrumentations and Measurements</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59146TLE</td>
+		<td>26</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-15.30</td>
+		<td> 1-26</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ดร.ไพฑูรย์</td>
+		<td>ชลธิชา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610301-1 : Electrical Instrumentations and Measurements</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>60346TLE</td>
+		<td>41</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-15.30</td>
+		<td> 1-21</td>
+		<td>EN_2 407</td>
+		<td>ผศ.จันทนา</td>
+		<td>พิสมัย</td>
+		<td> 22-41</td>
+		<td>EN_2 408</td>
+		<td>ดร.วิชุดา</td>
+		<td>ธีรภัทร</td>
+	</tr>
+	<tr>
+		<td>04610301-1 : Electrical Instrumentations and Measurements</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>59146NLE</td>
+		<td>27</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-15.30</td>
+		<td> 1-27</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ดร.สิริพรรณ</td>
+		<td>ผศ.ดร.อภินันท์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610302-1 : Feedback Control System</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59146ELE</td>
+		<td>30</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 402</td>
+		<td>อ.พร้อมศักดิ์</td>
+		<td>วิรัญญา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610302-1 : Feedback Control System</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59146TLE</td>
+		<td>19</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-19</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.ขวัญชัย</td>
+		<td>อ.สุเทพ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610302-1 : Feedback Control System</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>59146NLE</td>
+		<td>24</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-24</td>
+		<td>EN_1 403</td>
+		<td>ผศ.ดร.สโรชา</td>
+		<td>ผศ.ดร.อิฐอารัญ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610206-2 : Electromagnetic Fields</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>วศ.ปกติ</td>
+		<td>15</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-15</td>
+		<td>EN_1 204</td>
+		<td>ผศ.ศรีประไพ</td>
+		<td>ดร.อรรถพล</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04611301-1 : Semiconductor Devices</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59146ELE</td>
+		<td>23</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-12</td>
+		<td>EN_1 302</td>
+		<td>อ.เจษฎา</td>
+		<td>วิเชียร</td>
+		<td> 13-23</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.พฤศยน</td>
+		<td>วิทวัฒน์</td>
+	</tr>
+	<tr>
+		<td>04611302-1 : Microprocessors and Microcontrollers</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59146ELE</td>
+		<td>32</td>
+		<td> 4  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-32</td>
+		<td>EN_1 204</td>
+		<td>อ.ชานนท์</td>
+		<td>ณัฎฐา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04611302-1 : Microprocessors and Microcontrollers</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>59146TLE</td>
+		<td>29</td>
+		<td> 4  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-29</td>
+		<td>EN_1 202</td>
+		<td>ผศ.สุนีย์</td>
+		<td>อภิชาติ  ท.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04611302-1 : Microprocessors and Microcontrollers</td>
+		<td>3 (2-3-5)</td>
+		<td>3</td>
+		<td>59146NLE</td>
+		<td>29</td>
+		<td> 4  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-29</td>
+		<td>EN_1 203</td>
+		<td>ดร.วีราภรณ์</td>
+		<td>อ.พุทธิพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04611303-1 : Digital Signal Processing</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59346ELE</td>
+		<td>29</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-29</td>
+		<td>EN_1 403</td>
+		<td>อ.สมควร</td>
+		<td>นงนุช</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04611303-1 : Digital Signal Processing</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>59346TLE</td>
+		<td>30</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-30</td>
+		<td>EN_1 404</td>
+		<td>อ.ธีระพล</td>
+		<td>วัชรากร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04611303-1 : Digital Signal Processing</td>
+		<td>3 (2-3-5)</td>
+		<td>3</td>
+		<td>59446TLE</td>
+		<td>24</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-24</td>
+		<td>EN_2 407</td>
+		<td>ผศ.ศรีไร</td>
+		<td>ชริณพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610302-1 : Feedback Control System</td>
+		<td>3 (3-0-6)</td>
+		<td>5</td>
+		<td>วศ.ปกติ</td>
+		<td>26</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 201</td>
+		<td>ผศ.สุคม</td>
+		<td>ผศ.ดร.จิรวัฒน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04611304-1 : Electronic Circuits Analysis and Design</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59346ELE</td>
+		<td>26</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ดร.กำธรเกียรติ</td>
+		<td>อ.ไพศาล</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04611403-1 : Embedded System Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59346ELE</td>
+		<td>26</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 306</td>
+		<td>อ.ยศธน</td>
+		<td>วิรัญญา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04611307-2 : Electrical Machines and Drives</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59346ELE</td>
+		<td>24</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-24</td>
+		<td>EN_1 302</td>
+		<td>ดร.ศิริชัย</td>
+		<td>ผศ.ดร.ชาญณรงค์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612301-1 : Communication Networks and Transmission Lines</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59146TLE</td>
+		<td>23</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-23</td>
+		<td>EN_1 306</td>
+		<td>ดร.วิเชียร</td>
+		<td>ชลธิชา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612301-1 : Communication Networks and Transmission Lines</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59446TLE</td>
+		<td>25</td>
+		<td> 6  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-25</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.พิพัฒน์</td>
+		<td>สุทธาทิพย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612302-2 : Electronic Communications</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59446TLE</td>
+		<td>24</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-12</td>
+		<td>EN_1 401</td>
+		<td>ผศ.สมชาย</td>
+		<td>ศิริเมศ</td>
+		<td> 13-24</td>
+		<td>EN_1 402</td>
+		<td>ผศ.วิรัช</td>
+		<td>กิตติพงษ์</td>
+	</tr>
+	<tr>
+		<td>04612303-2 : Digital Communications</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59146ELE</td>
+		<td>31</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-31</td>
+		<td>EN_1 404</td>
+		<td>ดร.อภิรัฐ</td>
+		<td>มรกต</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612303-2 : Digital Communications</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59346ELE</td>
+		<td>25</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-25</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.ฉันท์ทิพ</td>
+		<td>อริสา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612303-2 : Digital Communications</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59146TLE</td>
+		<td>27</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 308</td>
+		<td>ผศ.ดร.ภาณุ</td>
+		<td>ศิวพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612303-2 : Digital Communications</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>59146NLE</td>
+		<td>27</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.สุรินทร์</td>
+		<td>สุทธิศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612305-3 : Data Communications and Networking</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59146ELE</td>
+		<td>36</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-18</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ดร.บุญชัย</td>
+		<td>สุทธิศักดิ์</td>
+		<td> 18-36</td>
+		<td>EN_1 303</td>
+		<td>ผศ.นฤทธิ์</td>
+		<td>กัลยาณี</td>
+	</tr>
+	<tr>
+		<td>04612305-3 : Data Communications and Networking</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59146TLE</td>
+		<td>26</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 403</td>
+		<td>อ.ชวลิต</td>
+		<td>วิริยะ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612305-3 : Data Communications and Networking</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>59146NLE</td>
+		<td>27</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 404</td>
+		<td>อ.วันเฉลิม</td>
+		<td>อุทัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612401-1 : Optical Communications</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59346ELE</td>
+		<td>25</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-25</td>
+		<td>EN_1 203</td>
+		<td>ดร.นรเสฎฐ์</td>
+		<td>ธีรภัทร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612401-1 : Optical Communications</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59346TLE</td>
+		<td>33</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-17</td>
+		<td>EN_1 306</td>
+		<td>ดร.ปรกช</td>
+		<td>ปวีณา</td>
+		<td> 18-33</td>
+		<td>EN_1 308</td>
+		<td>ผศ.จักรกฤษ</td>
+		<td>วิรัญญา</td>
+	</tr>
+	<tr>
+		<td>04612403-1 : Antenna Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59346TLE</td>
+		<td>32</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-16</td>
+		<td>EN_1 401</td>
+		<td>อ.ธีระพล</td>
+		<td>สันติ</td>
+		<td> 17-32</td>
+		<td>EN_1 402</td>
+		<td>อ.พร้อมศักดิ์</td>
+		<td>อภิชาติ  ท.</td>
+	</tr>
+	<tr>
+		<td>04612403-1 : Antenna Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59446TLE</td>
+		<td>26</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-26</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.มนฑล</td>
+		<td>วิเชียร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612404-1 : Microwave Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>58446TLE</td>
+		<td>23</td>
+		<td> 4  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-23</td>
+		<td>EN_2 408</td>
+		<td>ดร.อนินท์</td>
+		<td>บังอร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612406-1 : Radio Wave Propagation</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59346TLE</td>
+		<td>35</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-35</td>
+		<td>EN_1 406</td>
+		<td>ผศ.สุธี</td>
+		<td>อ.กวิตา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612407-1 : Satellite Communications</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59346TLE</td>
+		<td>29</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 207</td>
+		<td>ดร.พิมพ์สิรี</td>
+		<td>ชริณพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04612408-2 : Mobile Communications</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>58446TLE</td>
+		<td>23</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-23</td>
+		<td>EN_2 406</td>
+		<td>ภูเบต</td>
+		<td>มรกต</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04613304-1 : Wireless Communication Network</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>58446TLE</td>
+		<td>23</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-23</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ดร.อิฐอารัญ</td>
+		<td>ศิวพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>EN01ห้ามจัดพฤ.เช้า</td>
+		<td>45</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-45</td>
+		<td>EN_1 405</td>
+		<td>อ.ศักดิ์ชัย</td>
+		<td>อ.ปราโมทย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>EN02ห้ามจัดพฤ.เช้า</td>
+		<td>44</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-44</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ประจักษ์</td>
+		<td>ชเนรินทร์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>3</td>
+		<td>EN03ห้ามจัดพฤ.เช้า</td>
+		<td>47</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-30</td>
+		<td>EN_1 301</td>
+		<td>อ.วีระชัย</td>
+		<td>กิตติพงษ์</td>
+		<td> 31-47</td>
+		<td>EN_1 206</td>
+		<td>อ.นิสิต</td>
+		<td>วิรัญญา</td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>4</td>
+		<td>EN04ห้ามจัดพฤ.เช้า</td>
+		<td>45</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-45</td>
+		<td>EN_1 401</td>
+		<td>อ.ศิริวรรณ</td>
+		<td>อ.อโณทัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>5</td>
+		<td>EN05ห้ามจัดพฤ.เช้า</td>
+		<td>43</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-43</td>
+		<td>EN_1 402</td>
+		<td>อ.สมศักดิ์</td>
+		<td>มณเฑียรชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>6</td>
+		<td>EN06ห้ามจัดพฤ.เช้า</td>
+		<td>45</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-45</td>
+		<td>EN_1 403</td>
+		<td>ดร.สุทินัน</td>
+		<td>ดร.กุลวดี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>7</td>
+		<td>EN07ห้ามจัดพฤ.เช้า</td>
+		<td>42</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-42</td>
+		<td>EN_1 404</td>
+		<td>ดร.ปอลิน</td>
+		<td>เทวิกา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>8</td>
+		<td>EN08ห้ามจัดพฤ.เช้า</td>
+		<td>45</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-45</td>
+		<td>EN_1 306</td>
+		<td>อ.สมรรถชัย</td>
+		<td>ชุติกาญจน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>9</td>
+		<td>EN09ห้ามจัดพฤ.เช้า</td>
+		<td>42</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-42</td>
+		<td>EN_1 308</td>
+		<td>ผศ.นชิรัตน์</td>
+		<td>ศิริเมศ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>10</td>
+		<td>EN10ห้ามจัดพฤ.เช้า</td>
+		<td>44</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-44</td>
+		<td>IE409</td>
+		<td>อ.บุญส่ง</td>
+		<td>ผศ.สญชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>11</td>
+		<td>61341CVE1</td>
+		<td>37</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-18</td>
+		<td>EN_1 304</td>
+		<td>ผศ.ดร.ฉันท์ทิพ</td>
+		<td>ดวงเดือน</td>
+		<td> 19-37</td>
+		<td>EN_1 305</td>
+		<td>ผศ.ดร.สรพงษ์</td>
+		<td>Dr.Ishimoto</td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>12</td>
+		<td>61341CVE2</td>
+		<td>39</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-39</td>
+		<td>EN_1 407</td>
+		<td>อ.จักรกฤษณ์</td>
+		<td>พงษ์ศรี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>13</td>
+		<td>61441CVEในเวลา</td>
+		<td>56</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-28</td>
+		<td>EN5-2307</td>
+		<td>ผศ.อารียา</td>
+		<td>วริศชยา</td>
+		<td> 29-56</td>
+		<td>EN5-2308</td>
+		<td>อ.กฤษณ์</td>
+		<td>ผัลย์ศุภา</td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>14</td>
+		<td>61342EPE1</td>
+		<td>33</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-33</td>
+		<td>EN_1 307</td>
+		<td>รศ.ดร.สมเกียรติ</td>
+		<td>ผศ.วิรัช</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>15</td>
+		<td>61342EPE2</td>
+		<td>33</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-16</td>
+		<td>EN_1 402</td>
+		<td>อ.สมศักดิ์</td>
+		<td>มณเฑียรชัย</td>
+		<td> 17-33</td>
+		<td>EN_1 404</td>
+		<td>ดร.ปอลิน</td>
+		<td>เทวิกา</td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>16</td>
+		<td>61442EPE</td>
+		<td>51</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-26</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ประยุทธ</td>
+		<td>ศรีรัตน์</td>
+		<td> 27-51</td>
+		<td>EN_1 202</td>
+		<td>ผศ.สุรัตน์</td>
+		<td>อุทัย</td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>17</td>
+		<td>61343MEE</td>
+		<td>39</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-20</td>
+		<td>10202</td>
+		<td>อ.ทินวัฒน์</td>
+		<td>อภิชาติ  ท.</td>
+		<td> 21-39</td>
+		<td>3321</td>
+		<td>อ.บุญฤทธิ์</td>
+		<td>น้ำอ้อย</td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>18</td>
+		<td>61343RME</td>
+		<td>39</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-15</td>
+		<td>EN_1 401</td>
+		<td>อ.ศิริวรรณ</td>
+		<td>อ.อโณทัย</td>
+		<td> 16-39</td>
+		<td>EN_1 207</td>
+		<td>ผศ.ดร.อิฐอารัญ</td>
+		<td>นิรุตย์</td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>19</td>
+		<td>61443MEE</td>
+		<td>50</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-25</td>
+		<td>EN_1 203</td>
+		<td>อ.สำรวม</td>
+		<td>วิริยะ</td>
+		<td> 26-50</td>
+		<td>EN_1 204</td>
+		<td>ผศ.ศรีประไพ</td>
+		<td>ดร.อรรถพล</td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>20</td>
+		<td>61346ELE</td>
+		<td>37</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-19</td>
+		<td>EN_1 302</td>
+		<td>อ.เจษฎา</td>
+		<td>วิเชียร</td>
+		<td> 20-37</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.พฤศยน</td>
+		<td>วิทวัฒน์</td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>21</td>
+		<td>61346TLE</td>
+		<td>41</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-15</td>
+		<td>EN_1 306</td>
+		<td>อ.สมรรถชัย</td>
+		<td>ชุติกาญจน์</td>
+		<td> 16-30</td>
+		<td>EN_1 308</td>
+		<td>ผศ.นชิรัตน์</td>
+		<td>ศิริเมศ</td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>21</td>
+		<td>61346TLE</td>
+		<td>41</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 31-41</td>
+		<td>EN_1 206</td>
+		<td>อ.นิสิต</td>
+		<td>วิรัญญา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>22</td>
+		<td>61446TLE</td>
+		<td>45</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-23</td>
+		<td>EN_1 208</td>
+		<td>อ.ฉัตรชัย</td>
+		<td>เพ็ญศรี</td>
+		<td> 24-45</td>
+		<td>EN_1 209</td>
+		<td>ดร.นรเสฎฐ์</td>
+		<td>ธีรภัทร</td>
+	</tr>
+	<tr>
+		<td>04621101-4 : Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>23</td>
+		<td>61347POE</td>
+		<td>34</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-34</td>
+		<td>EN_1 207</td>
+		<td>ผศ.ดร.อิฐอารัญ</td>
+		<td>นิรุตย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621102-3 : Basic Electronics for Computer Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60146CPE1</td>
+		<td>31</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-31</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.สรพงษ์</td>
+		<td>Dr.Ishimoto</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621102-3 : Basic Electronics for Computer Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60146CPE2</td>
+		<td>22</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-22</td>
+		<td>EN_1 204</td>
+		<td>ผศ.วัฒนา</td>
+		<td>รศ.ดร.สุนัน</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621201-3 : Digital Circuit and Logic Design</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60146CPE1</td>
+		<td>29</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-29</td>
+		<td>EN_1 204</td>
+		<td>ผศ.สุรัตน์</td>
+		<td>ผศ.ดร.จุไรวัลย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621201-3 : Digital Circuit and Logic Design</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60146CPE2</td>
+		<td>27</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-27</td>
+		<td>EN_1 401</td>
+		<td>อ.วิเชียร</td>
+		<td>สุทธาทิพย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621202-2 : Advanced Digital System Design</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60346CPE</td>
+		<td>30</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-30</td>
+		<td>EN_1 203</td>
+		<td>รศ.ดร.เกรียงไกร</td>
+		<td>ผศ.ปิยนุช</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621202-2 : Advanced Digital System Design</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60446CPE</td>
+		<td>11</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-11</td>
+		<td>EN_1 205</td>
+		<td>อ.คฑาพล</td>
+		<td>สมบูรณ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621203-2 : Computer Architecture</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60346CPE</td>
+		<td>28</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-28</td>
+		<td>EN_1 403</td>
+		<td>อ.เดชรัตน์</td>
+		<td>เสาวลักษณ์  ท.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621203-2 : Computer Architecture</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60446CPE</td>
+		<td>12</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-12</td>
+		<td>EN_1 303</td>
+		<td>ภูเบต</td>
+		<td>อุทัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621301-2 : Computer Organization and Assembly Language</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59146CPE1</td>
+		<td>32</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-32</td>
+		<td>EN_1 302</td>
+		<td>ดร.ศิริชัย</td>
+		<td>ผศ.ดร.ชาญณรงค์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621301-2 : Computer Organization and Assembly Language</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>59146CPE2</td>
+		<td>32</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-32</td>
+		<td>EN_1 301</td>
+		<td>อ.ยศธน</td>
+		<td>ภูเบต</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621302-3 : Microcontroller and Interfacing</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59346CPE</td>
+		<td>21</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-21</td>
+		<td>EN5-2307</td>
+		<td>อ.บุญส่ง</td>
+		<td>ธีรศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04621302-3 : Microcontroller and Interfacing</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>59446CPE</td>
+		<td>17</td>
+		<td> 5  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-17</td>
+		<td>EN_1 310</td>
+		<td>ศศิธร</td>
+		<td>พงษ์ศรี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622101-1 : Advanced Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>3</td>
+		<td>60146CPE1</td>
+		<td>26</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 306</td>
+		<td>อ.ยศธน</td>
+		<td>วิรัญญา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622101-1 : Advanced Computer Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>4</td>
+		<td>60146CPE2</td>
+		<td>34</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-34</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.สุรชัย</td>
+		<td>ธีรศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622201-3 : Data Structure and Algorithms</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60146CPE1</td>
+		<td>29</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-29</td>
+		<td>EN_1 401</td>
+		<td>อ.เดชรัตน์</td>
+		<td>ดร.ฉัตรชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622201-3 : Data Structure and Algorithms</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60146CPE2</td>
+		<td>27</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-27</td>
+		<td>EN_1 402</td>
+		<td>อ.เจษฎา</td>
+		<td>อ.จุลพงศ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622202-3 : Software Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59346CPE</td>
+		<td>20</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-11.00</td>
+		<td> 1-20</td>
+		<td>EN_2 408</td>
+		<td>ดร.ศิริชัย</td>
+		<td>อ.ยรรยง</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622203-2 : Theory of Computation</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>61346CPE</td>
+		<td>62</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-31</td>
+		<td>EN_1 306</td>
+		<td>อ.รำพึง</td>
+		<td>ผศ.สุนีย์</td>
+		<td> 32-62</td>
+		<td>EN_1 308</td>
+		<td>ผศ.ดร.สโรชา</td>
+		<td>ณัฎฐา</td>
+	</tr>
+	<tr>
+		<td>04622203-2 : Theory of Computation</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>61446CPEในเวลา</td>
+		<td>40</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-40</td>
+		<td>EN_1 405</td>
+		<td>รศ.ดร.บวร</td>
+		<td>ผศ.จักรกฤษ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622301-2 : Database Systems</td>
+		<td>3 (2-3-5)</td>
+		<td>3</td>
+		<td>59146CPE1</td>
+		<td>32</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-32</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.ปรัชญา</td>
+		<td>เทวิกา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622301-2 : Database Systems</td>
+		<td>3 (2-3-5)</td>
+		<td>4</td>
+		<td>59146CPE2</td>
+		<td>33</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-33</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ศรีไร</td>
+		<td>อ.พงษ์ศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622303-3 : Systems Analysis and Design</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60346CPE</td>
+		<td>42</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-42</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.บุญชัย</td>
+		<td>อ.สมควร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622303-3 : Systems Analysis and Design</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60446CPE</td>
+		<td>16</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-16</td>
+		<td>EN_1 309</td>
+		<td>ผศ.ศิริชัย</td>
+		<td>ธนัตถ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622307-3 : Object-Oriented Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60346CPE</td>
+		<td>37</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-37</td>
+		<td>EN_1 407</td>
+		<td>อ.อมเรศ</td>
+		<td>ธีรภัทร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622307-3 : Object-Oriented Programming</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60446CPE</td>
+		<td>17</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-17</td>
+		<td>EN_1 204</td>
+		<td>รศ.ดร.สมเกียรติ</td>
+		<td>บังอร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622402-3 : Advanced Topics in Computer Software</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59146CPE1</td>
+		<td>31</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-31</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ดร.จตุรงค์</td>
+		<td>ผศ.ศิริชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04622402-3 : Advanced Topics in Computer Software</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>59146CPE2</td>
+		<td>32</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-32</td>
+		<td>EN_1 202</td>
+		<td>อ.วรญา</td>
+		<td>พิสมัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04623201-1 : Data Communication</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60146CPE1</td>
+		<td>32</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-32</td>
+		<td>EN_1 302</td>
+		<td>ดร.จรุงวิทย์</td>
+		<td>กาญจนา  ล.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04623201-1 : Data Communication</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60146CPE2</td>
+		<td>27</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 202</td>
+		<td>อ.จักรวาล</td>
+		<td>สาโรจน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04623301-2 : Computer Networks</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59146CPE1</td>
+		<td>34</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-34</td>
+		<td>EN_1 406</td>
+		<td>อ.คฑาพล</td>
+		<td>วิทวัฒน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04623301-2 : Computer Networks</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59146CPE2</td>
+		<td>30</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 207</td>
+		<td>ดร.พิมพ์สิรี</td>
+		<td>ชริณพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04623302-3 : TCP/IP Networks</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59346CPE</td>
+		<td>30</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-30</td>
+		<td>EN_1 404</td>
+		<td>อ.วีระชัย</td>
+		<td>กาญจนา  ส.</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04623302-3 : TCP/IP Networks</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59446CPE</td>
+		<td>23</td>
+		<td> 7  ก.ย.  61</td>
+		<td>17.00-20.00</td>
+		<td> 1-23</td>
+		<td>EN_1 303</td>
+		<td>ภูเบต</td>
+		<td>อุทัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04711201-2 : Chemical Engineering Principles and Calculations (เปิดตำรา)</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60147CHE1</td>
+		<td>34</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-34</td>
+		<td>EN_1 405</td>
+		<td>ผศ.พรรณราย</td>
+		<td>วริศชยา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04711201-2 : Chemical Engineering Principles and Calculations (เปิดตำรา)</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60147CHE2</td>
+		<td>28</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-15</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ดร.ขวัญชัย</td>
+		<td>อ.สมควร</td>
+		<td> 16-28</td>
+		<td>EN_1 407</td>
+		<td>ดร.สุทินัน</td>
+		<td>ผศ.ดร.จุไรวัลย์</td>
+	</tr>
+	<tr>
+		<td>04711202-2 : Chemical Engineering Thermodynamics 1</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60147CHE1</td>
+		<td>36</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-36</td>
+		<td>EN_1 407</td>
+		<td>อ.วีระพงษ์</td>
+		<td>รศ.ดร.รุ่งเรือง</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04711202-2 : Chemical Engineering Thermodynamics 1</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60147CHE2</td>
+		<td>27</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-27</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ดร.สมนึก</td>
+		<td>อ.อัครเดช</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04711301-1 : Chemical Process Instrumentation</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59147CHE1</td>
+		<td>25</td>
+		<td> 4  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-25</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ดร.ธรรมศักดิ์</td>
+		<td>อ.กวิตา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04711301-1 : Chemical Process Instrumentation</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59147CHE2</td>
+		<td>22</td>
+		<td> 4  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-22</td>
+		<td>EN_1 207</td>
+		<td>ดร.ฐนียา</td>
+		<td>ละอองทิพย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04711303-1 : Chemical Engineering Operations and Design</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59147CHE1</td>
+		<td>24</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-24</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ปิยนุช</td>
+		<td>อ.พุทธิพร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04711303-1 : Chemical Engineering Operations and Design</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59147CHE2</td>
+		<td>26</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-26</td>
+		<td>EN_1 308</td>
+		<td>ดร.ศศิรดี</td>
+		<td>ละอองทิพย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04712201-2 : Applied Chemistry in Chemical Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60147CHE1</td>
+		<td>30</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 401</td>
+		<td>ผศ.ดร.กิตติพงษ์</td>
+		<td>ดร.นิชนันท์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04712201-2 : Applied Chemistry in Chemical Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60147CHE2</td>
+		<td>25</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-25</td>
+		<td>EN_1 303</td>
+		<td>ผศ.วัฒนา</td>
+		<td>ดร.ศิริชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04712202-2 : Fluid Flow</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60147CHE1</td>
+		<td>33</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-33</td>
+		<td>EN_1 202</td>
+		<td>ผศ.ดร.ไพฑูรย์</td>
+		<td>ชลธิชา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04712202-2 : Fluid Flow</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60147CHE2</td>
+		<td>27</td>
+		<td> 7  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 201</td>
+		<td>ผศ.ดร.สิริพรรณ</td>
+		<td>ผศ.ดร.อภินันท์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04712301-2 : Process Dynamics and Control</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59147CHE1</td>
+		<td>28</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-28</td>
+		<td>EN_1 203</td>
+		<td>รศ.ดร.เกรียงไกร</td>
+		<td>ผศ.ปิยนุช</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04712301-2 : Process Dynamics and Control</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59147CHE2</td>
+		<td>21</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-21</td>
+		<td>EN_2 407</td>
+		<td>ดร.นที</td>
+		<td>รัตติญา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04712302-2 : Safety in Chemical Operations</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59147CHE1</td>
+		<td>26</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-26</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.พฤศยน</td>
+		<td>ผศ.ดร.ธีระวัฒน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04712302-2 : Safety in Chemical Operations</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>59147CHE2</td>
+		<td>25</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-25</td>
+		<td>EN_1 306</td>
+		<td>ดร.นิชนันท์</td>
+		<td>ดร.สุชาลิณี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720102-1 : Organic Polymer Chemistry 1</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60147PLE</td>
+		<td>56</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-28</td>
+		<td>EN_1 401</td>
+		<td>อ.เดชรัตน์</td>
+		<td>ดร.ฉัตรชัย</td>
+		<td> 29-56</td>
+		<td>EN_1 402</td>
+		<td>อ.เจษฎา</td>
+		<td>อ.จุลพงศ์</td>
+	</tr>
+	<tr>
+		<td>04720102-1 : Organic Polymer Chemistry 1</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60147POE</td>
+		<td>53</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-27</td>
+		<td>EN_1 403</td>
+		<td>ผศ.จันทนา</td>
+		<td>ดร.วีรินทร์ดา</td>
+		<td> 28-53</td>
+		<td>EN_1 404</td>
+		<td>ดร.กุลยา</td>
+		<td>ดร.ณรงค์ชัย</td>
+	</tr>
+	<tr>
+		<td>04720103-1 : Organic Polymer Chemistry 2</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60347PLE</td>
+		<td>30</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-30</td>
+		<td>EN_1 404</td>
+		<td>ผศ.ดร.ณัฐวุฒิ</td>
+		<td>สุทธิศักดิ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720103-1 : Organic Polymer Chemistry 2</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60347POE</td>
+		<td>49</td>
+		<td> 5  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-25</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.ปรัชญา</td>
+		<td>เทวิกา</td>
+		<td> 26-49</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ศรีไร</td>
+		<td>อ.พงษ์ศักดิ์</td>
+	</tr>
+	<tr>
+		<td>04720104-2 : Polymer  Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60147PLE</td>
+		<td>23</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-23</td>
+		<td>EN_1 310</td>
+		<td>อ.กวิพงษ์</td>
+		<td>ดร.ณรงค์ชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720104-2 : Polymer  Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>60147POE</td>
+		<td>26</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-26</td>
+		<td>EN_1 301</td>
+		<td>อ.วีระชัย</td>
+		<td>กิตติพงษ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04610201-1 : Electric Circuits</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>วศ.ปกติ</td>
+		<td>27</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 402</td>
+		<td>ผศ.ดร.สรพงษ์</td>
+		<td>Dr.Ishimoto</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>EN11  ห้ามจัดพฤ.บ่าย</td>
+		<td>49</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-25</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.จินดารัตน์</td>
+		<td>อ.ฉัตรชัย</td>
+		<td> 26-49</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ศรีประไพ</td>
+		<td>อภิชาติ  ท.</td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>2</td>
+		<td>EN12  ห้ามจัดพฤ.บ่าย</td>
+		<td>44</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-44</td>
+		<td>EN_1 406</td>
+		<td>ผศ.สุรัตน์</td>
+		<td>ดร.นรเสฎฐ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>3</td>
+		<td>EN13  ห้ามจัดพฤ.บ่าย</td>
+		<td>42</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-42</td>
+		<td>EN_1 405</td>
+		<td>ผศ.ประยุทธ</td>
+		<td>ศิริเมศ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>4</td>
+		<td>EN14  ห้ามจัดพฤ.บ่าย</td>
+		<td>44</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-44</td>
+		<td>EN_1 207</td>
+		<td>ผศ.วิรัช</td>
+		<td>ดร.ปอลิน</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>5</td>
+		<td>EN15  ห้ามจัดพฤ.บ่าย</td>
+		<td>53</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 401</td>
+		<td>อ.สำรวม</td>
+		<td>อุทัย</td>
+		<td> 28-53</td>
+		<td>EN_1 402</td>
+		<td>ผศ.ดร.สรพงษ์</td>
+		<td>Dr.Ishimoto</td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>6</td>
+		<td>EN16  ห้ามจัดพฤ.บ่าย</td>
+		<td>50</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-50</td>
+		<td>EN_1 303</td>
+		<td>ดร.อรรถพล</td>
+		<td>อ.เจษฎา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>7</td>
+		<td>EN17  ห้ามจัดพฤ.บ่าย</td>
+		<td>44</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-44</td>
+		<td>EN_1 308</td>
+		<td>ดร.ณรงค์ชัย</td>
+		<td>ผศ.อิฐอารัญ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>8</td>
+		<td>EN18  ห้ามจัดพฤ.บ่าย</td>
+		<td>45</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-21</td>
+		<td>10202</td>
+		<td>อ.อโณทัย</td>
+		<td>ผศ.นชิรัตน์</td>
+		<td> 22-45</td>
+		<td>3321</td>
+		<td>อ.นิสิต</td>
+		<td>น้ำอ้อย</td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>9</td>
+		<td>EN19  ห้ามจัดพฤ.บ่าย</td>
+		<td>47</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-47</td>
+		<td>EN5-2307</td>
+		<td>อ.จักรกฤษณ์</td>
+		<td>วริศยา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>10</td>
+		<td>EN20  ห้ามจัดพฤ.บ่าย</td>
+		<td>49</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-49</td>
+		<td>EN5-2308</td>
+		<td>อ.ศิริวรรณ</td>
+		<td>วิทวัฒน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>11</td>
+		<td>61344INE1</td>
+		<td>52</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 403</td>
+		<td>อ.สมศักดิ์</td>
+		<td>ศรีรัตน์</td>
+		<td> 27-52</td>
+		<td>EN_1 404</td>
+		<td>รศ.ดร.สมเกียรติ</td>
+		<td>กิตติพงษ์</td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>12</td>
+		<td>61344INE2</td>
+		<td>40</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-40</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.ฉันท์ทิพ</td>
+		<td>อ.สมรรถชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>13</td>
+		<td>61444INE</td>
+		<td>56</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-28</td>
+		<td>EN_1 201</td>
+		<td>อ.กวิพงษ์</td>
+		<td>มณเฑียรชัย</td>
+		<td> 29-56</td>
+		<td>EN_1 202</td>
+		<td>อ.กฤษณ์</td>
+		<td>นิรุตย์</td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>14</td>
+		<td>61346CPE</td>
+		<td>45</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-45</td>
+		<td>IE409</td>
+		<td>อ.บุญส่ง</td>
+		<td>อ.ปราโมทย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>15</td>
+		<td>61446CPE ในเวลา</td>
+		<td>50</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-50</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.พฤศยน</td>
+		<td>ดร.กุลวดี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>16</td>
+		<td>61347PLE</td>
+		<td>40</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-20</td>
+		<td>EN_1 203</td>
+		<td>ผศ.ประจักษ์</td>
+		<td>อ.วีระชัย</td>
+		<td> 21-40</td>
+		<td>EN_1 204</td>
+		<td>ดร.สุทินัน</td>
+		<td>ผศ.อารียา</td>
+	</tr>
+	<tr>
+		<td>04720201-2 : Engineering Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>17</td>
+		<td>59442EPE</td>
+		<td>44</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-21</td>
+		<td>EN_1 310</td>
+		<td>อ.ทินวัฒน์</td>
+		<td>วัชรากร</td>
+		<td> 22-44</td>
+		<td>EN_1 309</td>
+		<td>อ.บุญฤทธิ์</td>
+		<td>กาญจนา  ส.</td>
+	</tr>
+	<tr>
+		<td>04720208-1 : Quantitative Analytical Chemistry</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60147POE</td>
+		<td>32</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-32</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.สานิตย์ดา</td>
+		<td>ธีรภทัร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720211-2 : Polymer Processing</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60347PLE</td>
+		<td>26</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-11.00</td>
+		<td> 1-26</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.พฤศยน</td>
+		<td>ผศ.ดร.ธีระวัฒน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720211-2 : Polymer Processing</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>59147POE</td>
+		<td>64</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-11.00</td>
+		<td> 1-32</td>
+		<td>EN_1 405</td>
+		<td>อ.สมพิศ</td>
+		<td>ดร.กุลวดี</td>
+		<td> 33-64</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ดร.วีระศักดิ์</td>
+		<td>สุรพงษ์</td>
+	</tr>
+	<tr>
+		<td>04720313-1 : Thermodynamics of Materials</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59147PLE</td>
+		<td>55</td>
+		<td> 4  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-28</td>
+		<td>EN_1 202</td>
+		<td>ผศ.สุนีย์</td>
+		<td>อภิชาติ  ท.</td>
+		<td> 29-55</td>
+		<td>EN_1 203</td>
+		<td>ดร.วีราภรณ์</td>
+		<td>อ.พุทธิพร</td>
+	</tr>
+	<tr>
+		<td>04720314-2 : Fundamentals of Polymer Rheology</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60147PLE</td>
+		<td>22</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-22</td>
+		<td>EN_1 302</td>
+		<td>อ.วันเฉลิม</td>
+		<td>ศรีรัตน์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720314-2 : Fundamentals of Polymer Rheology</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60347PLE</td>
+		<td>26</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 401</td>
+		<td>ผศ.ดร.กิตติพงษ์</td>
+		<td>ดร.นิชนันท์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720314-2 : Fundamentals of Polymer Rheology</td>
+		<td>3 (2-3-5)</td>
+		<td>3</td>
+		<td>60347POE</td>
+		<td>27</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-27</td>
+		<td>EN_1 303</td>
+		<td>ผศ.วัฒนา</td>
+		<td>ดร.ศิริชัย</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720323-2 : Polymer Testing</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59347PLE+59347POE</td>
+		<td>49</td>
+		<td> 8  ก.ย.  61</td>
+		<td>09.00-11.00</td>
+		<td> 1-25</td>
+		<td>EN_1 203</td>
+		<td>ผศ.พินิจ</td>
+		<td>ธนัตถ์</td>
+		<td> 26-49</td>
+		<td>EN_1 204</td>
+		<td>อ.สำรวม</td>
+		<td>กัลยาณี</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>13</td>
+		<td>61343RWE</td>
+		<td>51</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-26</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.สุรินทร์</td>
+		<td>เสาวลักษณ์  ว.</td>
+		<td> 27-51</td>
+		<td>EN_1 302</td>
+		<td>ผศ.ดร.ฉันท์ทิพ</td>
+		<td>ละอองทิพย์</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>14</td>
+		<td>วศ.ปกติ</td>
+		<td>46</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-30</td>
+		<td>IE409</td>
+		<td>อ.บุญส่ง</td>
+		<td>สุทธาทิพย์</td>
+		<td> 31-46</td>
+		<td>EN_1 305</td>
+		<td>กิตติพงษ์</td>
+		<td>ทวีศักดิ์</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>15</td>
+		<td>วศ.ปกติ</td>
+		<td>48</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-24</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.ภาณุ</td>
+		<td>มรกต</td>
+		<td> 25-48</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.ปิติศานต์</td>
+		<td>ศิวพร</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>16</td>
+		<td>วศ.ปกติ</td>
+		<td>45</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-30</td>
+		<td>EN_1 209</td>
+		<td>โชติกา</td>
+		<td>สุทธิศักดิ์</td>
+		<td> 31-37</td>
+		<td>EN_1 307</td>
+		<td>กุลฉัตร</td>
+		<td>นิรุตย์</td>
+	</tr>
+	<tr>
+		<td>04311202-2 : Engineering Mechanics</td>
+		<td>3 (3-0-6)</td>
+		<td>16</td>
+		<td>วศ.ปกติ</td>
+		<td>45</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 38-48</td>
+		<td>EN_1 202</td>
+		<td>อ.สำรวม</td>
+		<td>ดวงเดือน</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04720415-2 : Occupational health and safety</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59347PLE+59347POE</td>
+		<td>37</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-37</td>
+		<td>EN_1 407</td>
+		<td>ผศ.ดร.จินดารัตน์</td>
+		<td>วิเชียร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04721210-1 : Thermoset  Resins</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60347PLE</td>
+		<td>30</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-24</td>
+		<td>3321</td>
+		<td>อ.คฑาพล</td>
+		<td>วิริยะ</td>
+		<td> 25-30</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.ปิติศานต์</td>
+		<td>ศิวพร</td>
+	</tr>
+	<tr>
+		<td>04721212-1 : Thermoplastics  Processing</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59147PLE</td>
+		<td>36</td>
+		<td> 8  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-36</td>
+		<td>EN_1 301</td>
+		<td>ผศ.องอาจ</td>
+		<td>กรุณา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04721315-1 : Thermosets  Processing</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59147PLE</td>
+		<td>37</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-19</td>
+		<td>EN_1 306</td>
+		<td>ดร.ปรกช</td>
+		<td>ปวีณา</td>
+		<td> 20-37</td>
+		<td>EN-1 308</td>
+		<td>ผศ.จักรกฤษ</td>
+		<td>วิรัญญา</td>
+	</tr>
+	<tr>
+		<td>04722101-1 : Petrochemical Industry</td>
+		<td>2 (2-0-4)</td>
+		<td>1</td>
+		<td>60347POE</td>
+		<td>28</td>
+		<td> 4  ก.ย.  61</td>
+		<td>09.00-11.00</td>
+		<td> 1-28</td>
+		<td>EN_1 201</td>
+		<td>ผศ.จักรกฤษ์</td>
+		<td>สมบูรณ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04722203-1 : Polymer   Properties</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59147POE</td>
+		<td>70</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-35</td>
+		<td>EN_1 405</td>
+		<td>ผศ.ดร.มนฑล</td>
+		<td>ศรีรัตน์</td>
+		<td> 36-70</td>
+		<td>EN_1 406</td>
+		<td>อ.ชวลิต</td>
+		<td>ธนัตถ์</td>
+	</tr>
+	<tr>
+		<td>04722206-1 : Polymerization  Processing</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59147POE</td>
+		<td>48</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-24</td>
+		<td>EN_2 407</td>
+		<td>ผศ.ดร.กำธรเกียรติ</td>
+		<td>อ.สมรรถชัย</td>
+		<td> 25-48</td>
+		<td>EN_2 408</td>
+		<td>ผศ.สญชัย</td>
+		<td>ดร.ระพี</td>
+	</tr>
+	<tr>
+		<td>04722209-1 : Latex  Technology</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59147POE</td>
+		<td>63</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-32</td>
+		<td>EN5-2307</td>
+		<td>ผศ.อารียา</td>
+		<td>วริศชยา</td>
+		<td> 33-63</td>
+		<td>EN5-2308</td>
+		<td>อ.กฤษณ์</td>
+		<td>ผัลย์ศุภา</td>
+	</tr>
+	<tr>
+		<td>04722209-1 : Latex  Technology</td>
+		<td>3 (2-3-5)</td>
+		<td>2</td>
+		<td>60347POE</td>
+		<td>29</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-29</td>
+		<td>EN_1 405</td>
+		<td>อ.ศักดิ์ชัย</td>
+		<td>อ.ปราโมทย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04722304-1 : Rubbers  Engineering</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60347POE</td>
+		<td>26</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-26</td>
+		<td>EN_1 308</td>
+		<td>ดร.จตุพล</td>
+		<td>ธนะเกียรติ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04722305-1 : Rubbers  Processing</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59347POE</td>
+		<td>21</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-21</td>
+		<td>EN_2 407</td>
+		<td>ดร.นที</td>
+		<td>รัตติญา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04722309-1 : Polymer Process Troubleshooting</td>
+		<td>2 (1-3-5)</td>
+		<td>1</td>
+		<td>59347POE</td>
+		<td>18</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-11.30</td>
+		<td> 1-18</td>
+		<td>EN_1 204</td>
+		<td>ผศ.ศรีประไพ</td>
+		<td>ดร.อรรถพล</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04812302-1 : Power for Agricultural Systems</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59148AME</td>
+		<td>38</td>
+		<td> 4  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-38</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.ดลหทัย</td>
+		<td>ดร.วริษฐา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04812303-2 : Agricultural Machinery Design</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59148AME</td>
+		<td>31</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-31</td>
+		<td>EN_1 308</td>
+		<td>ดร.ศศิรดี</td>
+		<td>ละอองทิพย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04812305-3 : Heat and Mass Transfer for Agricultural Engineering  (เปิดตำรา)</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59148AME</td>
+		<td>36</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-30</td>
+		<td>EN_1 201</td>
+		<td>ผศ.วัฒนา</td>
+		<td>ผศ.ดร.สิริพรรณ</td>
+		<td> 31-36</td>
+		<td>EN_1 206</td>
+		<td>อ.สุรพล</td>
+		<td>ดร.วริษฐา</td>
+	</tr>
+	<tr>
+		<td>04812311-2 : Agricultural Machinery 1  (เปิดตำรา)</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59148AME</td>
+		<td>37</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-37</td>
+		<td>EN_1 407</td>
+		<td>อ.ศุภกร</td>
+		<td>ปวีณา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04813410-1 : Precision Agriculture Technology</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59148AME</td>
+		<td>38</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-30</td>
+		<td>IE409</td>
+		<td>อ.บุญส่ง</td>
+		<td>สุทธาทิพย์</td>
+		<td> 31-38</td>
+		<td>EN_1 305</td>
+		<td>กิตติพงษ์</td>
+		<td>ทวีศักดิ์</td>
+	</tr>
+	<tr>
+		<td>04820201-1 : Food Chemistry and Microbiology</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60148FDE</td>
+		<td>19</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-19</td>
+		<td>EN_1 207</td>
+		<td>ดร.นิธินาถ</td>
+		<td>ณัฎฐา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04820301-1 : Principles of Food Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60148FDE</td>
+		<td>22</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-6</td>
+		<td>EN_1 203</td>
+		<td>อ.ไพศาล</td>
+		<td>ธีรศักดิ์</td>
+		<td> 7-12</td>
+		<td>EN_1 306</td>
+		<td>ผศ.ดร.สานิตย์ดา</td>
+		<td>ธีรภทัร</td>
+	</tr>
+	<tr>
+		<td>04820304-1 : Unit Operations in Food Engineering 1  (เปิดตำรา)</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59148FDE</td>
+		<td>48</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-24</td>
+		<td>EN_1 401</td>
+		<td>ผศ.ดร.สมหมาย</td>
+		<td>อ.พงษ์ศักดิ์</td>
+		<td> 25-48</td>
+		<td>EN_1 407</td>
+		<td>ดร.สุทินัน</td>
+		<td>ผศ.ดร.จุไรวัลย์</td>
+	</tr>
+	<tr>
+		<td>04820320-1 : Power Systems in Food Industry</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59148FDE</td>
+		<td>45</td>
+		<td> 7  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-23</td>
+		<td>EN_1 306</td>
+		<td>ดร.นิชนันท์</td>
+		<td>ดร.สุชาลิณี</td>
+		<td> 24-45</td>
+		<td>EN_1 308</td>
+		<td>ดร.จตุพล</td>
+		<td>ธนะเกียรติ</td>
+	</tr>
+	<tr>
+		<td>04820321-1 : Design of Food Machinery</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59148FDE</td>
+		<td>45</td>
+		<td> 1  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-23</td>
+		<td>EN_1 302</td>
+		<td>อ.เจษฎา</td>
+		<td>วิเชียร</td>
+		<td> 24-45</td>
+		<td>EN_1 303</td>
+		<td>ผศ.ดร.พฤศยน</td>
+		<td>วิทวัฒน์</td>
+	</tr>
+	<tr>
+		<td>04820401-2 : Processing Equipment in Food Industry</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59148FDE</td>
+		<td>43</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-23</td>
+		<td>EN5-2307</td>
+		<td>ผศ.วิรัช</td>
+		<td>เยาวลักษณ์</td>
+		<td> 24-43</td>
+		<td>EN5-2308</td>
+		<td>ดร.อภิรัฐ</td>
+		<td>ชเนรินทร์</td>
+	</tr>
+	<tr>
+		<td>04831201-1 : Irrigation and Drainage Engineering  (เปิดตำรา)</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>60148IRE</td>
+		<td>26</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 406</td>
+		<td>ผศ.ดร.ขวัญชัย</td>
+		<td>อ.สมควร</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04831302-1 : Design of Pressurized Irrigation System</td>
+		<td>2 (1-3-3)</td>
+		<td>1</td>
+		<td>59148IRE</td>
+		<td>42</td>
+		<td> 2  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-30</td>
+		<td>EN_1 207</td>
+		<td>ปวีณา</td>
+		<td>น้ำอ้อย</td>
+		<td> 31-42</td>
+		<td>EN_1 205</td>
+		<td>อุทัย</td>
+		<td>ชุติกาญจน์</td>
+	</tr>
+	<tr>
+		<td>04820301-1 : Principles of Food Engineering</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>60148FDE</td>
+		<td>22</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 13-22</td>
+		<td>EN_1 403</td>
+		<td>ดร.วิชุดา</td>
+		<td>ธนะเกียรติ</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04832301-1 : Engineering Hydrology  (เปิดตำรา)</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>59148IRE</td>
+		<td>44</td>
+		<td> 5  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-44</td>
+		<td>EN_1 207</td>
+		<td>ดร.นิชนันท์</td>
+		<td>ดร.สุชาลิณี</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04832303-1 : Open Channel Flow  (เปิดตำรา)</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>59148IRE</td>
+		<td>49</td>
+		<td> 6  ก.ย.  61</td>
+		<td>09.00-12.00</td>
+		<td> 1-30</td>
+		<td>EN_1 201</td>
+		<td>ผศ.วัฒนา</td>
+		<td>ผศ.ดร.สิริพรรณ</td>
+		<td> 31-49</td>
+		<td>EN_1 206</td>
+		<td>อ.สุรพล</td>
+		<td>ดร.วริษฐา</td>
+	</tr>
+	<tr>
+		<td>04630101   :  Mathematic for Aviation 1</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>61146ALE</td>
+		<td>26</td>
+		<td> 3  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 301</td>
+		<td>ผศ.ดร.สรพงษ์</td>
+		<td>Dr.Ishimoto</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04630103   :  Chemistry  for  Aviation</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>61146ALE</td>
+		<td>26</td>
+		<td> 4  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 308</td>
+		<td>ผศ.ดร.สโรชา</td>
+		<td>ณัฎฐา</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04630104  :  Physics for Aviation</td>
+		<td>3 (3-0-6)</td>
+		<td>1</td>
+		<td>61146ALE</td>
+		<td>26</td>
+		<td> 6  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 308</td>
+		<td>อ.อัครเดช</td>
+		<td>นิรุตย์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04630105   :  Electric Circutis 1</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>61146ALE</td>
+		<td>26</td>
+		<td> 1  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 406</td>
+		<td>ผศ.สุรัตน์</td>
+		<td>ดร.นรเสฎฐ์</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	<tr>
+		<td>04630209   :  Enginlish  for  Aviation</td>
+		<td>3 (2-3-5)</td>
+		<td>1</td>
+		<td>61146ALE</td>
+		<td>26</td>
+		<td> 2  ก.ย.  61</td>
+		<td>13.00-16.00</td>
+		<td> 1-26</td>
+		<td>EN_1 404</td>
+		<td>ดร.อภิรัฐ</td>
+		<td>มรกต</td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+		<td><br></td>
+	</tr>
+	</tbody>
+	<tfoot>
+	<tr>
+		<th>รายวิชา</th>
+		<th>หน่วยกิต</th>
+		<th>Sec.</th>
+		<th>กลุ่ม นศ.</th>
+		<th>จน.</th>
+		<th>วันสอบ</th>
+		<th>เวลาสอบ</th>
+		<th>เลขที่</th>
+		<th>ห้องสอบ</th>
+		<th>ผู้กำกับห้องสอบ</th>
+		<th>ผู้ช่วยผู้กำกับห้องสอบ</th>
+		<th>เลขที่</th>
+		<th>ห้องสอบ</th>
+		<th>ผู้กำกับห้องสอบ</th>
+		<th>ผู้ช่วยผู้กำกับห้องสอบ</th>
+	</tr>
+	</tfoot>
+</table>
+<!-- ************************************************************************** -->
+
+
+
+</body></html>
