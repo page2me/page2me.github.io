@@ -14,7 +14,39 @@
 	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
 	<script type="text/javascript" class="init">
 		$(document).ready(function() {
-			$('#miyazaki').DataTable();
+			$('#miyazaki').DataTable( {
+        "columnDefs": [
+            {
+                "targets": [ 0 ],
+                "visible": false,
+            },
+			{
+                "targets": [ 1 ],
+                "visible": false,
+            },
+            {
+                "targets": [ 2 ],
+                "visible": false
+            }
+			,
+            {
+                "targets": [ 3 ],
+                "visible": false
+            },
+            {
+                "targets": [ 4 ],
+                "visible": false
+            },
+            {
+                "targets": [ 7 ],
+                "visible": false
+            },
+            {
+                "targets": [ 11 ],
+                "visible": false
+            }
+        ]
+    } );
 		} );
 	</script>
 	<!--
