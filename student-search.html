@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta content="text/html; charset=windows-874" http-equiv="Content-Type">
+	<meta content="upgrade-insecure-requests" http-equiv="Content-Security-Policy">
+	<!--
+<meta http-equiv="Content-Type" content="text/html; charset=tis-620">
+-->
+	<title>STD Find by Student ID</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<style>
+	       table#miyazaki caption {
+	           font-weight: bold;
+	           font-family: "TH SarabunPSK";
+	           font-size: 1.3rem;
+	           color: #444;
+	           margin: 1rem;
+	       }
+	       
+	       table#miyazaki {
+	           border-collapse: collapse;
+	           font-family: "TH SarabunPSK";
+	           background: #333;
+	           color: #fff;
+	           border-radius: 5px;
+	       }
+	       
+	       table#miyazaki thead th {
+	           font-weight: bold;
+	           font-family: "TH SarabunPSK";
+	           font-size: 1.3rem;
+	           color: #fff;
+	           margin: 1rem;
+	       }
+	       
+	       table#miyazaki thead th,
+	       table#miyazaki tbody td {
+	           font-family: "TH SarabunPSK";
+	           font-size: 1.3rem;
+	           color: #fff;
+	           margin: 1rem;
+	       }
+	       
+	       table#miyazaki tbody td {
+	           padding: .5rem;
+	           font-family: "TH SarabunPSK";
+	           font-size: 1.3rem;
+	           color: #444;
+	           background: #EEE;
+	       }
+	       
+	       table#miyazaki tbody tr:not(:last-child) {
+	           border-top: 1px solid #DDD;
+	           border-bottom: 1px solid #DDD;
+	           border-left: 1px solid #DDD;
+	           border-right: 1px solid #DDD;
+	       }
+	       
+	       @media screen and (max-width: 600px) {
+	           table#miyazaki caption {
+	               background-image: none;
+	           }
+	           table#miyazaki thead {
+	               display: none;
+	           }
+	           table#miyazaki tbody td {
+	               display: block;
+	               padding: .5rem;
+	           }
+	           table#miyazaki tbody tr td:first-child {
+	               background: #333;
+	               color: #FFF;
+	           }
+	           table#miyazazi tbody td:before {
+	               content: attr(data-th);
+	               font-weight: bold;
+	               display: inline-block;
+	               width: 6rem;
+	           }
+	       }
+	</style>
+	<style>
+	       table#_miyazaki caption {
+	           font-weight: bold;
+	           font-family: "TH SarabunPSK";
+	           font-size: 1.3rem;
+	           color: #444;
+	           margin: 1rem;
+	       }
+	       
+	       table#_miyazaki {
+	           border-collapse: collapse;
+	           font-family: "TH SarabunPSK";
+	           background: #333;
+	           color: #fff;
+	           border-radius: 5px;
+	       }
+	       
+	       table#_miyazaki thead th {
+	           font-weight: bold;
+	           font-family: "TH SarabunPSK";
+	           font-size: 1.3rem;
+	           color: #fff;
+	           margin: 1rem;
+	       }
+	       
+	       table#_miyazaki thead th,
+	       table#_miyazaki tbody td {
+	           font-family: "TH SarabunPSK";
+	           font-size: 1.3rem;
+	           color: #fff;
+	           margin: 1rem;
+	       }
+	       
+	       table#_miyazaki tbody td {
+	           padding: .5rem;
+	           font-family: "TH SarabunPSK";
+	           font-size: 1.3rem;
+	           color: #444;
+	           background: #EEE;
+	       }
+	       
+	       table#_miyazaki tbody tr:not(:last-child) {
+	           border-top: 1px solid #DDD;
+	           border-bottom: 1px solid #DDD;
+	           border-left: 1px solid #DDD;
+	           border-right: 1px solid #DDD;
+	       }
+	       
+	       @media screen and (max-width: 600px) {
+	           table#_miyazaki caption {
+	               background-image: none;
+	           }
+	           table#_miyazaki thead {
+	               display: none;
+	           }
+	           table#_miyazaki tbody td {
+	               display: block;
+	               padding: .5rem;
+	           }
+	           table#_miyazaki tbody tr td:first-child {
+	               background: #333;
+	               color: #FFF;
+	           }
+	           table#_miyazazi tbody td:before {
+	               content: attr(data-th);
+	               font-weight: bold;
+	               display: inline-block;
+	               width: 6rem;
+	           }
+	       }
+	       input[type=search] {
+	           padding: 12px 20px 12px 40px;
+	           font-family: 'Trirong', serif;
+	           font-size: 1rem;
+	           box-sizing: border-box;
+	           border: 2px solid #ccc;
+	           border-radius: 4px;
+	           background-color: white;
+	           background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAACYktHRAD/h4/MvwAAAAl2cEFnAAABKgAAASkAUBZlMQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxMy0wNC0xMFQwNjo1OTowNy0wNzowMI5BiVEAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTMtMDQtMTBUMDY6NTk6MDctMDc6MDD/HDHtAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAABF0RVh0VGl0bGUAc2VhcmNoLWljb27Cg+x9AAACKklEQVQ4T6WUSavqQBCFK+2sII7gShFXLpUsBBHFf+1KcAQFwaWiolsnnBDn++4p0iHRqPDuByFJd/Wp6qrqVn5+IQP3+52m0ymtVis6Ho885na7KRgMUiKR4O9vmEQHgwGNx2NyOp0khCBFUXgcJo/Hg67XK8ViMcpkMjz+Dl200+nQZrMhh8PBE4gYQgDidrudvzEOm2KxyP9WsCginM1mHKEUS6VSFA6HOWI4G41GPAfx2+1GgUCAVFXVZMwovwY/lUqFPB4PiyFn+XxemzbT6/VovV6z8Ol0olwux+LPCBQFEQKIvhME2WyWbWGHFCD/VghUGVvE1rDlb6TTabbFmuVyqY2aEWgbFALeI5GINvyeUCjEtlgju+IZoRWfkS30CURoxFJUNjMEt9stf38CNjJKIFvNiMBJgTebzcZt843hcMhCELWqPBDxeJwulwtvC/3X7/e1qVfgFD0rC5tMJrUZM8Lr9VI0GmVBRDCfz6nZbHI/Sna7HXW7XZpMJtxSiBIP1lmhH9NqtaqfGKQDTmQREBnSgwfmMqfYYblc1o+2xHShtNttLgSiee4EmMEp3hDBPJzikimVSuRyuTTLJ1GwWCz4pCB3UhiL/X4/Hw50C5zjLSM+n898weCogxdRIzAGxigAdtNqtV6EC4UC+Xy+z6Kf2O/31Gg0TMK4ZBDxf4uCw+FA9XpdF0aaUOg/iQLcHbVaTb/p0Cl/FgXIJ/oYnaCqKv0DC6dltH6Ks84AAAAASUVORK5CYII=');
+	           background-position: 10px 10px; 
+	           background-repeat: no-repeat;
+	           -webkit-transition: width 0.4s ease-in-out;
+	           transition: width 0.4s ease-in-out;
+	       }
+	</style>
+</head>
+<body>
+	<table border="0">
+		<tbody>
+			<tr>
+				<td>
+					<form action="https://project.en.rmutt.ac.th/test1/search.php" id="searchForm" method="post" name="searchForm">
+						<div>
+							<input name="stdid" type="search" placeholder="Student ID">
+						</div>
+					</form>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+		<table border="0">
+		<tbody>
+			<tr>
+				<td>
+					<form action="https://project.en.rmutt.ac.th/test1/search1.php" id="searchForm1" method="post" name="searchForm1">
+						<div>
+							<input id="studentid" name="studentid" type="search" placeholder="studentid">
+						</div>
+					</form>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table border="0">
+		<tbody>
+			<tr>
+				<td>
+					<div id="result"></div>
+					<script>
+					       /* attach a submit handler to the form */
+					       $("#searchForm").submit(function(event) {
+
+					           /* stop form from submitting normally */
+					           event.preventDefault();
+
+					           /* get some values from elements on the page: */
+					           var $form = $(this),
+					               term = $form.find('input[name="stdid"]').val(),
+					               url = $form.attr('action');
+
+					           /* Send the data using post */
+					           var posting = $.post(url, {
+					               stdid: term
+					           });
+
+					           /* Put the results in a div */
+					           posting.done(function(data) {
+					           //    var content = $(data).find('#content');
+									var content = $(data);
+									//conv = new iconv.Iconv('windows-874', 'utf8');
+									//content = conv.convert(content).toString();
+									$("#result").empty().append(content);
+								   //$("#studentcode").empty().append(content);
+					           });
+					       });
+					</script>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<table border="0">
+		<tbody>
+			<tr>
+				<td>
+					<script>
+
+					       /* attach a submit handler to the form */
+					       $("#searchForm1").submit(function(event) {
+
+					           /* stop form from submitting normally */
+					           event.preventDefault();
+
+					           /* get some values from elements on the page: */
+					           var $form = $(this),
+					               term = $form.find('input[name="studentid"]').val(),
+					               url = $form.attr('action');
+
+					           /* Send the data using post */
+					           var posting = $.post(url, {
+					               stdid: term
+					           });
+
+					           /* Put the results in a div */
+					           posting.done(function(data) {
+					           //    var content = $(data).find('#content');
+					               var content = $(data);
+					               $("#result").empty().append(content);
+								   //$("#studentcode").empty().append(content);
+					           });
+					       });
+					</script>
+				</td>
+			</tr>
+		</tbody>
+	</table><!--
+<iframe id="fr" src="http://www.youtube.com/subscribe_widget?p=kitarotao" style="overflow: hidden; height: 105px; width: 300px; border: 0;" scrolling="no" frameBorder="0"></iframe>
+-->
+</body>
+</html>
