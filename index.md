@@ -38,3 +38,4 @@ Here are some ideas to get you started:
 - Microsoft Certified: Azure AI Fundamentals
 - Microsoft Technology Associate (MTA) Certified: Networking Fundamentals
 - Microsoft Technology Associate (MTA) Certified: Introduction to Programming Using JavaScript
+- https://www.credly.com/users/weerachai-yaemvachi
