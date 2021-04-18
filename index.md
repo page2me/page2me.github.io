@@ -42,5 +42,3 @@ Here are some ideas to get you started:
 - Microsoft Certified: Azure AI Fundamentals
 - Microsoft Technology Associate (MTA) Certified: Networking Fundamentals
 - Microsoft Technology Associate (MTA) Certified: Introduction to Programming Using JavaScript
-
-<script src="https://tryhackme.com/badge/5530"><img src="https://tryhackme-badges.s3.amazonaws.com/page2me.png"></script>
