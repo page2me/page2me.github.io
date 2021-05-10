@@ -35,6 +35,7 @@ Here are some ideas to get you started:
 - Alibaba Cloud Certified Associate (ACA) Cloud Native
 - Alibaba Cloud Certified Specialty (ACS) Innovative Computing
 - Microsoft Certified: Azure Fundamentals
+- Microsoft Certified: Azure Data Fundamentals
 - Microsoft Certified: Azure AI Fundamentals
 - Microsoft Technology Associate (MTA) Certified: Networking Fundamentals
 - Microsoft Technology Associate (MTA) Certified: Introduction to Programming Using JavaScript
