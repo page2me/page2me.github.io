@@ -34,6 +34,7 @@ Here are some ideas to get you started:
 - Alibaba Cloud Certified Associate (ACA) Cloud Security
 - Alibaba Cloud Certified Associate (ACA) Cloud Native
 - Alibaba Cloud Certified Associate (ACA) Big Data
+- Alibaba Cloud Certified Associate (ACA) System Operator
 - Alibaba Cloud Certified Specialty (ACS) Innovative Computing
 - Microsoft Certified: Azure Fundamentals
 - Microsoft Certified: Azure Data Fundamentals
