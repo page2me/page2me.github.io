@@ -27,7 +27,19 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 - Cisco Certified Academy Instructor (CCAI)
+  - CyberOps Associate
+  - DevNet Associate
+  - CCNP: Core Networking 
+  - IT Essentials
+  - CCNA: Introduction to Networks
+  - CCNA: Switching, Routing, and Wireless Essentials
+  - CCNA: Enterprise Networking, Security, and Automation
 - Huawei Certified Academy Instructor (HCAI)
+  - HCIA-Routing&Switching
+  - HCIA-Datacom
+  - HCIA-Cloud Service
+  - HCIP-Routing&Switching
+  - HCIA-5G
 - Huawei: HCIP-R&S HCIAx10 (R&S, Datacom, WLAN, Security, Storage, 5G, AI, IoT, Cloud Computing, Cloud Service)
 - Juniper Networks: JNCIAx4 (JunOS, Security, Cloud, DevOps)
 - Alibaba Cloud: ACPx2 (Cloud Security, DevOps Engineer)
