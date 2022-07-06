@@ -28,17 +28,11 @@ Here are some ideas to get you started:
 -->
 - Cisco Certified Academy Instructor (CCAI)
 - Huawei Certified Academy Instructor (HCAI)
-- Huawei: HCIP-R&S HCIAx8
-- Juniper Networks: JNCIAx4
-- Alibaba Cloud Certified Associate (ACA) Cloud Computing
-- Alibaba Cloud Certified Associate (ACA) Cloud Security
-- Alibaba Cloud Certified Associate (ACA) Cloud Native
-- Alibaba Cloud Certified Associate (ACA) Big Data
-- Alibaba Cloud Certified Associate (ACA) System Operator
-- Alibaba Cloud Certified Specialty (ACS) Innovative Computing
-- Microsoft Certified: Azure Fundamentals
-- Microsoft Certified: Azure Data Fundamentals
-- Microsoft Certified: Azure AI Fundamentals
-- Microsoft Technology Associate (MTA) Certified: Networking Fundamentals
-- Microsoft Technology Associate (MTA) Certified: Introduction to Programming Using JavaScript
+- Huawei: HCIP-R&S HCIAx10 (R&S, Datacom, WLAN, Security, Storage, 5G, AI, IoT, Cloud Computing, Cloud Service)
+- Juniper Networks: JNCIAx4 (JunOS, Security, Cloud, DevOps)
+- Alibaba Cloud: ACPx2 (Cloud Security, DevOps Engineer)
+- Alibaba Cloud: ACAx5 (Cloud Computing, Cloud Security, Cloud Native, Big Data, System Operator)
+- Alibaba Cloud: ACS Innovative Computing
+- Microsoft: AZUREx3 (Azure Fundamentals, Azure Data Fundamentals, Azure AI Fundamentals)
+- Microsoft: MTAx2 Certified: (Networking Fundamentals, Introduction to Programming Using JavaScript)
 - https://www.credly.com/users/weerachai-yaemvachi
